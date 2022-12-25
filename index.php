@@ -21,14 +21,7 @@
     } else {
         include_once "./front/main.php";
     }
-  
     ?>
-   
-    
-    <a href="?do=login">登入系統</a>
-    <br>
-    <a href="?do=reg">註冊系統</a>
-   
 </svg>
 </body>
 

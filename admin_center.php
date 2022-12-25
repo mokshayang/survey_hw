@@ -1,4 +1,9 @@
 <?php include_once "./db/base.php"; ?>
+<?php
+if(!isset($_SESSION['admin'])){
+    to("./index.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,21 +20,13 @@
     <?php include_once "./layouts/header.php"; ?>
     <?php
     $do = $_GET['do'] ?? 'main';
-    $file = "./front/" . $do . ".php";
+    $file = "./back/" . $do . ".php";
     if (file_exists($file)) {
         include_once $file;
     } else {
-        include_once "./front/main.php";
-    }
-    $do = $_GET['do'] ?? 'main';
-    $file = "./front/" . $do . ".php";
-    if (file_exists($file)) {
-        include_once $file;
-    } else {
-        include_once "./front/main.php";
+        include_once "./back/main.php";
     }
     ?>
-    <a href="index.php?do=login">123</a>
 </body>
 
 </html>
