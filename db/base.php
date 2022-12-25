@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set("Asia/Taipei");
 function dd($array){
     echo "<pre>";
     print_r($array);
@@ -24,7 +25,7 @@ class DB
         $this->pdo=new PDO($this->dsn,'root','');
         $this->table=$table;
     }
-    //for public
+    //for public each
     private function arrayToSqlArray($array){
         foreach ($array as $key => $value) {
             $tmp[]="`$key`='$value'";
@@ -44,6 +45,7 @@ class DB
         }
         return $sql;
     }
+    //CRUD
     function all(...$args){
         $sql="SELECT * FROM $this->table";
         if(isset($args[0])){
@@ -52,16 +54,13 @@ class DB
                 $sql .=" WHERE " . join(" && ",$tmp);
             }else{
                 $sql .= $args[0];
-            }
-            
+            } 
         }
         if(isset($args[1])){
             $sql .= $args[1];
         }
-        dd($sql);
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
-
     function find($id){
         $sql = "SELECT * FROM $this->table ";
         if(is_array($id)){
@@ -72,7 +71,6 @@ class DB
         }
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
-    
     function del($id){
         $sql = "DELETE FROM $this->table ";
         if(is_array($id)){
@@ -97,6 +95,7 @@ class DB
                                     VALUES ('" . join("','" , $array) . "')";
         }
     }
+    //math mod
     function sum($col,...$arg){
         $sql=$this->mathSql("sum",$col,...$arg);
         echo $sql;
@@ -130,5 +129,3 @@ $admin = new DB("admin_hw");
 $subject = new DB("survey_subject_hw");
 $options= new DB("survey_options_hw");
 $log = new DB("survey_log_tw");
-
-?>
