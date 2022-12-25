@@ -9,12 +9,14 @@
 }
 h1{
     width: 60%;
-    margin:auto;
+    padding-top: 30px;
+    margin: auto;
     padding-bottom: 40px;
     text-align: center;
     border-bottom: 1px solid #333;
     text-shadow: 1px 1px 2px #333;
     font-weight: bold;
+    line-height: 30px;
 }
 form{
     width: 50%;

@@ -57,7 +57,7 @@
         return check;
     };
 </script>
-<h1>會 員 註冊</h1>
+<h1>會 員 註 冊</h1>
 <div class="container">
     <div class="row">
         <form action="api/reg_user.php" method="POST" autocomplete="off" class="col col-lg-6 col-md-8 my-5 mb-3" onSubmit="return checkForm()">
@@ -91,9 +91,9 @@
             </div>
         </form>
         <div class="text-center col-12">
+            <span id="msg" style="color:#f00; font-size:20px;"></span>
             <span id="checkpw" style="color:#f00; font-size:20px;"></span>
             <span id="check" style="color:#f00; font-size:20px;"></span>
-            <span id="msg" style="color:#f00; font-size:20px;"></span>
         </div>
     </div>
 </div>
