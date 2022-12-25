@@ -94,31 +94,28 @@ class DB
             $sql = "INSERT INTO $this->table (`" . join("`,`" , $cols) . "`)
                                     VALUES ('" . join("','" , $array) . "')";
         }
+        dd($sql);
+        return $this->pdo->exec($sql);
     }
     //math mod
     function sum($col,...$arg){
         $sql=$this->mathSql("sum",$col,...$arg);
-        echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
     function min($col,...$arg){
         $sql=$this->mathSql("min",$col,...$arg);
-        echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
     function max($col,...$arg){
         $sql=$this->mathSql("max",$col,...$arg);
-        echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
     function avg($col,...$arg){
         $sql=$this->mathSql("avg",$col,...$arg);
-        echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
     function count(...$arg){
         $sql=$this->mathSql("count","*",...$arg);
-        echo $sql;
         return $this->pdo->query($sql)->fetchColumn();
     }
 

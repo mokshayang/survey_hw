@@ -1,0 +1,33 @@
+:root{
+    --darkBlue:#000080;
+    --lightBlue:#4D4DFF60;
+    --blue:#00f;
+    --darkenBlue:#262680;
+    --fadeBlue:#0000CC;
+    --white:#fff;
+
+}
+h1{
+    width: 60%;
+    margin:auto;
+    padding-bottom: 40px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    text-shadow: 1px 1px 2px #333;
+    font-weight: bold;
+}
+form{
+    width: 50%;
+    margin: 40px auto;
+    padding-top: 40px;
+    background-color: var(--lightBlue);
+    border-radius: 40px;
+    box-shadow: 1px 1px  5px  var(--darkBlue);;
+}
+form .content{
+    width: 72%;
+    margin: auto;
+}
+#seepw,#seerpw{
+    cursor: pointer;
+}

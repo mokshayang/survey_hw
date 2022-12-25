@@ -24,7 +24,10 @@
   
     ?>
    
-    <i class="bi bi-incognito" style="font-size:30px; color:red;"></i>
+    
+    <a href="?do=login">登入系統</a>
+    <br>
+    <a href="?do=reg">註冊系統</a>
    
 </svg>
 </body>
