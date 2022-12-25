@@ -62,8 +62,66 @@ class DB
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    function find($id){
+        $sql = "SELECT * FROM $this->table ";
+        if(is_array($id)){
+            $tmp = $this->arrayToSqlArray($id);
+            $sql .= " WHERE " . join(" && ", $tmp);
+        }else{
+            $sql .= " WHERE `id` = $id ";  
+        }
+        return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+    }
     
-
+    function del($id){
+        $sql = "DELETE FROM $this->table ";
+        if(is_array($id)){
+            $tmp = $this->arrayToSqlArray($id);
+            $sql .= " WHERE " .join(" && ", $tmp);
+        }else{
+            $sql .= " WHERE `id` = '$id'";
+        }
+        return $this->pdo->exec($sql);
+    }
+    function save($array){
+        if(isset($array['id'])){
+            $id=$array['id'];
+            unset($array['id']);
+            $tmp = $this->arrayToSqlArray($array);
+            $sql = "UPDATE $this->table SET ";
+            $sql .= join(" , ", $tmp);
+            $sql .= " WHERE `id` = $id";
+        }else{
+            $cols = array_keys($array);
+            $sql = "INSERT INTO $this->table (`" . join("`,`" , $cols) . "`)
+                                    VALUES ('" . join("','" , $array) . "')";
+        }
+    }
+    function sum($col,...$arg){
+        $sql=$this->mathSql("sum",$col,...$arg);
+        echo $sql;
+        return $this->pdo->query($sql)->fetchColumn();
+    }
+    function min($col,...$arg){
+        $sql=$this->mathSql("min",$col,...$arg);
+        echo $sql;
+        return $this->pdo->query($sql)->fetchColumn();
+    }
+    function max($col,...$arg){
+        $sql=$this->mathSql("max",$col,...$arg);
+        echo $sql;
+        return $this->pdo->query($sql)->fetchColumn();
+    }
+    function avg($col,...$arg){
+        $sql=$this->mathSql("avg",$col,...$arg);
+        echo $sql;
+        return $this->pdo->query($sql)->fetchColumn();
+    }
+    function count(...$arg){
+        $sql=$this->mathSql("count","*",...$arg);
+        echo $sql;
+        return $this->pdo->query($sql)->fetchColumn();
+    }
 
 
 }
@@ -72,11 +130,5 @@ $admin = new DB("admin_hw");
 $subject = new DB("survey_subject_hw");
 $options= new DB("survey_options_hw");
 $log = new DB("survey_log_tw");
-$a=$user->all(['pw'=>123],"order by `id` desc ");
-dd($a);
-echo "<hr>";
-$b=$admin->all();
-dd($b);
-
 
 ?>
