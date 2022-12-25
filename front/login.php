@@ -11,7 +11,7 @@
                     <label class="input-group-text">密碼 :</label>
                     <input type="text" class="form-control" name="pw">
                 </div>
-                
+                <!-- <input type="hidden" name="url" valur=""> 傳遞前一頁，暫時先不做-->
             </div>
             <div class="text-center col-12 my-4">
                 <a href="#" class="btn btn-danger shadow mx-1">忘記密碼</a>
@@ -21,3 +21,8 @@
         </form>
     </div>
 </div>
+<?php
+if(isset($_GET['error'])){
+    echo "<div>帳號密碼錯誤 !!</div>";
+}
+?>

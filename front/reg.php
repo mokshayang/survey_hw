@@ -15,7 +15,6 @@
 			};
 			request.send(vars);
 		};	
-
 	};
     function forbid(){
         const reg = document.getElementById("msg");
@@ -28,7 +27,6 @@
         }
         return check;
     }
-   
     function censorpw() { 
         let check = false;
         let pass = document.getElementById("pw").value;
@@ -72,13 +70,11 @@
                     <label class="input-group-text">密　　碼 :</label>
                     <input id="pw" name="pw" type="password" class="form-control" placeholder="請輸入4字以上" required onChange="censorpw()">
                     <i id="seepw" class="input-group-text bi bi-eye-slash-fill" style="font-size:24px;"></i>
-
                 </div>
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">確認密碼 :</label>
                     <input id="repw" type="password" class="form-control" required onchange="rePw()">
                     <i id="seerpw" class="input-group-text bi bi-eye-slash-fill" style="font-size:24px;"></i>
-
                 </div>
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">名　　稱 :</label>
