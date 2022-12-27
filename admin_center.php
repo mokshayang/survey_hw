@@ -2,6 +2,7 @@
 <?php
 if(!isset($_SESSION['admin'])){
     to("./index.php");
+    echo $_SESSION['admin'];
 }
 ?>
 <!DOCTYPE html>

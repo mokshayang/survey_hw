@@ -1,6 +1,8 @@
 <?php
 session_start();
 unset($_SESSION['login']);
+unset($_SESSION['admin']);
 
-to($_SERVER['HTTP_REFERER']);
+header("location:".$_SERVER['HTTP_REFERER']);
+
 ?>

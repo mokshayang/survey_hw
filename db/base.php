@@ -23,104 +23,106 @@ class DB
     protected $pdo;
     function __construct($table)
     {
-        $this->pdo=new PDO($this->dsn,'root','');
-        $this->table=$table;
+        $this->pdo = new PDO($this->dsn,'root','');
+        $this->table = $table;
     }
-    //for public each
     private function arrayToSqlArray($array){
         foreach ($array as $key => $value) {
-            $tmp[]="`$key`='$value'";
+            $tmp[] = "`$key`='$value'";
         }
         return $tmp;
     }
-    //for public math
-    private function mathSql($math,$col,...$arg){
+    function mathSql($math,$col,...$arg){
+        $sql = "select $math($col) from $this->table where ";
         if(isset($arg[0])){
-            foreach ($arg[0] as $key => $value) {
-                $tmp[]="`$key`='$value'";
+            if(is_array($arg[0])){
+                $tmp = $this->arrayToSqlArray($arg[0]);
+                $sql .= join(" && ",$tmp);
+            }else{
+                $sql .= $arg[0];
             }
-            $sql = "SELECT $math($col) FROM $this->table WHERE ";
-            $sql .= join(" && ",$tmp);
-        }else{
-            $sql = "SELECT $math($col) FROM $this->table";
+        }
+        if(isset($arg[1])){
+            $sql .= $arg[1];
         }
         return $sql;
     }
-    //CRUD
-    function all(...$args){
-        $sql="SELECT * FROM $this->table";
-        if(isset($args[0])){
-            if(is_array($args[0])){
-                $tmp = $this->arrayToSqlArray($args[0]);
-                $sql .=" WHERE " . join(" && ",$tmp);
+    function all(...$arg){
+        $sql = "select * from $this->table where ";
+        if(isset($arg[0])){
+            if(is_array($arg[0])){
+                $tmp = $this->arrayToSqlArray($arg[0]);
+                $sql .= join(" && ",$tmp);
             }else{
-                $sql .= $args[0];
-            } 
+                $sql .= $arg[0];
+            }
         }
-        if(isset($args[1])){
-            $sql .= $args[1];
+        if(isset($arg[1])){
+            $sql .= $arg[1];
         }
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     function find($id){
-        $sql = "SELECT * FROM $this->table ";
+        $sql = "select * from $this->table where ";
         if(is_array($id)){
             $tmp = $this->arrayToSqlArray($id);
-            $sql .= " WHERE " . join(" && ", $tmp);
+            $sql .= join(" && ",$tmp);
         }else{
-            $sql .= " WHERE `id` = $id ";  
+            $sql .= " `id`=$id";
         }
         return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
     }
     function del($id){
-        $sql = "DELETE FROM $this->table ";
+        $sql = "delete from $this->table where ";
         if(is_array($id)){
             $tmp = $this->arrayToSqlArray($id);
-            $sql .= " WHERE " .join(" && ", $tmp);
+            $sql .= join(" && ",$tmp);
         }else{
-            $sql .= " WHERE `id` = '$id'";
+            $sql .= " `id`=$id";
         }
         return $this->pdo->exec($sql);
     }
     function save($array){
         if(isset($array['id'])){
-            $id=$array['id'];
+            $id = $array['id'];
             unset($array['id']);
             $tmp = $this->arrayToSqlArray($array);
-            $sql = "UPDATE $this->table SET ";
-            $sql .= join(" , ", $tmp);
-            $sql .= " WHERE `id` = $id";
+            $sql = "update $this->table set " ;
+            $sql .=  join(",",$tmp);
+            $sql .= " where `id`=$id" ;
         }else{
-            $cols = array_keys($array);
-            $sql = "INSERT INTO $this->table (`" . join("`,`" , $cols) . "`)
-                                    VALUES ('" . join("','" , $array) . "')";
+            $col = array_keys($array);
+            $sql = "insert into $this->table (`" . join("`,`",$col)."`)
+            values ('" . join("','",$array)."')";
         }
         dd($sql);
-        return $this->pdo->exec($sql);
     }
-    //math mod
-    function sum($col,...$arg){
-        $sql=$this->mathSql("sum",$col,...$arg);
+    function count(...$arg){
+        $sql = $this->mathSql("count","*",...$arg);
+        dd($sql);
         return $this->pdo->query($sql)->fetchColumn();
     }
+    function sum($col,...$arg){
+         $sql = $this->mathSql("sum",$col,...$arg);
+        dd($sql);
+        return $this->pdo->query($sql)->fetchColumn();       
+    }
     function min($col,...$arg){
-        $sql=$this->mathSql("min",$col,...$arg);
+        $sql = $this->mathSql("min",$col,...$arg);
+        dd($sql);
         return $this->pdo->query($sql)->fetchColumn();
     }
     function max($col,...$arg){
-        $sql=$this->mathSql("max",$col,...$arg);
+        $sql = $this->mathSql("max",$col,...$arg);
+        dd($sql);
         return $this->pdo->query($sql)->fetchColumn();
     }
     function avg($col,...$arg){
-        $sql=$this->mathSql("avg",$col,...$arg);
+        $sql = $this->mathSql("avg",$col,...$arg);
+        dd($sql);
         return $this->pdo->query($sql)->fetchColumn();
     }
-    function count(...$arg){
-        $sql=$this->mathSql("count","*",...$arg);
-        return $this->pdo->query($sql)->fetchColumn();
-    }
-
-
+   
 }
 $user = new DB("users_hw");
 $admin = new DB("admin_hw");
