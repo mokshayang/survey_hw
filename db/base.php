@@ -96,6 +96,7 @@ class DB
             values ('" . join("','",$array)."')";
         }
         dd($sql);
+        return $this->pdo->exec($sql);
     }
     function count(...$arg){
         $sql = $this->mathSql("count","*",...$arg);
