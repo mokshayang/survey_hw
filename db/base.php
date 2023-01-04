@@ -95,32 +95,32 @@ class DB
             $sql = "insert into $this->table (`" . join("`,`",$col)."`)
             values ('" . join("','",$array)."')";
         }
-        dd($sql);
+        //dd($sql);
         return $this->pdo->exec($sql);
     }
     function count(...$arg){
         $sql = $this->mathSql("count","*",...$arg);
-        dd($sql);
+        //dd($sql);
         return $this->pdo->query($sql)->fetchColumn();
     }
     function sum($col,...$arg){
          $sql = $this->mathSql("sum",$col,...$arg);
-        dd($sql);
+        //dd($sql);
         return $this->pdo->query($sql)->fetchColumn();       
     }
     function min($col,...$arg){
         $sql = $this->mathSql("min",$col,...$arg);
-        dd($sql);
+        //dd($sql);
         return $this->pdo->query($sql)->fetchColumn();
     }
     function max($col,...$arg){
         $sql = $this->mathSql("max",$col,...$arg);
-        dd($sql);
+        //dd($sql);
         return $this->pdo->query($sql)->fetchColumn();
     }
     function avg($col,...$arg){
         $sql = $this->mathSql("avg",$col,...$arg);
-        dd($sql);
+        //dd($sql);
         return $this->pdo->query($sql)->fetchColumn();
     }
    

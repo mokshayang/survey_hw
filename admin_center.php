@@ -15,10 +15,12 @@ if(!isset($_SESSION['admin'])){
     <link rel="stylesheet" href="./css/front.css">
     <title>Opinion</title>
     <?php include_once "./layouts/link_css.php" ?>
+    <link rel="stylesheet" href="./css/back.css">
 </head>
 
 <body>
     <?php include_once "./layouts/header.php"; ?>
+
     <?php
     $do = $_GET['do'] ?? 'main';
     $file = "./back/" . $do . ".php";

@@ -57,6 +57,7 @@
         return check;
     };
 </script>
+
 <h1>會 員 註 冊</h1>
 <div class="container">
     <div class="row">
