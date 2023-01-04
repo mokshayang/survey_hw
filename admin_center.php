@@ -1,6 +1,6 @@
 <?php include_once "./db/base.php"; ?>
 <?php
-if(!isset($_SESSION['admin'])){
+if (!isset($_SESSION['admin'])) {
     to("./index.php");
     echo $_SESSION['admin'];
 }
@@ -16,11 +16,17 @@ if(!isset($_SESSION['admin'])){
     <title>Opinion</title>
     <?php include_once "./layouts/link_css.php" ?>
     <link rel="stylesheet" href="./css/back.css">
+    <script src="js/js.js"></script>
 </head>
 
 <body>
     <?php include_once "./layouts/header.php"; ?>
-
+    <div id="cover" style="display:none; ">
+        <div id="coverr">
+            <div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; " ></div>
+            <a style="position:absolute;color:#00f; right:18px; top:10px; cursor:pointer;" onclick="cl('#cover')">X</a>
+        </div>
+    </div>
     <?php
     $do = $_GET['do'] ?? 'main';
     $file = "./back/" . $do . ".php";
@@ -33,3 +39,7 @@ if(!isset($_SESSION['admin'])){
 </body>
 
 </html>
+
+<script>
+
+</script>
