@@ -48,11 +48,11 @@ class DB
         return $sql;
     }
     function all(...$arg){
-        $sql = "select * from $this->table where ";
+        $sql = "select * from $this->table ";
         if(isset($arg[0])){
             if(is_array($arg[0])){
                 $tmp = $this->arrayToSqlArray($arg[0]);
-                $sql .= join(" && ",$tmp);
+                $sql .= " where " .join(" && ",$tmp);
             }else{
                 $sql .= $arg[0];
             }
