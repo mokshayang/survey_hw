@@ -24,8 +24,9 @@ form{
     padding-top: 40px;
     background-color: var(--lightBlue);
     border-radius: 40px;
-    box-shadow: 1px 1px  5px  var(--darkBlue);;
+    box-shadow: 1px 1px  5px  var(--darkBlue);
 }
+
 form .content{
     width: 72%;
     margin: auto;

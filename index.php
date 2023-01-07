@@ -14,7 +14,7 @@
 <body>
     <?php include_once "./layouts/header.php"; ?>
     <div class="container">
-        sd
+        這裡是boorstrap . container
     </div>
     <?php
     $do = $_GET['do'] ?? 'main';
