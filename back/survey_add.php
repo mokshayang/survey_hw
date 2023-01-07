@@ -62,14 +62,14 @@
 <form action="./api/survey_add.php" method="post" class="col-5 mx-auto  flex-wrap justify-content-center">
     <div class="input-group mb-3">
         <label class=" input-group-text ">&nbsp; 主 題 : &nbsp; </label>
-        <input type="text" name="subject" class="form-control ">
+        <input type="text" name="subject" required class="form-control ">
     </div>
     <div>
         <!-- 選項區 -->
         <div class="input-group mb-3 col-8" id="options">
             <label class=" input-group-text ">選項 :&nbsp;<span>1</span></label>
             <!-- 將選項內容裝入array->opt[] -->
-            <input type="text" name="opt[]" value="" class="form-control">
+            <input type="text" name="opt[]" required class="form-control">
             <a href="#" class="btn btn-primary" role="button" style='border-radius:4px;width:33.14px;'></a>
             <!-- 將survey_options id 內容裝入array->opt_id[] -->
             
