@@ -1,14 +1,24 @@
 <style>
     img {
-        width: 100%;
-       
+        width: 102%;
+        height: 68%;
         margin: auto;
         transform: scale(1, 1);
         transition: all 0.3s ease-out;
     }
-
+    .ii{
+        width: 144px;
+        height: 242px;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
     img:hover {
         transform: scale(1.02, 1.02);
+    }
+    .sub{
+        font-size:24px;
+        font-weight: bold;
+        text-shadow: 1px 1px 1px #33333395;
     }
 </style>
 <h3>調查列表</h3>
@@ -32,10 +42,10 @@
                     <?php } else {
                         $icon = dummy_icon($survey['type']);
                     ?>
-                        <img src="./material/<?= $icon ?>" style="width:144px" alt="">
+                        <img src="./material/<?= $icon ?>" class="ii" alt="">
                     <?php } ?>
                     <div class="card-body ">
-                        <p class="card-text"><?= $survey['subject'] ?></p>
+                        <p class="card-text sub" ><?= $survey['subject'] ?></p>
                         <a href="./api/acive.php?id=<?= $survey['id'] ?>" class="btn btn-sm mx-2 <?= $active ?>"> <?= $activeText ?> </a>
                         <a href="./admin_center.php?do=survey_edit&id=<?= $survey['id'] ?>" class="btn btn-sm btn-success mx-2">編輯</a>
                         <a href="./api/del.php?id=<?= $survey['id'] ?>" class="btn btn-sm btn-info mx-2">刪除</a>

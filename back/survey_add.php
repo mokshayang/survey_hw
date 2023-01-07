@@ -20,8 +20,8 @@
     }
 
     .img {
-        width: 18rem;
-        height: 12rem;
+        width: 21rem;
+        height: 14rem;
         text-align: center;
         /* border: 2px solid orange; */
         box-shadow: 1px 1px 5px #33333380;
