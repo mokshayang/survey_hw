@@ -26,26 +26,32 @@
         /* border: 2px solid orange; */
         box-shadow: 1px 1px 10px #33333360;
         margin: auto;
+        margin-bottom: 5px;
         border-radius: 40px;
         overflow: hidden;
     }
 
     .img img {
-        width: 99%;
-
+        width: 100%;
     }
 </style>
 <h3>新增選項 <button id="optionAdd" class="btn btn-outline-success btn-sm add" data-toggle="tooltip" data-placement="top" title="增加選項">+</button></h3>
-<?php
+<div class="img">
+    <?php
 
-if (!empty($_GET['imgId'])) {
-    $img = $subject->find(['id' => $_GET['imgId']]);
-    dd($img);
-?>
-    <div class="img">
+    if (!empty($_GET['imgId'])) {
+        $img = $subject->find(['id' => $_GET['imgId']]);
+        // dd($img);
+        if (is_image($img['type'])) {
+    ?>
         <img src="./upload/<?= $img['img'] ?>" alt="">
-    </div>
-<?php } ?>
+    <?php } else {  
+        $icon=dummy_icon($img['type']);
+    ?>
+        <img src="./material/<?= $icon ?>" style="width:144px" alt="">
+    <?php }
+    } ?>
+</div>
 <form action="./api/survey_edit.php" method="post" class="col-5 mx-auto  flex-wrap justify-content-center">
     <div class="input-group mb-3">
         <label class=" input-group-text ">&nbsp; 主 題 : &nbsp; </label>
@@ -54,7 +60,6 @@ if (!empty($_GET['imgId'])) {
     </div>
     <div>
         <!-- 選項區 -->
-
         <div class="input-group mb-3 col-8" id="options">
             <label class=" input-group-text ">選項 :&nbsp;<span></span></label>
             <!-- 將選項內容裝入array->opt[] -->
@@ -63,8 +68,6 @@ if (!empty($_GET['imgId'])) {
             <!-- 將survey_options id 內容裝入array->opt_id[] -->
             <input type="hidden" name="opt_id[]" value="<?= $option['id'] ?>">
         </div>
-
-
 
     </div>
     <div class="text-center mt-3">
