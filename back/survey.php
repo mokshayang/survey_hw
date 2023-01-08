@@ -47,6 +47,9 @@
         foreach ($surveys as $survey) {
             $active = ($survey['acive'] == 1) ? "btn-primary" : "btn-secondary";
             $activeText = ($survey['acive'] == 1) ? "啟用" : "關閉";
+            $level = ($survey['level'] == 1) ? "btn-primary" : "btn-outline-secondary";
+            $levelText = ($survey['level'] == 1) ? "會員" : "一般";
+
         ?>
             <div class="col-12 col-sm-6 col-lg-4  my-3 d-flex justify-content-center ">
                 <div class="card shadow radio" style="width: 20rem; overflow:hidden;">
@@ -63,8 +66,8 @@
                 </div>
                     <div class="card-body ">
                         <p class="card-text sub"><?= $survey['subject'] ?></p>
-                        <a href="./api/acive.php?id=<?= $survey['id'] ?>" class="btn btn-sm mx-2 bh  <?= $active ?>"> <?= $activeText ?> </a>
-                        <a href="#" class="btn btn-sm btn-primary mx-2 bh ">會員</a>
+                        <a href="./api/acive.php?id=<?= $survey['id'] ?>" class="btn btn-sm mx-2 bh <?= $active ?>"> <?= $activeText ?> </a>
+                        <a href="./api/level.php?id=<?= $survey['id'] ?>" class="btn btn-sm mx-2 bh <?= $level ?>"><?= $levelText ?></a>
                         <a href="./admin_center.php?do=survey_edit&id=<?= $survey['id'] ?>" class="btn btn-sm btn-success mx-2 bh ">編輯</a>
                         <a href="./api/del.php?id=<?= $survey['id'] ?>" class="btn btn-sm btn-danger mx-2 bh" onclick="
                         return confirm('確定刪除主題 : <?=$survey['subject']?>  ?')">刪除</a>

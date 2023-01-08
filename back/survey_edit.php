@@ -31,6 +31,12 @@ if (isset($_GET['id'])) {
         border-radius: 40px;
         overflow: hidden;
     }
+    .ii {
+        width: 120px;
+        /* height: 242px; */
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
     .img div{
         width: 100%;
         height: 100%;
@@ -43,7 +49,7 @@ if (isset($_GET['id'])) {
 <h3>編輯調查 <button id="optionAdd" class="btn btn-outline-success btn-sm add" data-toggle="tooltip" data-placement="top" title="增加選項">+</button></h3>
 
 <div class="img">
-    <div>
+    <div >
         <?php
         if (!empty($_GET['id'])) {
             if (is_image($img['type'])) {
@@ -52,7 +58,7 @@ if (isset($_GET['id'])) {
             <?php } else {
                 $icon = dummy_icon($img['type']);
             ?>
-                <img src="./material/<?= $icon ?>" style="width:144px" alt="">
+                <img src="./material/<?= $icon ?>" class="ii" style="width: 144px;" alt="">
         <?php }
         } ?>
     </div>
