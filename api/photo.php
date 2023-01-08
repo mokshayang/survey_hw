@@ -39,9 +39,9 @@ if(!empty($_FILES['img']['tmp_name'])){
 
     
     //這邊一定要選擇新名字 $new_name，剛剛用了 $data['img'] 一下有 一下沒有 因為把$data=[] 放在了裡面
-    $imgId = $subject->find(['img'=>$new_name]);
-    dd($imgId);
-    to("../admin_center.php?do={$_POST['table']}&imgId={$imgId['id']}");
+    $id = $subject->find(['img'=>$new_name]);
+    dd($id);
+    to("../admin_center.php?do={$_POST['table']}&id={$id['id']}");
 }else{
     echo "上傳失敗，請聯絡管理員，或請檢查檔案是否支援";
 }

@@ -44,8 +44,8 @@
 <div class="img">
     <div>
         <?php
-        if (!empty($_GET['imgId'])) {
-            $img = $subject->find(['id' => $_GET['imgId']]);
+        if (!empty($_GET['id'])) {
+            $img = $subject->find(['id' => $_GET['id']]);
             // dd($img);
             if (is_image($img['type'])) {
         ?>
@@ -78,9 +78,9 @@
     </div>
     <div class="text-center mt-3">
         <?php
-        if (!empty($_GET['imgId'])) {
+        if (!empty($_GET['id'])) {
         ?>
-            <input class="btn btn-success mx-1" onclick="op('#cover','#cvr','./modal/add.php?imgId=<?= $img['id']; ?>')" value="更改主題圖片">
+            <input class="btn btn-success mx-1" onclick="op('#cover','#cvr','./modal/add.php?id=<?= $img['id']; ?>')" value="更改主題圖片">
             <input type="hidden" name=subject_id   value="<?= $img['id']; ?>">
         <?php } else { ?>
             <input class="btn btn-success mx-1" onclick="op('#cover','#cvr','./modal/add.php')" value="新增主題圖片">
