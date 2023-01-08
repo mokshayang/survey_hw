@@ -25,18 +25,14 @@ if(!empty($_FILES['img']['tmp_name'])){
             unlink("../upload/".$DBimg['img']);
             $data['id']=$_POST['id'];
             $data['img']=$new_name;
-           
-      
        }
     }else{
         $new_name=date("Y-m-d h-i-s").".".$sub;
         $data['img']=$new_name;
-       
     }
 
     move_uploaded_file($_FILES['img']['tmp_name'],"../upload/".$new_name);
     $imgvar = $subject->save($data);
-
     
     //這邊一定要選擇新名字 $new_name，剛剛用了 $data['img'] 一下有 一下沒有 因為把$data=[] 放在了裡面
     $id = $subject->find(['img'=>$new_name]);
