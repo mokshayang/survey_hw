@@ -7,14 +7,12 @@ if (!empty($_FILES['img']['tmp_name'])) {
     $row['type'] = $_FILES['img']['type'];
     $img_arr = explode(".", $_FILES['img']['name']);
     $sub = array_pop($img_arr);
-
-
-    $row = $subject->find(['id' => $_POST['id']]);
     //取出 DB img 的前面名字 + 上 form 的副檔名
-    dd($row);
-    $row_arr = explode(".", $row['img']);
+    $row = $subject->find(['id' => $_POST['id']]);
+    // dd($row);
     
     //重新組裝 一個新名  即 DB img的前檔名稱 + form 的副檔名曾
+    $row_arr = explode(".", $row['img']);
     $new_name = array_shift($row_arr) . "." . $sub;
     // dd($new_name);
 

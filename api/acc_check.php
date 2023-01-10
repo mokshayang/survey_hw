@@ -6,5 +6,3 @@ $result=$user->count(['acc'=>$acc]);
 	}else{
 		echo "此帳號可使用";
 	};
-   
-?>

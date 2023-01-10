@@ -1,6 +1,10 @@
 <script>
     	function instCheck() {//ajax
-		if(document.getElementById("acc").value !="") {
+            let acc = document.getElementById("acc");
+            let accVal =acc.value.trim();
+            console.log(accVal);
+            // console.log(acc.value.trim());
+		if(accVal !== "" ) {
 			const request=new XMLHttpRequest() ;
 			const url="./api/acc_check.php";
 			let acc=document.getElementById("acc").value;
@@ -52,8 +56,17 @@
         };
         return check;
     };
+    function chkEmail(){
+        let chkEmail = $('#chkEmail');
+        if(chkEmail.val() == "已有相同信相，請換一個"){
+        check=false;
+    }else{
+        return true;
+    }
+    return check;
+}
     function checkForm() {
-        let check = censorpw() && rePw() && forbid();
+        let check = censorpw() && rePw() && forbid() && instmail();
         return check;
     };
 </script>
@@ -83,7 +96,7 @@
                 </div>
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">信　　箱 :</label>
-                    <input type="email" class="form-control" name="email">
+                    <input type="email" class="form-control" name="email" id="email" required onchange="instmail()">
                 </div>
             </div>
             <div class="text-center col-12 my-4">
@@ -96,6 +109,7 @@
             <span id="checkpw" style="color:#f00; font-size:20px;"></span>
             <span id="check" style="color:#f00; font-size:20px;"></span>
         </div>
+        <div class="text-center col-12" id="shmail"></div>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -120,4 +134,20 @@
             $('#seerpw').removeClass().addClass('input-group-text bi bi-eye-slash-fill');
         };
     });
+
+function instmail(){
+    let check = false;
+    let mail = {'email' : $('#email').val()};
+    let shmail =$('#shmail');
+    $.post("./api/chk_email.php",mail,(res)=>{
+        console.log(res);
+        if(parseInt(res) ===1){
+            shmail.html("已有相同信箱");
+            check = false;
+        }else{
+            check = true;
+        }
+    })
+    return check;
+}
 </script>
