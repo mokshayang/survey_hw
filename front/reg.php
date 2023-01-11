@@ -23,9 +23,10 @@
         }
 	};
     function forbid(){
+        let check = false;
         const reg = document.getElementById("msg");
         let text =reg.textContent;
-        if(text != "" && text == "此帳號可使用"){
+        if(text != "" && text === "此帳號可使用"){
             check = true;
         }else{
             alert("請更改您的帳號");
@@ -50,7 +51,7 @@
         let pass = document.getElementById("pw").value;
         let repass = document.getElementById("repw").value;
         if (pass != repass) {
-            document.getElementById("check").innerHTML = " 確認密碼不一樣";
+            document.getElementById("check").innerHTML = "確認密碼不一樣";
             check = false;
         } else {
             document.getElementById("check").innerHTML = " ";
@@ -58,17 +59,19 @@
         };
         return check;
     };
-    function chkEmail(){
-        let chkEmail = $('#chkEmail');
-        if(chkEmail.val() == "已有相同信相，請換一個"){
+    function shmail(){
+        let check = false;
+        let chkmail = $('#shmail');
+        if(chkmail.html() === "已有相同信箱，請換一個"){
         check=false;
     }else{
-        return true;
+        check=true;
     }
     return check;
 }
-    function checkForm() {
-        let check = censorpw() && rePw() && forbid() && instmail();
+function checkForm() {
+    let check = censorpw() && rePw() && forbid() && shmail();
+    
         return check;
     };
 </script>
@@ -111,7 +114,7 @@
             <span id="checkpw" style="color:#f00; font-size:20px;"></span>
             <span id="check" style="color:#f00; font-size:20px;"></span>
         </div>
-        <div class="text-center col-12" style="color:#00f; font-size:20px;" id="shmail"></div>
+        <div id="shmail" class="text-center col-12" style="color:#00f; font-size:20px;"></div>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -142,14 +145,17 @@ function instmail(){
     let mail = {'email' : $('#email').val()};
     let shmail =$('#shmail');
     $.post("./api/chk_email.php",mail,(res)=>{
-        console.log(res);
+        // console.log(res);
         if(parseInt(res) ===1){
-            shmail.html("已有相同信箱");
+            shmail.html("已有相同信箱，請換一個");
             check = false;
         }else{
+            shmail.html("信箱可以使用")
             check = true;
         }
     })
     return check;
 }
+
+
 </script>

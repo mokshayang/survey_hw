@@ -298,6 +298,7 @@
 <i class="bi bi-arrow-up-short"></i>
 </div>
 
+<script src="./js/goTop.js"></script>
 <style>
     .tt{
         text-align: center;
@@ -309,7 +310,6 @@
         color: #eee;
     }
 </style>
-<script src="./js/goTop.js"></script>
 <footer>
     <div class="tt">
    footer information
