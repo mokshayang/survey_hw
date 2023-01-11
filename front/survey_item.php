@@ -1,3 +1,4 @@
+<?php include_once "../db/base.php"; ?>
 <?php
 if (isset($_GET['id'])) {
     $survey =$subject->find( $_GET['id']); //取得主題
@@ -64,6 +65,12 @@ if (isset($_GET['id'])) {
             width: 90%;
         }
     }
+    .select{
+
+        margin: 20px auto;
+        text-align: center;
+        font-size: 20px;
+    }
 </style>
 <h3 style="padding-top:20px;"><?= $survey['subject'] ?></h3>
 <div class="img">
@@ -81,7 +88,7 @@ if (isset($_GET['id'])) {
         } ?>
     </div>
 </div>
-
+<div class="select">請選擇您的意見</div>
 <form action="./api/survey_vote.php" method="post">
     <div class="items">
         <?php
@@ -108,7 +115,6 @@ if (isset($_GET['id'])) {
     </div>
     <?php if (!isset($error)) {; ?>
         <div class="text-center col-12 mt-3">
-            <a href="index.php?do=main" class="btn btn-warning mx-1">取消返回</a>
             <input class="btn btn-primary mx-1" type="submit" value="投票">
         </div>
     <?php } ?>

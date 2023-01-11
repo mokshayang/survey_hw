@@ -1,16 +1,16 @@
 <?php include_once "../db/base.php";
 $option_id=$_POST['option'];
 // echo $_POST['ip'];
-$option=find('survey_options',$option_id);
-$subject=find("survey_subject",$option['subject_id']);
-// dd($subject);
-// dd($option);
+$opt_vote=$options->find(['id'=>$option_id]);
+$sub_vote=$subject->find(['id'=>$opt_vote['subject_id']]);
+dd($subject);
+dd($opt_vote);
 //echo "++前";
 //dd($subject);
-$subject['vote']++;
-$option['vote']++;
-update("survey_subject",$subject,$subject['id']);
-update("survey_options",$option,$option['id']);
+$sub_vote['vote']++;
+$opt_vote['vote']++;
+$options->save($opt_vote);
+$subject->save($sub_vote);
 
 
 
@@ -35,12 +35,12 @@ if (!empty($_SERVER['HTTP_CLIENT_IP']))//check ip from share internet
     // echo "<br>";
     // echo $_SERVER['REMOTE_ADDR'];//
 
-$log=[
-    'user'=>(isset($_SESSION['login']))?$_SESSION['login']['id']:0,
-    'ip'=>$ip,
-    'subject_id'=>$subject['id'],
-    'option_id'=>$option['id']
-];
-insert("survey_log",$log);
+// $log=[
+//     'user'=>(isset($_SESSION['login']))?$_SESSION['login']['id']:0,
+//     'ip'=>$ip,
+//     'subject_id'=>$subject['id'],
+//     'option_id'=>$opt_vote['id']
+// ];
+// insert("survey_log",$log);
 // dd($log);
-to("../index.php?do=survey_result&id={$subject['id']}");
+to("../index.php?do=survey_result&id={$sub_vote['id']}");

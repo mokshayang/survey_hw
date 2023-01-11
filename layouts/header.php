@@ -35,7 +35,7 @@
                             <i class="bi bi-person-vcard-fill i" style="color:blue;"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="index.php?do=user&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">會員中心</a>
+                            <a href="?do=user&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">會員中心</a>
                         </li>
                         <li class="nav-item mx-2">
                             <i class="bi bi-door-open-fill i" style="color:blue;"></i>
@@ -49,20 +49,20 @@
                             <i class="bi bi-person-plus py-4 i"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="index.php?do=reg" class="nav-link tc" type="button">會員註冊</a>
+                            <a href="?do=reg" class="nav-link tc" type="button">會員註冊</a>
                         </li>
                         <li class="nav-item mx-2">
                             <i class="bi bi-person-workspace i"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="index.php?do=login" class="nav-link tc" type="button">會員登入</a>
+                            <a href="?do=login" class="nav-link tc" type="button">會員登入</a>
                         </li>
                     <?php } ?>
                 </ul>
 
             <?php break;
             case "admin_center": ?>
-
+ 
 
                 <ul class="nav nav-pills" role="tablist">
                     <li class="nav-item mx-3">
@@ -74,7 +74,7 @@
                 </ul>
                 <ul class="nav nav-pills " role="tablist">
                     <li class="nav-item mx-2">
-                        <a href="?do=sruvey.php" class="nav-link" data-bs-toggle="tab" type="button">選項主題管理</a>
+                        <a href="?do=survey" class="nav-link"  type="button">選項主題管理</a>
                     </li>
 
                     <li class="nav-item mx-2">
@@ -84,11 +84,11 @@
                 <ul class="nav nav-pills mr-2 " role="tablist">
 
                     <li class="nav-item mx-2">
-                        <a class="nav-link" data-bs-toggle="tab" type="button">管理者列表</a>
+                        <a class="nav-link"  type="button">管理者列表</a>
                     </li>
 
                     <li class="nav-item mx-2">
-                        <a href="index.php?do=reg" class="nav-link" type="button">登出</a>
+                        <a href="./logout.php" class="nav-link" type="button">登出</a>
                     </li>
                 </ul>
 
