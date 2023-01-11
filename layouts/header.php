@@ -1,15 +1,18 @@
 <style>
-    i {
+    .i {
         font-size: 28px;
         margin-top: 20px;
         vertical-align: middle;
-
-
+        color: var(--darkBlue);
+    }
+    .tc{
+        color:#eee;
+        font-size: 16px;
     }
 </style>
-<header class="shadow">
+<header class="shadow" style="margin-bottom:56px;">
 
-    <nav class=" nav nav-pills py-2 justify-content-between" style="background-color:var(--lightBlue);">
+    <nav class="navbar fixed-top justify-content-between" style="background-color:var(--lightBlue); ">
         <?php
         $file_str = explode("/", $_SERVER['PHP_SELF']);
         $local = str_replace('.php', '', array_pop($file_str));
@@ -29,30 +32,30 @@
 
                     ?>
                         <li class="nav-item mx-2">
-                            <i class="bi bi-person-vcard-fill" style="color:blue;"></i>
+                            <i class="bi bi-person-vcard-fill i" style="color:blue;"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="index.php?do=user&id=<?= $_SESSION['login']['id'] ?>" class="nav-link" type="button">會員中心</a>
+                            <a href="index.php?do=user&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">會員中心</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <i class="bi bi-door-open-fill" style="color:blue;"></i>
+                            <i class="bi bi-door-open-fill i" style="color:blue;"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="./logout.php" class="nav-link" type="button">會員登出</a>
+                            <a href="./logout.php" class="nav-link tc" type="button">會員登出</a>
                         </li>
 
                     <?php  } else { ?>
                         <li class="nav-item mx-2">
-                            <i class="bi bi-person-plus py-4"></i>
+                            <i class="bi bi-person-plus py-4 i"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="index.php?do=reg" class="nav-link" type="button">會員註冊</a>
+                            <a href="index.php?do=reg" class="nav-link tc" type="button">會員註冊</a>
                         </li>
                         <li class="nav-item mx-2">
-                            <i class="bi bi-person-workspace"></i>
+                            <i class="bi bi-person-workspace i"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="index.php?do=login" class="nav-link" type="button">會員登入</a>
+                            <a href="index.php?do=login" class="nav-link tc" type="button">會員登入</a>
                         </li>
                     <?php } ?>
                 </ul>

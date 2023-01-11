@@ -18,7 +18,9 @@
 				};
 			};
 			request.send(vars);
-		};	
+		}else{
+            document.getElementById("msg").innerHTML = "帳號不能空白 ";
+        }
 	};
     function forbid(){
         const reg = document.getElementById("msg");
@@ -78,7 +80,7 @@
             <div class="content">
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">帳　　號:</label>
-                    <input id="acc" name="acc" type="text" class="form-control" required autofocus onblur="instCheck()">
+                    <input id="acc" name="acc" type="text" class="form-control" autofocus onblur="instCheck()" required>
                 </div>
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">密　　碼 :</label>
@@ -105,11 +107,11 @@
             </div>
         </form>
         <div class="text-center col-12">
-            <span id="msg" style="color:#f00; font-size:20px;"></span>
+            <span id="msg" style="color:#f00; font-size:20px; font-weight:bold;"></span>
             <span id="checkpw" style="color:#f00; font-size:20px;"></span>
             <span id="check" style="color:#f00; font-size:20px;"></span>
         </div>
-        <div class="text-center col-12" id="shmail"></div>
+        <div class="text-center col-12" style="color:#00f; font-size:20px;" id="shmail"></div>
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
