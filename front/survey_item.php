@@ -13,15 +13,16 @@ if (isset($_GET['id'])) {
 <style>
     form {
         width: 68%;
-        margin:auto;
+        margin:0 auto;
         background-color: #fff;
         box-shadow: none;
+        padding-top: 5px;
     }
 
     .items {
         margin:10px auto;
         display: grid;
-        grid-auto-rows: 48;
+        grid-auto-rows: 48px;
         grid-template-columns: 3fr 1fr 6fr 3fr;
         justify-items: end;
     }
@@ -67,9 +68,10 @@ if (isset($_GET['id'])) {
     }
     .select{
 
-        margin: 20px auto;
+        margin: 10px auto ;
         text-align: center;
         font-size: 20px;
+        
     }
 </style>
 <h3 style="padding-top:20px;"><?= $survey['subject'] ?></h3>
@@ -89,7 +91,7 @@ if (isset($_GET['id'])) {
     </div>
 </div>
 <div class="select">請選擇您的意見</div>
-<form action="./api/survey_vote.php" method="post">
+<form action="./api/survey_vote.php" method="post" >
     <div class="items">
         <?php
         if (isset($error)) {

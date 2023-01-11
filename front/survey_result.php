@@ -31,7 +31,7 @@ $level=($sub['level']==1)?"人投票":"次投票";
 ?>
 <div class="total">目前共 <?= $sub['vote'] ?> <?=$level?></div>
 
-<ul class="list-group col-10 mx-auto">
+<ul class="list-group col-10 mx-auto" style="width:60%;">
     <?php
     foreach ($opts as $opt) {
         $division = ($sub['vote'] == 0) ? 1 : $sub['vote']; //預防分母為0

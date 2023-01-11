@@ -1,20 +1,20 @@
-<link rel="stylesheet" href="../css/slider.css">
-<link rel="stylesheet" href="../css/mobile_silder.css">
+<link rel="stylesheet" href="./css/slider.css">
+<link rel="stylesheet" href="./css/mobile_silder.css">
 <?php
-include_once "../db/base.php";
-include_once "../layouts/link_css.php"
+include_once "./db/base.php";
+include_once "./layouts/link_css.php"
 ?>
 <div id="turn">
     <div style="width:100%; z-index:999;">
         <div class="imgs">
             <div id="slider">
                 <!-- php 撈顯示的張數 -->
-                <img src="../photo/vote1.png" alt="photo">
-                <img src="../photo/vote2.png" alt="photo">
-                <img src="../photo/vote3.png" alt="photo">
-                <img src="../photo/vote4.png" alt="photo">
-                <img src="../photo/vote5.png" alt="photo">
-                <img src="../photo/vote1.png" alt="photo">
+                <img src="./photo/vote1.png" alt="photo">
+                <img src="./photo/vote2.png" alt="photo">
+                <img src="./photo/vote3.png" alt="photo">
+                <img src="./photo/vote4.png" alt="photo">
+                <img src="./photo/vote5.png" alt="photo">
+                <img src="./photo/vote1.png" alt="photo">
             </div>
             <button class="prev">＜</button>
             <button class="next">＞</button>
