@@ -4,38 +4,61 @@
 include_once "./db/base.php";
 include_once "./layouts/link_css.php"
 ?>
+<style>
+ .ii{
+    text-align: center;
+ }
+</style>
 <div id="turn">
     <div style="width:100%; z-index:999;">
         <div class="imgs">
             <div id="slider">
-                <!-- php 撈顯示的張數 -->
-                <img src="./photo/vote1.png" alt="photo">
-                <img src="./photo/vote2.png" alt="photo">
-                <img src="./photo/vote3.png" alt="photo">
-                <img src="./photo/vote4.png" alt="photo">
-                <img src="./photo/vote5.png" alt="photo">
-                <img src="./photo/vote1.png" alt="photo">
+
+                <?php
+                $num = $subject->count(['acive' => 1, 'level' => 1]);
+                if($num>1){
+                foreach ($sub_imgs as $key => $img) {
+                    if (is_image($img['type']) == ("image/gif" || "image/jpeg" || "image/png")) {
+                        echo "<img src='./upload/{$img['img']}' alt='photo'>";
+                    } else {
+                        $icon = dummy_icon($img['type']);
+                        echo "<div style='width:40%; margin:30px auto; text-align:center;'>";
+                        echo "<img src='./material/$icon'  alt='photo'>";
+                        echo "</div>";
+                    } 
+                }
+            }else{
+                echo "<img src=''>";
+            }
+                $first_img =  $subject->find(['id' => $sub_imgs[0]['id']]);
+                if (is_image($first_img['type'])) {
+                    echo "<img src='./upload/{$first_img['img']}'>";
+                }
+                ?>
+
             </div>
             <button class="prev">＜</button>
             <button class="next">＞</button>
         </div>
         <div class="tag">
             <!-- php 撈顯示的數量 -->
-            <div class="rad">
-                <div class="point"></div>
-            </div>
-            <div class="rad">
-                <div></div>
-            </div>
-            <div class="rad">
-                <div></div>
-            </div>
-            <div class="rad">
-                <div></div>
-            </div>
-            <div class="rad">
-                <div></div>
-            </div>
+            <?php
+            
+            if ($num > 1) {
+            ?>
+                <div class="rad">
+                    <div class="point"></div>
+                </div>
+                <?php
+                for ($i = 1; $i <= $num - 1; $i++) {
+                ?>
+                    <div class="rad">
+                        <div></div>
+                    </div>
+            <?php }
+            } else {
+                echo "";
+            } ?>
         </div>
     </div>
 </div>
@@ -48,7 +71,7 @@ include_once "./layouts/link_css.php"
 <script>
     //----------------------------自動輪轉-------------------------------//
     var x = 0; //手動用作標
-    const k = 5; //5張圖片可用PHP去撈張數
+    const k = <?= $num ?>; //5張圖片可用PHP去撈張數
     let interval; //間隔時間，自動用
     let banner = $('#slider'); //簡化;
     let that = $('.tag .rad'); //簡化;

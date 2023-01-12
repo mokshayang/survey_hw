@@ -6,12 +6,17 @@
         color: #ccc;
     }
 
-    .items:hover {
+    /* .items:hover {
         background-color: #dddddd90;
+    } */
+    .sub_p{
+        width: 100%;
+        height: 900px;
+        overflow: hidden;
     }
 </style>
 <!--↓↓↓↓↓↓↓↓↓↓ photo　↓↓↓↓↓↓↓↓↓↓-->
-<div>
+<div class="sub_p">
     <img src="./photo/c10.jpg" alt="" width="100%">
 </div>
 
@@ -59,9 +64,7 @@
                 <div><?= $survey['subject'] ?></div>
                 <div><?= $survey['vote'] ?></div>
                 <div>
-
                     <a class="btn btn-sm btn-success mx-1" onclick="op('#cover','#cvr','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
-
                     <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-success mx-1">結果</a>
 
                 </div>
@@ -75,13 +78,14 @@
     <div style="height:60px;">2</div>
 </div>
 <style>
-        .slider{
-            text-align: center;
-            font-size: 30px;
-            margin: 30px auto;
-        }
+    .slider {
+        text-align: center;
+        font-size: 30px;
+        margin: 30px auto;
+    }
 </style>
 <div class="slider">照片撈資料庫的主題照片，上方宣傳語言</div>
+<?php $sub_imgs = $subject->all(['acive' => 1, 'level' => 1]," ORDER by id limit 5"); ?>
 <?php include_once "./slider/slider.php" ?> <!-- 尚未製作  -->
 <!-- 紙牌區 -->
 
@@ -94,7 +98,7 @@
         cursor: pointer;
     }
 
-    .card {
+    .cards {
         width: 200px;
         height: 300px;
         border-radius: 10px;
@@ -133,137 +137,127 @@
         justify-items: center;
         grid-gap: 20px;
     }
+
     @media screen and (max-width:760px) {
         .asb {
             grid-template-columns: repeat(2, 1fr);
+        }
     }
-}
 </style>
 <style>
-    .user{
+    .user {
         text-align: center;
         font-size: 40px;
         line-height: 40px;
         margin: 40px auto;
     }
+
+   
+    .mm {
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+    }
+
+  
+    .mm img{
+        width: 100%;
+    }
+    .choose {
+        position: relative;
+        top: 10px;
+    }
+    #cover_user
+{
+	width:100%;
+	height:100%;
+	position:fixed;
+	z-index:5;
+	background:rgba(51,51,51,0.4);
+	top:50px;
+	left:0px;
+	overflow:auto;
+}
+#coverr_user
+{
+	width:60%;
+	min-width:300px;
+	max-width:800px;
+	height:70%;
+	min-height:300px;
+	position:absolute;
+	z-index:5;
+	background:#eef;
+	top:00px;
+	left:0px;
+	right:0px;
+	bottom:0px;
+	margin:auto;
+	overflow:auto;
+    border-radius: 32px;
+    text-shadow: 1px 1px 1px #333;
+}
 </style>
 <div class="user">會員投票區:</div>
+
+<div id="cover_user" style="display:none;min-width:380px ">
+    <div id="coverr_user" style="min-width:480px">
+        <div id="cvr_user" class="sh" style="position:absolute; width:50%; min-width:320px; min-height:560px; margin:auto; transform:translate(-50%,6%); left:50%; background-color:#fff;  border-radius: 20px;  background-color:#fff;box-shadow: 1px 1px 3px 1px #33333390;"></div>
+        <a style="position:absolute; color:#00f; transform:translate(-50%,10%);  right:5%; top:8%;  cursor:pointer; z-index: 100;" onclick="cl('#cover_user')">X</a>
+    </div>
+</div>
+
 <div class="container text-center">
+
+
 
     <div class="row">
 
         <div class="asb">
 
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
+            <?php
+            $surveys = $subject->all(['acive' => 1, 'level' => 1]);
+            foreach ($surveys as $key => $survey) {
+            ?>
+                <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
+                    <!-- 卡片正面 -->
+                    <div class="cards cardfront">
+                        front
+                    </div>
+                    <!-- 卡片背面 -->
+                    <div class="cards cardback">
 
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
+                        <div class="card shadow radio" style="width: 200px; height:300px; overflow:hidden;">
+                            <div class="mm ">
+                                <?php
+                                if (is_image($survey['type'])) {
+                                ?>
+                                    <img src="./upload/<?= $survey['img'] ?>" alt="photo">
+                                <?php } else {
+                                    $icon = dummy_icon($survey['type']);
+                                ?>
+                                <div style="width:56%; margin:auto;">
+                                    <img src="./material/<?= $icon ?>" class="ii" alt="photo">
+                                    </div>
+                                <?php } ?>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text sub"><?= $survey['subject'] ?></p>
+                                <div class="choose">
+                                    <a class="btn btn-sm btn-primary mx-1" onclick="op('#cover_user','#cvr_user','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
+                                    <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-primary mx-1">結果</a>
+                                </div>
+                            </div>
+                        </div>
 
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
+            <?php } ?>
 
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
 
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
-
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
-
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
-
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
-
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
-
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                <div class="card cardfront">
-                    front
-                </div>
-
-                <div class="card cardback">
-                    <a href="#">
-                        <img src="./photo/vote.jpg" alt="">
-                    </a>
-                </div>
-            </div>
+       
+        
+        
 
 
 
@@ -274,36 +268,37 @@
     </div>
 </div>
 <style>
-#go-top{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: linear-gradient(blue, #fff);
-    box-shadow: 1px 1px 5px var(--fadeBlue);
-    position: fixed;
-    right: 40px;
-    bottom: 60px;
-    display:hidden;
-    cursor: pointer;
-}
-#go-top .bi{
-    font-size: 60px;
-    color: #fff;
-    position: absolute;
-    top: -15px;
-}
+    #go-top {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(blue, #fff);
+        box-shadow: 1px 1px 5px var(--fadeBlue);
+        position: fixed;
+        right: 40px;
+        bottom: 60px;
+        display: hidden;
+        cursor: pointer;
+    }
+
+    #go-top .bi {
+        font-size: 60px;
+        color: #fff;
+        position: absolute;
+        top: -15px;
+    }
 </style>
 
 <div id="go-top">
-<i class="bi bi-arrow-up-short"></i>
+    <i class="bi bi-arrow-up-short"></i>
 </div>
 
 <script src="./js/goTop.js"></script>
 <style>
-    .tt{
+    .tt {
         text-align: center;
         font-size: 40px;
-        margin: 40px  auto;
+        margin: 40px auto;
         height: 280px;
         line-height: 280px;
         background-color: var(--darkBlue);
@@ -312,6 +307,6 @@
 </style>
 <footer>
     <div class="tt">
-   footer information
+        footer information
     </div>
 </footer>

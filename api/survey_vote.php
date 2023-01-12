@@ -1,14 +1,23 @@
 <?php include_once "../db/base.php";
 $option_id=$_POST['option'];
 // echo $_POST['ip'];
+$tmp=[];
 $opt_vote=$options->find(['id'=>$option_id]);
 $sub_vote=$subject->find(['id'=>$opt_vote['subject_id']]);
-dd($subject);
+dd($sub_vote);
 dd($opt_vote);
+
 //echo "++前";
 //dd($subject);
 $sub_vote['vote']++;
 $opt_vote['vote']++;
+if(isset($_SESSION['login'])){
+$tmp['user_id'] = $_SESSION['login']['id'];
+$tmp['subject_id']=$sub_vote['id'];
+$log->save($tmp);
+}
+dd($_SESSION['login']);
+dd($tmp);
 $options->save($opt_vote);
 $subject->save($sub_vote);
 

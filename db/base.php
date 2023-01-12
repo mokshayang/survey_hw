@@ -161,4 +161,4 @@ $user = new DB("users_hw");
 $admin = new DB("admin_hw");
 $subject = new DB("survey_subject_hw");
 $options= new DB("survey_options_hw");
-$log = new DB("survey_log_tw");
+$log = new DB("survey_log_hw");

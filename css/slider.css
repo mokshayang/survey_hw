@@ -5,15 +5,17 @@
 }
 
 .imgs {
-    /*設定圖片比列(2:1)*/
-    width: 94%;
+    /*設定圖片比列(5:3)*/
+    width: 80%;
     height: 0;
-    padding-bottom: 47%;
+    padding-bottom: 48%;
     position: relative;
     overflow: hidden;
-    border: 2rem solid #00e;
+    border: 1rem solid #00e;
     min-width: 40rem;
     border-radius: 20px;
+    margin: auto;
+    box-shadow: 1px 1px 5px #00e;
 }
 
 #slider {

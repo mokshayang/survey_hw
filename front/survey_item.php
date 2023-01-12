@@ -32,26 +32,28 @@ if (isset($_GET['id'])) {
         height: 38px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        background-color: #eef;
+        background-color: #fff;
         text-align: center;
         line-height: 38px;
     }
     .img {
-        width: 21rem;
-        height: 14rem;
+        width: 300px;
+        height: 180px;
         text-align: center;
         /* border: 2px solid orange; */
         box-shadow: 1px 1px 5px #33333380;
         margin: auto;
-        margin-bottom: 5px;
-        border-radius: 40px;
+        /* margin-bottom: 5px; */
+        border-radius: 20px;
         overflow: hidden;
+        min-width: 240px;
+        min-height: 144px;
     }
     .ii {
         width: 120px;
         /* height: 242px; */
-        padding-bottom: 10px;
-        padding-top: 10px;
+        /* padding-bottom: 10px; */
+        /* padding-top: 10px; */
     }
     .img div{
         width: 100%;
@@ -59,13 +61,24 @@ if (isset($_GET['id'])) {
     }
     .img img {
         width: 100%;
-
     }
     @media only screen and (max-width: 780px) {
         form {
             width: 90%;
         }
     }
+    img {
+        width: 100%;
+        /* height: 100%; */
+        margin: auto;
+        transform: scale(1, 1);
+        transition: all 0.3s ease-out;
+    }
+
+    img:hover {
+        transform: scale(1.02, 1.02);
+    }
+
     .select{
 
         margin: 10px auto ;

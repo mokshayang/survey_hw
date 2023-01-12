@@ -1,4 +1,6 @@
+
 let bt=$('#go-top');
+bt.hide();
 $(window).scroll(function() {
 let self=$(this),
     height=self.height(),
