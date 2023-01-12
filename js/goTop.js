@@ -1,6 +1,6 @@
-var bt=$('#go-top');
+let bt=$('#go-top');
 $(window).scroll(function() {
-var self=$(this),
+let self=$(this),
     height=self.height(),
     top=self.scrollTop();
 //		console.log(height);
