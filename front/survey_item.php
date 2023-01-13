@@ -40,10 +40,8 @@ if (isset($_GET['id'])) {
         width: 300px;
         height: 180px;
         text-align: center;
-        /* border: 2px solid orange; */
         box-shadow: 1px 1px 5px #33333380;
         margin: auto;
-        /* margin-bottom: 5px; */
         border-radius: 20px;
         overflow: hidden;
         min-width: 240px;
@@ -51,9 +49,6 @@ if (isset($_GET['id'])) {
     }
     .ii {
         width: 120px;
-        /* height: 242px; */
-        /* padding-bottom: 10px; */
-        /* padding-top: 10px; */
     }
     .img_sub div{
         width: 100%;
@@ -69,16 +64,14 @@ if (isset($_GET['id'])) {
     }
     .img_opt , .ii {
         width: 100%;
-        /* height: 100%; */
         margin: auto;
         transform: scale(1, 1);
         transition: all 0.3s ease-out;
     }
 
-    .img_opt:hover , .ii {
+    .img_opt:hover , .ii:hover {
         transform: scale(1.02, 1.02);
     }
-
     .select{
 
         margin: 10px auto ;
@@ -114,7 +107,6 @@ if (isset($_GET['id'])) {
                 $checked = ($key == 0) ? "checked" : "";
         ?>
                 <!-- 項目列表 -->
-  
                 <div></div>
                 <div class="radio">
                     <input type="radio" name="option" <?= $checked ?> value="<?= $option['id'] ?>">

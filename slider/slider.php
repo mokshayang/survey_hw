@@ -4,31 +4,39 @@
 include_once "./db/base.php";
 include_once "./layouts/link_css.php"
 ?>
+<script src="./js/easeing.js"></script>
 <style>
+    #slider img {
+        transform: scale(1, 1);
+        transition: all 0.2s ease-out;
+    }
 
+    #slider img:hover {
+        transform: scale(1.01, 1.01);
+    }
 </style>
 <div id="turn">
     <div style="width:100%; z-index:999;">
         <div class="imgs">
-            <div id="slider" >
+            <div id="slider">
 
                 <?php
                 $num = $subject->count(['acive' => 1, 'level' => 1]);
-                if($num>1){
-                foreach ($sub_imgs as $key => $img) {
-                    if (is_image($img['type']) == ("image/gif" || "image/jpeg" || "image/png")) {
-                        echo "<img src='./upload/{$img['img']}' alt='photo'>";
-                    } else {
-                        $icon = dummy_icon($img['type']);
-                        echo "<div style='width:40%; margin:36px auto; text-align:center;'>";
-                        echo "<img src='./material/$icon'  alt='photo'>";
-                        echo "</div>";
-                    } 
+                if ($num > 1) {
+                    foreach ($sub_imgs as $key => $img) {
+                        if (is_image($img['type']) == ("image/gif" || "image/jpeg" || "image/png")) {
+                            echo "<img src='./upload/{$img['img']}' alt='photo'>";
+                        } else {
+                            $icon = dummy_icon($img['type']);
+                            echo "<div style='width:40%; margin:36px auto; text-align:center;'>";
+                            echo "<img src='./material/$icon'  alt='photo'>";
+                            echo "</div>";
+                        }
+                    }
+                } else {
+                    echo "<img src=''>"; //都沒有主題時，要放的照片
                 }
-            }else{
-                echo "<img src=''>";//都沒有主題時，要放的照片
-            }
-                $first_img =  $subject->find(['id' => $sub_imgs[0]['id']]);//腦經打結，第一章一定要放圖檔
+                $first_img =  $subject->find(['id' => $sub_imgs[0]['id']]); //腦經打結，第一章一定要放圖檔
                 if (is_image($first_img['type'])) {
                     echo "<img src='./upload/{$first_img['img']}'>";
                 }
@@ -41,7 +49,7 @@ include_once "./layouts/link_css.php"
         <div class="tag">
             <!-- php 撈顯示的數量 -->
             <?php
-            
+
             if ($num > 1) {
             ?>
                 <div class="rad">

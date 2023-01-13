@@ -1,17 +1,15 @@
 <link rel="stylesheet" href="./css/table.css">
 <script src="./js/js.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <style>
     .selected {
         color: #ccc;
     }
 
-    /* .items:hover {
-        background-color: #dddddd90;
-    } */
-    .sub_p{
+    .sub_p {
         width: 100%;
         height: 900px;
+
         overflow: hidden;
     }
 </style>
@@ -85,7 +83,7 @@
     }
 </style>
 <div class="slider">照片撈資料庫的主題照片，上方宣傳語言</div>
-<?php $sub_imgs = $subject->all(['acive' => 1, 'level' => 1]," ORDER by id limit 5"); ?>
+<?php $sub_imgs = $subject->all(['acive' => 1, 'level' => 1], " ORDER by id limit 5"); ?>
 <?php include_once "./slider/slider.php" ?> <!-- 尚未製作  -->
 <!-- 紙牌區 -->
 
@@ -105,7 +103,7 @@
         overflow: hidden;
         transition: 1.6s all ease;
         backface-visibility: hidden;
-        box-shadow: 3px 3px 10px #333;
+        box-shadow: 1px 1px 5px #0000cc98;
     }
 
     .cardfront {
@@ -152,51 +150,61 @@
         margin: 40px auto;
     }
 
-   
+
     .mm {
         width: 101%;
         height: 150px;
         overflow: hidden;
     }
 
-  
-    .mm img{
+
+    .mm img {
         width: 100%;
     }
+
     .choose {
         position: relative;
         top: 10px;
     }
-    #cover_user
-{
-	width:100%;
-	height:100%;
-	position:fixed;
-	z-index:5;
-	background:rgba(51,51,51,0.4);
-	top:50px;
-	left:0px;
-	overflow:auto;
-}
-#coverr_user
-{
-	width:60%;
-	min-width:300px;
-	max-width:800px;
-	height:70%;
-	min-height:300px;
-	position:absolute;
-	z-index:5;
-	background:#eef;
-	top:00px;
-	left:0px;
-	right:0px;
-	bottom:0px;
-	margin:auto;
-	overflow:auto;
-    border-radius: 32px;
-    text-shadow: 1px 1px 1px #333;
-}
+
+    #cover_user {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 5;
+        background: rgba(51, 51, 51, 0.4);
+        top: 50px;
+        left: 0px;
+        overflow: auto;
+    }
+
+    #coverr_user {
+        width: 60%;
+        min-width: 300px;
+        max-width: 800px;
+        height: 70%;
+        min-height: 300px;
+        position: absolute;
+        z-index: 5;
+        background: #eef;
+        top: 00px;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        margin: auto;
+        overflow: auto;
+        border-radius: 32px;
+        text-shadow: 1px 1px 1px #333;
+    }
+
+    .mm img {
+        transform: scale(1, 1);
+        transition: all 0.3s ease-out;
+    }
+
+    .mm img:hover {
+        transform: scale(1.02, 1.02);
+    }
 </style>
 <div class="user">會員投票區:</div>
 
@@ -223,7 +231,7 @@
                 <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
                     <!-- 卡片正面 -->
                     <div class="cards cardfront">
-                        front
+
                     </div>
                     <!-- 卡片背面 -->
                     <div class="cards cardback">
@@ -237,8 +245,8 @@
                                 <?php } else {
                                     $icon = dummy_icon($survey['type']);
                                 ?>
-                                <div style="width:52%; margin:auto;">
-                                    <img src="./material/<?= $icon ?>" class="ii" alt="photo">
+                                    <div style="width:48%; margin:auto; padding-top:4px;">
+                                        <img src="./material/<?= $icon ?>" class="ii" alt="photo">
                                     </div>
                                 <?php } ?>
                             </div>
@@ -256,9 +264,9 @@
             <?php } ?>
 
 
-       
-        
-        
+
+
+
 
 
 
@@ -295,6 +303,7 @@
 </div>
 
 <script src="./js/goTop.js"></script>
+
 <style>
     .tt {
         text-align: center;
