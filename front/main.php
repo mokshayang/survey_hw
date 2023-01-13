@@ -149,24 +149,18 @@
         line-height: 40px;
         margin: 40px auto;
     }
-
-
     .mm {
         width: 101%;
         height: 150px;
         overflow: hidden;
     }
-
-
     .mm img {
         width: 100%;
     }
-
     .choose {
         position: relative;
         top: 10px;
     }
-
     #cover_user {
         width: 100%;
         height: 100%;
@@ -217,8 +211,6 @@
 
 <div class="container text-center">
 
-
-
     <div class="row">
 
         <div class="asb">
@@ -265,14 +257,6 @@
 
 
 
-
-
-
-
-
-
-
-
         </div>
     </div>
 </div>
@@ -282,7 +266,7 @@
         height: 60px;
         border-radius: 50%;
         background: linear-gradient(blue, #fff);
-        box-shadow: 1px 1px 5px var(--fadeBlue);
+        box-shadow: 2px 2px 5px var(--fadeBlue);
         position: fixed;
         right: 40px;
         bottom: 60px;

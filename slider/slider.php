@@ -4,7 +4,7 @@
 include_once "./db/base.php";
 include_once "./layouts/link_css.php"
 ?>
-<script src="./js/easeing.js"></script>
+
 <style>
     #slider img {
         transform: scale(1, 1);
