@@ -99,7 +99,7 @@
     }
 
     .cards {
-        width: 200px;
+        width: 215px;
         height: 300px;
         border-radius: 10px;
         overflow: hidden;
@@ -154,7 +154,7 @@
 
    
     .mm {
-        width: 100%;
+        width: 101%;
         height: 150px;
         overflow: hidden;
     }
@@ -217,6 +217,7 @@
 
             <?php
             $surveys = $subject->all(['acive' => 1, 'level' => 1]);
+            // $user_id=
             foreach ($surveys as $key => $survey) {
             ?>
                 <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
@@ -227,7 +228,7 @@
                     <!-- 卡片背面 -->
                     <div class="cards cardback">
 
-                        <div class="card shadow radio" style="width: 200px; height:300px; overflow:hidden;">
+                        <div class="card shadow radio" style="width: 216px; height:300px; overflow:hidden;">
                             <div class="mm ">
                                 <?php
                                 if (is_image($survey['type'])) {
@@ -236,7 +237,7 @@
                                 <?php } else {
                                     $icon = dummy_icon($survey['type']);
                                 ?>
-                                <div style="width:56%; margin:auto;">
+                                <div style="width:52%; margin:auto;">
                                     <img src="./material/<?= $icon ?>" class="ii" alt="photo">
                                     </div>
                                 <?php } ?>

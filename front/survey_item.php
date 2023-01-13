@@ -36,7 +36,7 @@ if (isset($_GET['id'])) {
         text-align: center;
         line-height: 38px;
     }
-    .img {
+    .img_sub {
         width: 300px;
         height: 180px;
         text-align: center;
@@ -55,11 +55,11 @@ if (isset($_GET['id'])) {
         /* padding-bottom: 10px; */
         /* padding-top: 10px; */
     }
-    .img div{
+    .img_sub div{
         width: 100%;
         height: 100%;
     }
-    .img img {
+    .img_sub .img_opt {
         width: 100%;
     }
     @media only screen and (max-width: 780px) {
@@ -67,7 +67,7 @@ if (isset($_GET['id'])) {
             width: 90%;
         }
     }
-    img {
+    .img_opt , .ii {
         width: 100%;
         /* height: 100%; */
         margin: auto;
@@ -75,7 +75,7 @@ if (isset($_GET['id'])) {
         transition: all 0.3s ease-out;
     }
 
-    img:hover {
+    .img_opt:hover , .ii {
         transform: scale(1.02, 1.02);
     }
 
@@ -88,17 +88,17 @@ if (isset($_GET['id'])) {
     }
 </style>
 <h3 style="padding-top:20px;"><?= $survey['subject'] ?></h3>
-<div class="img">
+<div class="img_sub">
     <div >
         <?php
         if (!empty($_GET['id'])) {
             if (is_image($survey['type'])) {
         ?>
-                <img src="./upload/<?= $survey['img'] ?>" alt="">
+                <img src="./upload/<?= $survey['img'] ?>" class="img_opt" alt="photo">
             <?php } else {
                 $icon = dummy_icon($survey['type']);
             ?>
-                <img src="./material/<?= $icon ?>" class="ii" style="width: 144px;" alt="">
+                <img src="./material/<?= $icon ?>" class="ii" style="width: 132px; padding-top:2px;" alt="">
         <?php }
         } ?>
     </div>

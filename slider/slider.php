@@ -5,14 +5,12 @@ include_once "./db/base.php";
 include_once "./layouts/link_css.php"
 ?>
 <style>
- .ii{
-    text-align: center;
- }
+
 </style>
 <div id="turn">
     <div style="width:100%; z-index:999;">
         <div class="imgs">
-            <div id="slider">
+            <div id="slider" >
 
                 <?php
                 $num = $subject->count(['acive' => 1, 'level' => 1]);
@@ -22,15 +20,15 @@ include_once "./layouts/link_css.php"
                         echo "<img src='./upload/{$img['img']}' alt='photo'>";
                     } else {
                         $icon = dummy_icon($img['type']);
-                        echo "<div style='width:40%; margin:30px auto; text-align:center;'>";
+                        echo "<div style='width:40%; margin:36px auto; text-align:center;'>";
                         echo "<img src='./material/$icon'  alt='photo'>";
                         echo "</div>";
                     } 
                 }
             }else{
-                echo "<img src=''>";
+                echo "<img src=''>";//都沒有主題時，要放的照片
             }
-                $first_img =  $subject->find(['id' => $sub_imgs[0]['id']]);
+                $first_img =  $subject->find(['id' => $sub_imgs[0]['id']]);//腦經打結，第一章一定要放圖檔
                 if (is_image($first_img['type'])) {
                     echo "<img src='./upload/{$first_img['img']}'>";
                 }
@@ -71,7 +69,7 @@ include_once "./layouts/link_css.php"
 <script>
     //----------------------------自動輪轉-------------------------------//
     var x = 0; //手動用作標
-    const k = <?= $num ?>; //5張圖片可用PHP去撈張數
+    const k = <?= $num ?>; //N張圖片可用PHP去撈張數
     let interval; //間隔時間，自動用
     let banner = $('#slider'); //簡化;
     let that = $('.tag .rad'); //簡化;

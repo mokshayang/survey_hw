@@ -1,3 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+    /* box-sizing: border-box; */
+}
 #turn {
     width: 62.5%;
     margin: auto;
@@ -11,7 +16,7 @@
     padding-bottom: 48%;
     position: relative;
     overflow: hidden;
-    border: 1rem solid #00e;
+    border: 18px solid #00e;
     min-width: 40rem;
     border-radius: 20px;
     margin: auto;
@@ -21,6 +26,7 @@
 #slider {
     width: 600%;
     /*6張的寬度*/
+   
     position: relative;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -29,6 +35,7 @@
 
 #slider img {
     width: 100%;
+
 }
 
 .prev,
