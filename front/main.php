@@ -149,18 +149,22 @@
         line-height: 40px;
         margin: 40px auto;
     }
+
     .mm {
         width: 101%;
         height: 150px;
         overflow: hidden;
     }
+
     .mm img {
         width: 100%;
     }
+
     .choose {
         position: relative;
         top: 10px;
     }
+
     #cover_user {
         width: 100%;
         height: 100%;
@@ -199,6 +203,24 @@
     .mm img:hover {
         transform: scale(1.02, 1.02);
     }
+
+    .selected {
+        width: 216px;
+        height: 300px;
+        position: relative;
+        top: -300px;
+        background-color: #0000ee80;
+        border-radius: 10px;
+       
+    }
+
+    .see_result {
+        position: absolute;
+      
+        top: 68%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 </style>
 <div class="user">會員投票區:</div>
 
@@ -216,18 +238,21 @@
         <div class="asb">
 
             <?php
+            $user_id = $log->all(['user_id' => $_SESSION['login']['id']]);
+            $temp = [];
+            foreach ($user_id as  $u_id) {
+                $temp[] = $u_id['subject_id'];
+            }
+            // dd($temp);
+            // dd($user_id);
             $surveys = $subject->all(['acive' => 1, 'level' => 1]);
-            // $user_id=
             foreach ($surveys as $key => $survey) {
+                if (in_array($survey['id'], $temp)) {
             ?>
-                <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
-                    <!-- 卡片正面 -->
-                    <div class="cards cardfront">
 
-                    </div>
-                    <!-- 卡片背面 -->
-                    <div class="cards cardback">
+                    <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
 
+                        <!-- 卡片背面 -->
                         <div class="card shadow radio" style="width: 216px; height:300px; overflow:hidden;">
                             <div class="mm ">
                                 <?php
@@ -242,18 +267,58 @@
                                     </div>
                                 <?php } ?>
                             </div>
-                            <div class="card-body">
-                                <p class="card-text sub"><?= $survey['subject'] ?></p>
+                        </div>
+                        <div class="selected">
+                            <div class="see_result">
+                                <p style="width:215px;"><?= $survey['subject'] ?></p>
                                 <div class="choose">
-                                    <a class="btn btn-sm btn-primary mx-1" onclick="op('#cover_user','#cvr_user','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
-                                    <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-primary mx-1">結果</a>
+                                    <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-warning mx-1">結果</a>
+                                </div>
+                            </div>
+                            <img src="./photo/vote.png " style=" background-repeat:no-repeat;" alt="votefor">
+                        </div>
+                    </div>
+
+
+
+
+                <?php } else {
+                ?>
+
+                    <div class="col-12 col-sm-6 col-lg-4 my-3 c justify-content-center">
+                        <!-- 卡片正面 -->
+                        <div class="cards cardfront">
+
+                        </div>
+                        <!-- 卡片背面 -->
+                        <div class="cards cardback">
+
+                            <div class="card shadow radio" style="width: 216px; height:300px; overflow:hidden;">
+                                <div class="mm ">
+                                    <?php
+                                    if (is_image($survey['type'])) {
+                                    ?>
+                                        <img src="./upload/<?= $survey['img'] ?>" alt="photo">
+                                    <?php } else {
+                                        $icon = dummy_icon($survey['type']);
+                                    ?>
+                                        <div style="width:48%; margin:auto; padding-top:4px;">
+                                            <img src="./material/<?= $icon ?>" class="ii" alt="photo">
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <div class="card-body">
+                                    <p class="card-text sub"><?= $survey['subject'] ?></p>
+                                    <div class="choose">
+                                        <a class="btn btn-sm btn-primary mx-1" onclick="op('#cover_user','#cvr_user','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
+                                        <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-primary mx-1">結果</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
-            <?php } ?>
+            <?php }
+            } ?>
 
 
 
