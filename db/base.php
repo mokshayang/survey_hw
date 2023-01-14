@@ -33,11 +33,11 @@ class DB
         return $tmp;
     }
     function mathSql($math,$col,...$arg){
-        $sql = "select $math($col) from $this->table where ";
+        $sql = "select $math($col) from $this->table  ";
         if(isset($arg[0])){
             if(is_array($arg[0])){
                 $tmp = $this->arrayToSqlArray($arg[0]);
-                $sql .= join(" && ",$tmp);
+                $sql .=" where" . join(" && ",$tmp);
             }else{
                 $sql .= $arg[0];
             }
@@ -60,6 +60,7 @@ class DB
         if(isset($arg[1])){
             $sql .= $arg[1];
         }
+        //dd($sql);
         return $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
     }
     function find($id){
@@ -95,12 +96,12 @@ class DB
             $sql = "insert into $this->table (`" . join("`,`",$col)."`)
             values ('" . join("','",$array)."')";
         }
-        dd($sql);
+       // dd($sql);
         return $this->pdo->exec($sql);
     }
     function count(...$arg){
         $sql = $this->mathSql("count","*",...$arg);
-        //dd($sql);
+       // dd($sql);
         return $this->pdo->query($sql)->fetchColumn();
     }
     function sum($col,...$arg){

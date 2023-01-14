@@ -85,13 +85,13 @@
                     </li>
 
                     <li class="nav-item mx-2">
-                        <a href="index.php?do=login" class="nav-link" type="button">會員管理</a>
+                        <a href="?do=users" class="nav-link" type="button">會員管理</a>
                     </li>
                 </ul>
                 <ul class="nav nav-pills mr-2 " role="tablist">
 
                     <li class="nav-item mx-2">
-                        <a class="nav-link" type="button">管理者列表</a>
+                        <a  href="?do=admin" class="nav-link" type="button">管理者列表</a>
                     </li>
 
                     <li class="nav-item mx-2">

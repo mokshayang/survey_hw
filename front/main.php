@@ -40,7 +40,7 @@
 
         .in_show {
             transform: translateX(-80%);
-            transition: all 2.4s ease-in-out;
+            transition: all 2.5s ease-in-out;
             opacity: 0;
         }
     </style>
@@ -143,7 +143,7 @@
 ?>
     <div class="user in_show" style="color:var(--fadeBlue); font-style: italic;">Member Voting Area :</div>
 <?php }else{?>
-    <div class="user in_show" style="color:var(--blue);  text-shadow: 1px 1px 3px var(--blue);">Member Voting Area : Please become a member</div>
+    <div class="user in_show" style="color:var(--blue); font-style: italic; text-shadow: 1px 1px 3px var(--blue);">Member Voting Area : Please become a member</div>
 <?php }?>
 
 <div id="cover_user" style="display:none;min-width:380px ">

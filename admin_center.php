@@ -36,10 +36,14 @@ if (!isset($_SESSION['admin'])) {
         include_once "./back/main.php";
     }
     ?>
+     <?php
+    if (isset($_GET['del'])) {
+        echo "<div class='del-msg'>";
+        echo $_GET['del'];
+        echo "</div>";
+        unset($_GET['del']);
+    }
+    ?>
 </body>
 
 </html>
-
-<script>
-
-</script>
