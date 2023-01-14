@@ -75,7 +75,7 @@ $opts = $options->all(["subject_id" => $_GET['id']]);
         box-shadow: 1px 1px 5px var(--blue);
     }
 </style>
-<h3 class="text-primary text-center"><?= $sub['subject']; ?></h3>
+<h3 class="text-primary text-center my-2"><?= $sub['subject']; ?></h3>
 <div id="chart"></div>
 <?php
 $level = ($sub['level'] == 1) ? "人投票" : "次投票";
@@ -119,16 +119,17 @@ $level = ($sub['level'] == 1) ? "人投票" : "次投票";
         color: #f00;
     }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script>
     $(".tool-chart").each(function() {
         var progress = $(this).attr("data-progress");
         $(this).children(".tag").text(progress + "%")
             .animate({
                 left: progress + "%",
-            }, 1500);
+            }, 2500,"easeOutBounce");
         $(this).children(".bar").children("span").animate({
             width: progress + "%",
-        }, 1500)
+        }, 1000)
     })
 
 
