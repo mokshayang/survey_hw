@@ -2,14 +2,9 @@
 <script src="./js/js.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <style>
-    .selected {
-        color: #ccc;
-    }
-
     .sub_p {
         width: 100%;
         height: 900px;
-
         overflow: hidden;
     }
 </style>
@@ -234,7 +229,8 @@
 <div class="container text-center">
 
     <div class="row">
-
+        <?php if(isset($_SESSION['login'])){
+            ?>
         <div class="asb">
 
             <?php
@@ -323,6 +319,9 @@
 
 
         </div>
+<?php } ?> 
+
+
     </div>
 </div>
 <style>
@@ -352,6 +351,7 @@
 </div>
 
 <script src="./js/goTop.js"></script>
+
 
 <style>
     .tt {

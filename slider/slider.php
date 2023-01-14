@@ -22,6 +22,7 @@ include_once "./layouts/link_css.php"
 
                 <?php
                 $num = $subject->count(['acive' => 1, 'level' => 1]);
+                // $num_point =$subject->count(['acive' => 1, 'level' => 1], " limit 5");
                 if ($num > 1) {
                     foreach ($sub_imgs as $key => $img) {
                         if (is_image($img['type']) == ("image/gif" || "image/jpeg" || "image/png")) {
@@ -37,8 +38,13 @@ include_once "./layouts/link_css.php"
                     echo "<img src=''>"; //都沒有主題時，要放的照片
                 }
                 $first_img =  $subject->find(['id' => $sub_imgs[0]['id']]); //腦經打結，第一章一定要放圖檔
-                if (is_image($first_img['type'])) {
-                    echo "<img src='./upload/{$first_img['img']}'>";
+                if (is_image($first_img['type']) == ("image/gif" || "image/jpeg" || "image/png")) {
+                    echo "<img src='./upload/{$first_img['img']}' alt='photo'>";
+                } else {
+                    $icon = dummy_icon($first_img['type']);
+                    echo "<div style='width:40%; margin:36px auto; text-align:center;'>";
+                    echo "<img src='./material/$icon'  alt='photo'>";
+                    echo "</div>";
                 }
                 ?>
 
@@ -56,7 +62,7 @@ include_once "./layouts/link_css.php"
                     <div class="point"></div>
                 </div>
                 <?php
-                for ($i = 1; $i <= $num - 1; $i++) {
+                for ($i = 1; $i <= 4 ; $i++) {
                 ?>
                     <div class="rad">
                         <div></div>
@@ -106,11 +112,11 @@ include_once "./layouts/link_css.php"
             };
             banner.animate({
                 left: x + '%'
-            }, 800);
+            }, 1000,"easeOutCirc");
             //↓↓↓↓↓↓↓防止重複點擊↓↓↓↓↓↓↓
             setTimeout(function() {
                 next = false;
-            }, 801);
+            }, 1001);
         };
     });
     //↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//
@@ -138,11 +144,11 @@ include_once "./layouts/link_css.php"
             };
             banner.animate({
                 left: x + '%'
-            }, 800);
+            }, 1000,"easeOutCirc");
             //↓↓↓↓↓↓↓防止重複點擊↓↓↓↓↓↓↓
             setTimeout(function() {
                 prev = false;
-            }, 801);
+            }, 1001);
         };
     });
     //↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//
@@ -164,7 +170,7 @@ include_once "./layouts/link_css.php"
     function startSlide() {
         interval = setInterval(function() {
             $('.next').click();
-        }, 3200);
+        }, 2400);
     }
     startSlide();
     //↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑//
