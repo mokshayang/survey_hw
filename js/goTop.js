@@ -1,3 +1,4 @@
+
 let bt=$('#go-top');
 bt.hide();
 $(window).scroll(function() {
@@ -19,3 +20,5 @@ bt.click(() => {
         scrollTop : 0
     } , 1500  );
 });
+
+//fade in_show
