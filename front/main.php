@@ -103,22 +103,22 @@
         font-size: 40px;
         background-color: var(--darkenBlue);
         color: #fff;
-
-
     }
 
     .more {
         height: 38rem;
         background-color: var(--lightBlue);
         color: #fff;
-        margin: 120px auto;
+        margin: 240px auto 120px ;
         color: #fff;
+     
     }
 
     .slider {
         text-align: center;
         font-size: 30px;
         margin: 30px auto;
+        
     }
 </style>
 <div class="more">
@@ -136,14 +136,19 @@
 
 
 <style>
-
+.th{
+    text-shadow: 1px 1px 5px var(--blue);
+    font-weight: bold;
+    margin: 240px auto 60px;
+    font-style: italic;
+}
 </style>
 <?php 
     if(isset($_SESSION['login'])){
 ?>
-    <div class="user in_show" style="color:var(--fadeBlue); font-style: italic;">Member Voting Area :</div>
+    <div class="user in_show th" style="color:var(--fadeBlue); ">Member Voting Area :</div>
 <?php }else{?>
-    <div class="user in_show" style="color:var(--blue); font-style: italic; text-shadow: 1px 1px 3px var(--blue);">Member Voting Area : Please become a member</div>
+    <div class="user in_show th" style="color:var(--blue);  ">Member Voting Area : Please become a member</div>
 <?php }?>
 
 <div id="cover_user" style="display:none;min-width:380px ">
@@ -154,9 +159,9 @@
     </div>
 </div>
 
-<div class="container text-center">
+<div class="container text-center" style="margin-bottom:200px;">
 
-    <div class="row">
+    <div class="row" >
         <?php if (isset($_SESSION['login'])) {
         ?>
             <div class="asb ">
@@ -287,8 +292,8 @@
         text-align: center;
         font-size: 40px;
         margin: 40px auto;
-        height: 280px;
-        line-height: 280px;
+        height: 320px;
+        line-height: 320px;
         background-color: var(--darkBlue);
         color: #eee;
     }

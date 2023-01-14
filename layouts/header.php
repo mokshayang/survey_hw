@@ -13,7 +13,7 @@
 </style>
 <header class="shadow" style="margin-bottom:56px;">
 
-    <nav class="navbar fixed-top justify-content-between" style="background-color:var(--lightBlue); ">
+    <nav class="navbar fixed-top justify-content-between" style="background-color:var(--lightBlue);height: 56px; ">
         <?php
         $file_str = explode("/", $_SERVER['PHP_SELF']);
         $local = str_replace('.php', '', array_pop($file_str));

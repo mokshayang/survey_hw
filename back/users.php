@@ -10,7 +10,7 @@
         <div>email</div>
         <div>操作</div>
     </div>
-    <div class="users table table-hover"">
+    <div class="users ">
         <?php
         $tt = $user->count();
         $num = 8;

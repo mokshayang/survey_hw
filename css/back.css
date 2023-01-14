@@ -3,7 +3,7 @@
     --lightBlue:#4D4DFF60;
     --blue:#00f;
     --darkenBlue:#262680;
-    --fadeBlue:#0000CC;
+    --fadeBlue:#0000CC90;
     --white:#fff;
 }
 
@@ -34,9 +34,11 @@ h1,h3{
     align-items: center;
     margin: auto;
 }
-
+.userData:hover{
+    background-color: #eef;
+}
 .item{
-    background-color: var(--darkBlue);
+    background-color: var(--fadeBlue);
     border-radius: 12px 12px 0 0;
     color:#eee;
     text-align: center;
@@ -52,9 +54,7 @@ h1,h3{
     width: 68%;
     min-width: 560px;
 }
-.userData:nth-child(2n){
-    background-color: #eef;
-}
+
 .operate {
     display: grid;
     grid-template-columns:1fr 1fr;
@@ -142,7 +142,7 @@ a.now {
     min-width:500px;
     text-align: center;
     font-size: 1.5rem;
-    background: pink;
+    background: var(--darkenBlue);
     margin: 0.5rem auto;
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -150,6 +150,7 @@ a.now {
     animation-duration:5s ;
     opacity: 0;
     height:0;
+    color: #fff;
 }
 @keyframes fade{
     0%{

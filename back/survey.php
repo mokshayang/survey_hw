@@ -35,6 +35,9 @@
     .radio{
         border-radius: 20px ;
     }
+    .cardshadow{
+        box-shadow: 1px 1px 10px var(--lightBlue);
+    }
 </style>
 <h3>調查列表</h3>
 <div class=add_head>
@@ -51,8 +54,8 @@
             $levelText = ($survey['level'] == 1) ? "會員" : "一般";
 
         ?>
-            <div class="col-12 col-sm-6 col-lg-4  my-3 d-flex justify-content-center ">
-                <div class="card shadow radio" style="width: 20rem; overflow:hidden;">
+            <div class="col-12 col-sm-6 col-lg-4  my-3 d-flex  justify-content-center ">
+                <div class="card radio cardshadow" style="width: 20rem; overflow:hidden;">
                 <div class="mm ">
                     <?php
                     if (is_image($survey['type'])) {
