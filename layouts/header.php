@@ -5,8 +5,9 @@
         vertical-align: middle;
         color: var(--darkBlue);
     }
-    .tc{
-        color:#eee;
+
+    .tc {
+        color: #eee;
         font-size: 16px;
     }
 </style>
@@ -19,15 +20,19 @@
         switch ($local) {
             case "index":
         ?>
+
                 <ul class="nav nav-pills" role="tablist">
                     <li class="nav-item mx-3">
-                        <a class="nav-link active" data-bs-toggle="tab" type="button">logo</a>
+                        <a class=" nav-link tc " href="index.php" type="button">logo</a>
                     </li>
                 </ul>
 
                 <ul class="nav nav-pills mr-2 " role="tablist">
 
                     <?php
+
+
+
                     if (isset($_SESSION['login'])) {
 
                     ?>
@@ -57,12 +62,14 @@
                         <li class="nav-item mx-2">
                             <a href="?do=login" class="nav-link tc" type="button">Login</a>
                         </li>
-                    <?php } ?>
+                    <?php }
+                    ?>
+
                 </ul>
 
             <?php break;
             case "admin_center": ?>
- 
+
 
                 <ul class="nav nav-pills" role="tablist">
                     <li class="nav-item mx-3">
@@ -74,7 +81,7 @@
                 </ul>
                 <ul class="nav nav-pills " role="tablist">
                     <li class="nav-item mx-2">
-                        <a href="?do=survey" class="nav-link"  type="button">選項主題管理</a>
+                        <a href="?do=survey" class="nav-link" type="button">選項主題管理</a>
                     </li>
 
                     <li class="nav-item mx-2">
@@ -84,7 +91,7 @@
                 <ul class="nav nav-pills mr-2 " role="tablist">
 
                     <li class="nav-item mx-2">
-                        <a class="nav-link"  type="button">管理者列表</a>
+                        <a class="nav-link" type="button">管理者列表</a>
                     </li>
 
                     <li class="nav-item mx-2">

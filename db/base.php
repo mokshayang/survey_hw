@@ -154,7 +154,7 @@ function dummy_icon($type){
             return "file-ai.png";
         break;
         default:
-            return "file-regular.jpg";
+            return "file-regular.png";
     }
 }
 $user = new DB("users_hw");
