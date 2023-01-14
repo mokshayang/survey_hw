@@ -221,6 +221,7 @@ a.now {
     grid-auto-rows: 48px;
     align-items: center;
     justify-items: center;
+
 }
 .table_head{
     height: 60px;

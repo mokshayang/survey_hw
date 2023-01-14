@@ -1,5 +1,5 @@
 .table_list{
-    width: 80%;
+    width: 60%;
     margin: 20px auto;
     min-width: 540px;
 }
@@ -9,6 +9,10 @@
     grid-auto-rows: 48px;
     align-items: center;
     justify-items: center;
+    grid-gap:10px;
+    border-radius: 24px;
+    margin-bottom: 40px;
+    box-shadow: 0px 1px 5px var(--fadeBlue);
 }
 .table_head{
     height: 60px;
@@ -17,14 +21,8 @@
     padding-top: 6px;
     background-color: #fff;
     border-radius: 10px 10px 0 0;
-    /* border: 1px solid #00e; */
     color: #00f;
-}
-.items {
-    box-sizing:  1px 1px 1px 1px #000;
-}
-.items:nth-child(2n){
-    background-color: #f5f5ff;
+    box-shadow: none;
 }
 
 .items div:nth-child(1){
@@ -33,7 +31,6 @@
 }
 h1,h3{
     text-align: center;
- 
     text-shadow: 1px 1px 2px  #333;
     margin: 20px auto;
     font-size: 28px;

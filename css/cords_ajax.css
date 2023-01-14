@@ -1,0 +1,129 @@
+.c {
+    width: 200px;
+    height: 300px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.cards {
+    width: 215px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 1.6s all ease;
+    backface-visibility: hidden;
+    box-shadow: 1px 1px 5px #0000cc98;
+}
+
+.cardfront {
+    background: url("../photo/vote.jpg");
+    background-size: 100%;
+    position: relative;
+    transform: rotateY(0deg);
+}
+
+.cardback {
+    top: -300px;
+    position: relative;
+    transform: rotateY(180deg);
+}
+
+.c:hover .cardfront {
+    transform: rotateY(180deg);
+}
+
+.c:hover .cardback {
+    transform: rotateY(0deg);
+}
+
+.asb {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    grid-gap: 20px;
+}
+
+@media screen and (max-width:760px) {
+    .asb {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.user {
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+    margin: 40px auto;
+}
+
+.mm {
+    width: 101%;
+    height: 150px;
+    overflow: hidden;
+}
+
+.mm img {
+    width: 100%;
+}
+
+.choose {
+    position: relative;
+    top: 10px;
+}
+
+#cover_user {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 5;
+    background: rgba(51, 51, 51, 0.4);
+    top: 50px;
+    left: 0px;
+    overflow: auto;
+}
+
+#coverr_user {
+    width: 60%;
+    min-width: 300px;
+    max-width: 800px;
+    height: 70%;
+    min-height: 300px;
+    position: absolute;
+    z-index: 5;
+    background: #eef;
+    top: 00px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+    overflow: auto;
+    border-radius: 32px;
+    text-shadow: 1px 1px 1px #333;
+}
+
+.mm img {
+    transform: scale(1, 1);
+    transition: all 0.3s ease-out;
+}
+
+.mm img:hover {
+    transform: scale(1.02, 1.02);
+}
+
+.selected {
+    width: 216px;
+    height: 300px;
+    position: relative;
+    top: -300px;
+    background-color: #0000ee80;
+    border-radius: 10px;
+   
+}
+
+.see_result {
+    position: absolute;
+  
+    top: 68%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
