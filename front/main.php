@@ -4,7 +4,7 @@
 <style>
     .sub_p {
         width: 100%;
-        height: 900px;
+        /* height: 900px; */
         overflow: hidden;
     }
 </style>
@@ -62,7 +62,7 @@
     </style>
     <h3 class="block in_show sub_vote" style="font-size :40px;color:#00e;text-shadow:1px 1px 3px 
     #00e;">To experience
-        <div style=" border-bottom:1px solid #00e; width:40%; margin: 10px auto;"></div>
+        <div style=" border-bottom:3px solid #00e; width:280px; margin: 10px auto;"></div>
     </h3>
     <div class="table_list block in_show">
         <div class="table_head sub" style="top: 40px; font-size:24px;">
@@ -77,9 +77,9 @@
         foreach ($surveys as $key => $survey) {
         ?>
             <div class="items block in_show my-5" style="line-height:48px;">
-                <div style="height: 48px;"><?= $survey['subject'] ?></div>
-                <div style="height: 48px;"><?= $survey['vote'] ?></div>
-                <div style="height: 48px;">
+                <div><?= $survey['subject'] ?></div>
+                <div><?= $survey['vote'] ?></div>
+                <div>
                     <a class="btn btn-sm btn-success mx-1" onclick="op('#cover','#cvr','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
                     <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-success mx-1">結果</a>
 
@@ -87,48 +87,64 @@
             </div>
         <?php } ?>
     </div>
-    <style>
-        .sub_publicity {
-            width: 60%;
-            margin: auto;
-            background-color: var(--lightBlue);
-        }
-
-        .publicity {
-            padding: 10px;
-            overflow: hidden;
-            font-size: 40px;
-            background-color: var(--darkenBlue);
-            color: #fff;
-
-
-        }
-    </style>
-
-   <h3 class="block in_show sub_vote" style="font-size :40px;color:#00e;text-shadow:1px 1px 3px #00e;margin-top: 120px;">More options
-        <div style=" border-bottom:1px solid #00e; width:40%; margin: 10px auto;"></div>
-    </h3>
-
 </div><!-- bootstrap conainer --->
-
-
+<link rel="stylesheet" href="./css/slider.css">
+<link rel="stylesheet" href="./css/mobile_silder.css">
 <style>
+    .sub_publicity {
+        width: 60%;
+        margin: auto;
+        background-color: var(--lightBlue);
+    }
+
+    .publicity {
+        padding: 10px;
+        overflow: hidden;
+        font-size: 40px;
+        background-color: var(--darkenBlue);
+        color: #fff;
+
+
+    }
+
+    .more {
+        height: 38rem;
+        background-color: var(--lightBlue);
+        color: #fff;
+        margin: 120px auto;
+        color: #fff;
+    }
+
     .slider {
         text-align: center;
         font-size: 30px;
         margin: 30px auto;
     }
 </style>
+<div class="more">
+    <h3 class="block in_show sub_vote" style="font-size :40px;text-shadow:1px 1px 3px #00e;padding-top:10px;">More subject
+        <div style=" border-bottom:1px solid #fff; width: 280px; margin: 10px auto;"></div>
+    </h3>
 
-<?php $sub_imgs = $subject->all(['acive' => 1, 'level' => 1], " ORDER by id limit 5"); ?>
-<?php include_once "./slider/slider.php" ?>
+
+
+
+    <?php $sub_imgs = $subject->all(['acive' => 1, 'level' => 1], " ORDER by id limit 5"); ?>
+    <?php include_once "./slider/slider.php" ?>
+</div>
 <!-- 紙牌區 -->
 
 
 <style>
 
 </style>
-<div class="user">會員投票區:</div>
+<?php 
+    if(isset($_SESSION['login'])){
+?>
+    <div class="user in_show" style="color:var(--fadeBlue); font-style: italic;">Member Voting Area :</div>
+<?php }else{?>
+    <div class="user in_show" style="color:var(--blue);  text-shadow: 1px 1px 3px var(--blue);">Member Voting Area : Please become a member</div>
+<?php }?>
 
 <div id="cover_user" style="display:none;min-width:380px ">
     <div id="coverr_user" style="min-width:480px">
@@ -263,6 +279,7 @@
 </div>
 
 <script src="./js/goTop.js"></script>
+
 
 
 <style>

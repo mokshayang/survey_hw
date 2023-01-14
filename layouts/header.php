@@ -35,13 +35,13 @@
                             <i class="bi bi-person-vcard-fill i" style="color:blue;"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="?do=user&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">會員中心</a>
+                            <a href="?do=user&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">Member Centre</a>
                         </li>
                         <li class="nav-item mx-2">
                             <i class="bi bi-door-open-fill i" style="color:blue;"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="./logout.php" class="nav-link tc" type="button">會員登出</a>
+                            <a href="./logout.php" class="nav-link tc" type="button">Sign Out</a>
                         </li>
 
                     <?php  } else { ?>
@@ -49,13 +49,13 @@
                             <i class="bi bi-person-plus py-4 i"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="?do=reg" class="nav-link tc" type="button">會員註冊</a>
+                            <a href="?do=reg" class="nav-link tc" type="button">Sign Up</a>
                         </li>
                         <li class="nav-item mx-2">
                             <i class="bi bi-person-workspace i"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="?do=login" class="nav-link tc" type="button">會員登入</a>
+                            <a href="?do=login" class="nav-link tc" type="button">Login</a>
                         </li>
                     <?php } ?>
                 </ul>

@@ -24,7 +24,7 @@
     }
     ?>
 
-<script src="./js/goTop.js"></script>
+
 </body>
 
 </html>

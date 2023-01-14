@@ -1,6 +1,6 @@
 
-let bt=$('#go-top');
-bt.hide();
+let up=$('#go-top');
+up.hide();
 $(window).scroll(function() {
 let self=$(this),
     height=self.height(),
@@ -8,14 +8,14 @@ let self=$(this),
 		// console.log(height);
 		// console.log(top);
 if(top>1.2*height) {
-    bt.fadeIn(800);
+    up.fadeIn(800);
 } else {
-    bt.fadeOut(800);
+    up.fadeOut(800);
 };
 
 });
 
-bt.click(() => {
+up.click(() => {
     $('html,body').animate({
         scrollTop : 0
     } , 1500  );

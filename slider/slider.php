@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="./css/slider.css">
-<link rel="stylesheet" href="./css/mobile_silder.css">
+
 <?php
 include_once "./db/base.php";
 include_once "./layouts/link_css.php"
@@ -15,7 +14,7 @@ include_once "./layouts/link_css.php"
         transform: scale(1.01, 1.01);
     }
 </style>
-<div id="turn" class=" in_show">
+<div id="turn" class=" in_show" >
     <div style="width:100%; z-index:999;">
         <div class="imgs">
             <div id="slider">
