@@ -35,7 +35,7 @@
                             <i class="bi bi-person-vcard-fill i" style="color:blue;"></i>
                         </li>
                         <li class="nav-item mx-2">
-                            <a href="?do=user&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">Member Centre</a>
+                            <a href="?do=user_edit&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">Member Center</a>
                         </li>
                         <li class="nav-item mx-2">
                             <i class="bi bi-door-open-fill i" style="color:blue;"></i>
