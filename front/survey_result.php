@@ -7,7 +7,7 @@ $opts = $options->all(["subject_id" => $_GET['id']]);
 foreach ($opts as $opt) {
     $tmp[] = $opt['vote'];
 }
-$max = max($tmp);
+$max = (max($tmp)==0)?1:max($tmp);
 $recoup = ($sub['vote'] / $max);
 
 

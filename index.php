@@ -24,7 +24,30 @@
     }
     ?>
 
-
+<style>
+    .tt {
+        text-align: center;
+        font-size: 40px;
+        margin: 40px auto 0 auto;
+        height: 320px;
+        line-height: 320px;
+        background-color: var(--fadeBlue);
+        color: #eee;
+    }
+    footer {
+        background-color: var(--darkenBlue);
+        height: 48px;
+        font-size: 20px;
+        line-height: 48px;
+        text-align: center;
+        color: #fff;
+    }
+</style>
+<div class="tt">
+    footer information
+</div>
+<footer>
+&copy; 練習作品 & 翻印 必不究 !
+</footer>
 </body>
-
 </html>

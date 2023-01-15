@@ -287,22 +287,7 @@
 
 
 
-<style>
-    .tt {
-        text-align: center;
-        font-size: 40px;
-        margin: 40px auto;
-        height: 320px;
-        line-height: 320px;
-        background-color: var(--darkBlue);
-        color: #eee;
-    }
-</style>
-<footer>
-    <div class="tt">
-        footer information
-    </div>
-</footer>
+
 <script>
     $('.block').addClass('in_show');
 
