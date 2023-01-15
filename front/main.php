@@ -174,7 +174,7 @@ if (isset($_SESSION['login'])) {
 
 <div id="cover_user" style="display:none;min-width:380px ">
     <div id="coverr_user" style="min-width:480px">
-        <div id="cvr_user" class="she" style="position:absolute; width:50%; min-width:320px; min-height:560px; margin:auto; transform:translate(-50%,6%); background-color:#fff;  border-radius: 20px;  background-color:#fff;">
+        <div id="cvr_user" class="she" style="position:absolute; width:72%; min-width:320px; min-height:560px; margin:auto; transform:translate(-50%,6%); background-color:#fff;  border-radius: 20px;  background-color:#fff;">
         </div>
         <a style="position:absolute; color:#00f; transform:translate(-50%,10%);  right:5%; top:8%;  cursor:pointer; z-index: 100;" onclick="cl('#cover_user')">X</a>
     </div>
