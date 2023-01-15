@@ -204,7 +204,9 @@ if (isset($_SESSION['login'])) {
                                         <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-warning mx-1">結果</a>
                                     </div>
                                 </div>
-                                <img src="./photo/vote.png " style=" background-repeat:no-repeat;" alt="votefor">
+                                <div style="padding-top:10px;">
+                                <img src="./photo/voted.png " style=" background-repeat:no-repeat;" alt="votefor" width="80%" >
+                                </div>
                             </div>
                         </div>
 
