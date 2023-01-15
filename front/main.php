@@ -257,33 +257,7 @@
 
     </div>
 </div>
-<style>
-    #go-top {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        background: linear-gradient(blue, #fff);
-        box-shadow: 2px 2px 5px var(--fadeBlue);
-        position: fixed;
-        right: 40px;
-        bottom: 60px;
-        display: hidden;
-        cursor: pointer;
-    }
 
-    #go-top .bi {
-        font-size: 60px;
-        color: #fff;
-        position: absolute;
-        top: -15px;
-    }
-</style>
-
-<div id="go-top">
-    <i class="bi bi-arrow-up-short"></i>
-</div>
-
-<script src="./js/goTop.js"></script>
 
 
 
