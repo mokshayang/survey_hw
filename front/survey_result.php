@@ -4,7 +4,11 @@
 <?php
 $sub = $subject->find(['id' => $_GET['id']]);
 $opts = $options->all(["subject_id" => $_GET['id']]);
-
+foreach ($opts as $opt) {
+    $tmp[] = $opt['vote'];
+}
+$max = max($tmp);
+$recoup = ($sub['vote'] / $max);
 
 
 
@@ -24,12 +28,13 @@ $opts = $options->all(["subject_id" => $_GET['id']]);
         margin: auto;
     }
 
-    
+
     .tool-chart {
         position: relative;
         width: 100%;
         left: 0px;
     }
+
     .bar {
         margin-top: 5px;
         margin-bottom: 5px;
@@ -37,7 +42,7 @@ $opts = $options->all(["subject_id" => $_GET['id']]);
         background: #eee;
         border-radius: 10px;
 
-       
+
         overflow: hidden;
     }
 
@@ -58,7 +63,7 @@ $opts = $options->all(["subject_id" => $_GET['id']]);
         display: block;
         border-left: 5px solid transparent;
         border-right: 5px solid transparent;
-        border-top: 7px solid  var(--blue);
+        border-top: 7px solid var(--blue);
         position: absolute;
         left: 50%;
         top: 100%;
@@ -71,7 +76,8 @@ $opts = $options->all(["subject_id" => $_GET['id']]);
         background: var(--lightBlue);
         width: 0%;
     }
-    .li_sh{
+
+    .li_sh {
         box-shadow: 1px 1px 5px var(--blue);
     }
 </style>
@@ -79,6 +85,7 @@ $opts = $options->all(["subject_id" => $_GET['id']]);
 <div id="chart"></div>
 <?php
 $level = ($sub['level'] == 1) ? "人投票" : "次投票";
+$type = ($sub['level'] == 1) ? "人" : "次";
 ?>
 <div class="total">目前共 <?= $sub['vote'] ?> <?= $level ?></div>
 
@@ -89,19 +96,18 @@ $level = ($sub['level'] == 1) ? "人投票" : "次投票";
         $width = round(($opt['vote'] / $division) * 100, 1);
     ?>
         <li class="d-flex list-group-item list-group-item-light list-group-item-action my-4 li_sh" style="height:40px;">
-            <div class="col-4 voted-result" data-vote="<?= $opt['vote'] ?>"><?= $opt['opt']; ?></div>
-            <div class="col-2"><?= $opt['vote']; ?> 人</div>
-            <div class="col-5 d-flex align-items-center">
 
+            <div class="col-4 voted-result" data-vote="<?= $opt['vote'] ?>"><?= $opt['opt']; ?></div>
+            <div class="col-2"><?= $opt['vote']; ?> <?= $type ?></div>
+            <div class="col-5 d-flex align-items-center">
                 <div class="tool-chart col-5  rounded" data-progress="<?= $width; ?>" data-title="degree">
                     <div class="tag"></div>
                     <div class="bar">
-                    <span></span>
+                        <span></span>
                     </div>
                 </div>
-
             </div>
-          
+
         </li>
     <?php
     }
@@ -125,10 +131,10 @@ $level = ($sub['level'] == 1) ? "人投票" : "次投票";
         var progress = $(this).attr("data-progress");
         $(this).children(".tag").text(progress + "%")
             .animate({
-                left: progress + "%",
-            }, 2500,"easeOutBounce");
+                left: progress * <?= $recoup; ?> + "%",
+            }, 2500, "easeOutBounce");
         $(this).children(".bar").children("span").animate({
-            width: progress + "%",
+            width: progress * <?= $recoup; ?> + "%",
         }, 1000)
     })
 

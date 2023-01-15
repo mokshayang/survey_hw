@@ -43,7 +43,7 @@
 <div class=add_head>
     <a href="admin_center.php?do=survey_add">新增調查主題</a>
 </div>
-<div class="container text-center">
+<div class="container text-center" style="margin:20px auto 100px;">
     <div class="row mt-5 ">
         <?php
         $surveys = $subject->all();

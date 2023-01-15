@@ -45,6 +45,7 @@
             echo "<a href=?do=users&p=1 class='fi'>首頁</a>";
         }
         ?>
+        <!-- 中間區 -->
         <div>
             <?php
             if (($now - 1) > 0) {
@@ -52,7 +53,7 @@
             }
 
             //中間部分
-            if ($pages >= 5) {//display 5 page
+            if ($pages >= 5) {//display 5 page ， pages 取 (startPage + 4) 
                 if ($now >= 3 && $now <= ($pages - 2)) {//$now center
                     $startPage = $now - 2;
                 } else if (($now - 2) < 3) {//$now start $now < 3
@@ -64,7 +65,7 @@
                     $nowPage = ($i == $now) ? "now" : "";
                     echo "<a href='?do=users&p=$i' class='$nowPage'> $i </a>";
                 }
-            } else {
+            } else {//pages <5 取 $pages
                 $startPage = 1;
                 for ($i = $startPage; $i <= $pages ; $i++) {
                     $nowPage = ($i == $now) ? "now" : "";

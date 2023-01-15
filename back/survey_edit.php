@@ -8,6 +8,10 @@ if (isset($_GET['id'])) {
 
 ?>
 <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
     .add {
         font-size: 18px;
         margin-bottom: 4px;
@@ -21,29 +25,33 @@ if (isset($_GET['id'])) {
     }
 
     .img {
-        width: 21rem;
-        height: 14rem;
+        width: 25rem;
+        height: 16rem;
         text-align: center;
-        /* border: 2px solid orange; */
-        box-shadow: 1px 1px 5px #33333380;
+        box-shadow: 1px 1px 5px var(--blue);
         margin: auto;
-        margin-bottom: 5px;
-        border-radius: 40px;
-        overflow: hidden;
+        border-radius: 20px;
+        margin: 0.5rem auto;
+        /* overflow: hidden; */
     }
     .ii {
         width: 120px;
-        /* height: 242px; */
         padding-bottom: 10px;
         padding-top: 10px;
     }
     .img div{
         width: 100%;
         height: 100%;
+        border-radius: 20px;
+        overflow: hidden;
     }
-    .img img {
+    .img div img {
         width: 100%;
-
+        transform: scale(1,1);
+        transition: all 0.3s ease-out;
+    }
+    .img div img:hover{
+        transform: scale(1.02,1.02);
     }
 </style>
 <h3>編輯調查 <button id="optionAdd" class="btn btn-outline-success btn-sm add" data-toggle="tooltip" data-placement="top" title="增加選項">+</button></h3>
