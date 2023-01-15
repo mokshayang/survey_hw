@@ -29,7 +29,7 @@
         .sh {
             position: absolute;
             position: relative;
-            min-width: 380px;
+            min-width: 450px;
             min-height: 560px;
             transform: translate(-50%, -10%);
             left: 50%;
@@ -50,7 +50,7 @@
     <!--↓↓↓↓↓↓↓↓↓↓ 一般會員　↓↓↓↓↓↓↓↓↓↓-->
     <div id="cover" style="display:none;min-width:380px ">
         <div id="coverr" style="min-width:380px;padding: 5px;">
-            <div id="cvr" class="sh" style="position:absolute; width:40%; min-width:380px; min-height:560px; margin:auto; margin-bottom:20px; transform:translate(-50%,-10%);  background-color:#fff;  border-radius: 20px;  background-color:#fff;">
+            <div id="cvr" class="sh" style="position:absolute; width:60%; min-width:380px; min-height:560px; margin:auto; margin-bottom:20px; transform:translate(-50%,-10%);  background-color:#fff;  border-radius: 20px;  background-color:#fff;">
             </div>
             <a style="position:absolute; color:#00f; transform:translate(-50%,0%);  right:5%; top:5%; cursor:pointer; z-index: 100;" onclick="cl('#cover')">X</a>
         </div>
