@@ -54,7 +54,7 @@
     </div>
     <style>
         .sub {
-            margin-bottom: 0;
+            top:60px;
             position: relative;
             font-style: italic;
 
@@ -65,18 +65,18 @@
         <div style=" border-bottom:3px solid #00e; width:280px; margin: 10px auto;"></div>
     </h3>
     <div class="table_list block in_show">
-        <div class="table_head sub" style="top: 40px; font-size:24px;">
+        <div class="table_head sub" style="font-size:24px;">
             <div>theme</div>
             <div>participant</div>
             <div>vote</div>
         </div>
     </div>
-    <div class="table_list block in_show">
+    <div class="front_table block in_show">
         <?php
         $surveys = $subject->all(['acive' => 1, 'level' => 0]); //啟動
         foreach ($surveys as $key => $survey) {
         ?>
-            <div class="items block in_show my-5" style="line-height:48px;">
+            <div class="front_items block in_show" style="line-height:48px;">
                 <div><?= $survey['subject'] ?></div>
                 <div><?= $survey['vote'] ?></div>
                 <div>
@@ -121,7 +121,7 @@
         
     }
 </style>
-<div class="more">
+<div class="more in_show">
     <h3 class="block in_show sub_vote" style="font-size :40px;text-shadow:1px 1px 3px #00e;padding-top:10px;">More subject
         <div style=" border-bottom:1px solid #fff; width: 280px; margin: 10px auto;"></div>
     </h3>
@@ -237,7 +237,7 @@
                                         <?php } ?>
                                     </div>
                                     <div class="card-body">
-                                        <p class="card-text sub"><?= $survey['subject'] ?></p>
+                                        <p class="card-text "><?= $survey['subject'] ?></p>
                                         <div class="choose">
                                             <a class="btn btn-sm btn-primary mx-1" onclick="op('#cover_user','#cvr_user','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
                                             <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-primary mx-1">結果</a>

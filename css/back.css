@@ -226,7 +226,7 @@ a.now {
     font-weight: bold;
     padding-top: 6px;
     background-color: #33e;
-    border-radius: 10px 10px 0 0;
+    /* border-radius: 10px 10px 0 0; */
     color: #eee;
 }
 .items {
