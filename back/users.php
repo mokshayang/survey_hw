@@ -1,6 +1,29 @@
+<?php
+ $tt = $user->count();
+ $num = 8;
+ $pages = ceil($tt / $num);
+ $now = $_GET['p'] ?? 1;
+ $start = ($now - 1) * $num;
+ $clients = $user->all(" limit $start ,$num");
+ // dd($clients);
+?>
 <h1>會 員 管 理 系 統</h1>
-<nav>
+<style>
+    .ad_user{
+        display: grid;
+        grid-template-columns: 1fr 5fr 1fr;
+    }
+    .ad_user a {
+        display: block;
+        width: 100px;
+        height: 40px;
+        align-self: center;
+    }
+</style>
+<nav class="ad_user">
+    <div></div>
     <div class="admin"><?= $_SESSION['admin'] ?> 您好 !!</div>
+    <a href="?do=add_user&p=<?=$pages?>" class="btn btn-outline-primary">新增會員</a>
 </nav>
 <div class="usersList">
     <div class="item">
@@ -12,13 +35,7 @@
     </div>
     <div class="users ">
         <?php
-        $tt = $user->count();
-        $num = 8;
-        $pages = ceil($tt / $num);
-        $now = $_GET['p'] ?? 1;
-        $start = ($now - 1) * $num;
-        $clients = $user->all(" limit $start ,$num");
-        // dd($clients);
+     
         foreach ($clients as $client) {
         ?>
             <div class="userData">
@@ -27,7 +44,7 @@
                 <div><?= $client['name'] ?></div>
                 <div><?= $client['email'] ?></div>
                 <div class="operate">
-                    <a href="?do=used_edit&id=<?= $client['id'] ?>" class="btn btn-outline-primary">編輯</a>
+                    <a href="?do=user_edit&id=<?= $client['id'] ?>&p=<?=$_GET['p']?>" class="btn btn-outline-primary">編輯</a>
                     <a href="./api/user_del.php?id=<?= $client['id'] ?>" class="btn btn-danger" onclick="
                                 return confirm('確定刪除會員帳號 : <?= $client['acc'] ?>  ?')">刪除</a>
                 </div>
@@ -78,8 +95,6 @@
             if (($now + 1) <= $pages) {
                 echo "<a href=?do=users&p=" . ($now + 1) . " class='fe'> > </a>";
             }
-
-
             ?>
 
         </div>

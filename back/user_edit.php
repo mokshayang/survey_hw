@@ -1,40 +1,47 @@
+<?php
+// dd($_GET);
+$us = $user->find(['id' => $_GET['id']]);
+// dd($us);
+?>
 <script>
-    	function instCheck() {//ajax
-            let acc = document.getElementById("acc");
-            let accVal =acc.value.trim();
-            console.log(accVal);
-            // console.log(acc.value.trim());
-		if(accVal !== "" ) {
-			const request=new XMLHttpRequest() ;
-			const url="./api/acc_check.php";
-			let acc=document.getElementById("acc").value;
-			let vars="acc="+acc;
-			request.open("POST",url,true);
-			request.setRequestHeader("Content-type","application/x-www-form-urlencoded");
-			request.onreadystatechange=function() {
-				if(request.readyState==4 && request.status==200) {
-					var return_data=request.responseText;
-					document.getElementById("msg").innerHTML=return_data;
-				};
-			};
-			request.send(vars);
-		}else{
-            document.getElementById("msg").innerHTML = "帳號不能空白 ";
+    function instCheck() { //ajax
+        let acc = document.getElementById("acc");
+        let accVal = acc.value.trim();
+        console.log(accVal);
+        console.log("<?= $us['acc'] ?>");
+        if (accVal !== "<?= $us['acc'] ?>") {
+            const request = new XMLHttpRequest();
+            const url = "./api/acc_check.php";
+            let acc = document.getElementById("acc").value;
+            let vars = "acc=" + acc;
+            request.open("POST", url, true);
+            request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            request.onreadystatechange = function() {
+                if (request.readyState == 4 && request.status == 200) {
+                    var return_data = request.responseText;
+                    document.getElementById("msg").innerHTML = return_data;
+                };
+            };
+            request.send(vars);
+        } else {
+            document.getElementById("msg").innerHTML = "帳號為原帳號";
         }
-	};
-    function forbid(){
+    };
+
+    function forbid() {
         let check = false;
         const reg = document.getElementById("msg");
-        let text =reg.textContent;
-        if(text != "" && text === "此帳號可使用"){
+        let text = reg.textContent;
+        if ((text != "" && text === "此帳號可使用") || text === "帳號為原帳號") {
             check = true;
-        }else{
+        } else {
             alert("請更改您的帳號");
-            check =  false;
+            check = false;
         }
         return check;
     }
-    function censorpw() { 
+
+    function censorpw() {
         let check = false;
         let pass = document.getElementById("pw").value;
         if (pass.length < 4) {
@@ -46,7 +53,8 @@
         };
         return check;
     };
-    function rePw() { 
+
+    function rePw() {
         let check = false;
         let pass = document.getElementById("pw").value;
         let repass = document.getElementById("repw").value;
@@ -59,19 +67,21 @@
         };
         return check;
     };
-    function shmail(){
+
+    function shmail() {
         let check = false;
         let chkmail = $('#shmail');
-        if(chkmail.html() === "已有相同信箱，請換一個"){
-        check=false;
-    }else{
-        check=true;
+        if (chkmail.html() === "已有相同信箱，請換一個") {
+            check = false;
+        } else {
+            check = true;
+        }
+        return check;
     }
-    return check;
-}
-function checkForm() {
-    let check = censorpw() && rePw() && forbid() && shmail();
-    
+
+    function checkForm() {
+        let check = censorpw() && rePw() && forbid() && shmail();
+
         return check;
     };
 </script>
@@ -83,31 +93,33 @@ function checkForm() {
             <div class="content">
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">帳　　號:</label>
-                    <input id="acc" name="acc" type="text" class="form-control" autofocus onblur="instCheck()" required>
+                    <input id="acc" name="acc" type="text" class="form-control" autofocus onblur="instCheck()" required value="<?= $us['acc'] ?>">
                 </div>
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">密　　碼 :</label>
-                    <input id="pw" name="pw" type="password" class="form-control" placeholder="請輸入4字以上" required onChange="censorpw()">
+                    <input id="pw" name="pw" type="password" class="form-control" required onChange="censorpw()" value="<?= $us['pw'] ?>">
                     <i id="seepw" class="input-group-text bi bi-eye-slash-fill" style="font-size:24px;"></i>
                 </div>
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">確認密碼 :</label>
-                    <input id="repw" type="password" class="form-control" required onchange="rePw()">
+                    <input id="repw" type="password" class="form-control" required onchange="rePw()" value="<?= $us['pw'] ?>">
                     <i id="seerpw" class="input-group-text bi bi-eye-slash-fill" style="font-size:24px;"></i>
                 </div>
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">名　　稱 :</label>
-                    <input type="text" class="form-control" name="name" required>
+                    <input type="text" class="form-control" name="name" required value="<?= $us['name'] ?>">
                 </div>
                 <div class="input-group mb-4 col-8">
                     <label class="input-group-text">信　　箱 :</label>
-                    <input type="email" class="form-control" name="email" id="email" required onchange="instmail()">
+                    <input type="email" class="form-control" name="email" id="email" required onchange="instmail()" value="<?= $us['email'] ?>">
                 </div>
             </div>
             <div class="text-center col-12 my-4">
-                <input type="hidden" name="table" value="index.php?do=reg">
-                <input class="btn btn-warning shadow mx-1" type="reset" value="重置">
-                <input class="btn btn-primary shadow mx-1" type="submit" value="註冊">
+                <input type="hidden" name="page" value="<?=$_GET['p']?>">
+                <input type="hidden" name="id"  value="<?= $us['id'] ?>">
+                <input type="hidden" name="table" value="admin_center.php?do=used_edit">
+                <input class="btn btn-warning shadow mx-1" type="reset" value="復原">
+                <input class="btn btn-primary shadow mx-1" type="submit" value="修改">
             </div>
         </form>
         <div class="text-center col-12">
@@ -118,7 +130,7 @@ function checkForm() {
         <div id="shmail" class="text-center col-12" style="color:#00f; font-size:20px;"></div>
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
 <script>
     $('#seepw').click(function() {
         let passtype = document.getElementById("pw");
@@ -141,22 +153,24 @@ function checkForm() {
         };
     });
 
-function instmail(){
-    let check = false;
-    let mail = {'email' : $('#email').val()};
-    let shmail =$('#shmail');
-    $.post("./api/chk_email.php",mail,(res)=>{
-        // console.log(res);
-        if(parseInt(res) ===1){
-            shmail.html("已有相同信箱，請換一個");
-            check = false;
-        }else{
-            shmail.html("信箱可以使用")
-            check = true;
+    function instmail() {
+        let check = false;
+        let mail = {
+            'email': $('#email').val()
+        };
+        let shmail = $('#shmail');
+        if (mail.email.trim() != "<?= $us['email'] ?>") {
+            $.post("./api/chk_email.php", mail, (res) => {
+                // console.log(res);
+                if (parseInt(res) === 1) {
+                    shmail.html("已有相同信箱，請換一個");
+                    check = false;
+                } else {
+                    shmail.html("信箱可以使用")
+                    check = true;
+                }
+            })
+            return check;
         }
-    })
-    return check;
-}
-
-
+    }
 </script>

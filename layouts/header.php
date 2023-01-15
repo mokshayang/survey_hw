@@ -85,7 +85,7 @@
                     </li>
 
                     <li class="nav-item mx-2">
-                        <a href="?do=users" class="nav-link" type="button">會員管理</a>
+                        <a href="?do=users&p=1" class="nav-link" type="button">會員管理</a>
                     </li>
                 </ul>
                 <ul class="nav nav-pills mr-2 " role="tablist">

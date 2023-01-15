@@ -76,7 +76,7 @@ function checkForm() {
     };
 </script>
 
-<h1>會 員 註 冊</h1>
+<h1>新 增 會 員</h1>
 <div class="container">
     <div class="row">
         <form action="api/reg_user.php" method="POST" autocomplete="off" class="col col-lg-6 col-md-8 my-5 mb-3" onSubmit="return checkForm()">
@@ -105,7 +105,7 @@ function checkForm() {
                 </div>
             </div>
             <div class="text-center col-12 my-4">
-                <input type="hidden" name="table" value="index.php?do=reg">
+                <input type="hidden" name="page" value="<?=$_GET['p']?>">
                 <input class="btn btn-warning shadow mx-1" type="reset" value="重置">
                 <input class="btn btn-primary shadow mx-1" type="submit" value="註冊">
             </div>

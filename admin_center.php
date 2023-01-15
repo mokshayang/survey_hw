@@ -43,6 +43,18 @@ if (!isset($_SESSION['admin'])) {
         echo "</div>";
         unset($_GET['del']);
     }
+    if (isset($_GET['edit'])) {
+        echo "<div class='del-msg' style='background-color:var(--lightBlue);color:var(--blue);'>";
+        echo $_GET['edit'];
+        echo "</div>";
+        unset($_GET['edit']);
+    }
+    if (isset($_GET['add'])) {
+        echo "<div class='del-msg' style='background-color:#00e;'>";
+        echo $_GET['add'];
+        echo "</div>";
+        unset($_GET['add']);
+    }
     ?>
 </body>
 
