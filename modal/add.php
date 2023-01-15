@@ -17,9 +17,9 @@
     </div>
     <div style="text-align:center; padding: 30px;">
         <?php
-        if (!empty($_GET['imgId'])) {
+        if (!empty($_GET['id'])) {
         ?>
-        <input type="hidden" name="id" value="<?= $_GET['imgId'] ?>">
+        <input type="hidden" name="id" value="<?= $_GET['id'] ?>">
         <?php } ?>
         <input type="hidden" name="table" value="survey_add">
         <input class="btn btn-sm btn-primary mx-2" type="submit" value="確定">

@@ -8,7 +8,8 @@ function dd($array){
 }
 function q($sql){
     global $pdo;
-    $dsn="mysql:host=localhost;charset=utf8;dbname=opinion";
+    $dsn="mysql:host=localhost;charset=utf8;dbname=opinion";//個人用
+    // $dsn="mysql:host=localhost;charset=utf8;dbname=s1110415";
     $pdo=new PDO($dsn,'root','');
     return $pdo->query($sql)->fetchAll();
 }
@@ -19,11 +20,13 @@ function to($location){
 class DB
 {
     protected $table;
-    protected $dsn="mysql:host=localhost;charset=utf8;dbname=opinion";
+       protected $dsn="mysql:host=localhost;charset=utf8;dbname=opinion";//個人用
+    // protected $dsn="mysql:host=localhost;charset=utf8;dbname=s1110415";
     protected $pdo;
     function __construct($table)
     {
-        $this->pdo = new PDO($this->dsn,'root','');
+        $this->pdo = new PDO($this->dsn,'root','');//個人用
+        // $this->pdo = new PDO($this->dsn,'s1110415','s1110415');//220.128.133.15 用
         $this->table = $table;
     }
     private function arrayToSqlArray($array){

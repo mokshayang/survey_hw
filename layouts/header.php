@@ -40,6 +40,10 @@
                     <li class="nav-item mx-3">
                         <a class=" nav-link tc " href="index.php"><i class="bi bi-file-earmark-music music"></i></a>
                     </li>
+                    <!-- 下方為220專用 -->
+                    <!-- <li class="nav-item mx-3">
+                        <a class=" nav-link tc " style="top:0px;" href="../">回作品集首頁</a>
+                    </li> -->
                 </ul>
 
                 <ul class="nav nav-pills mr-2 " role="tablist">

@@ -86,7 +86,7 @@
             <input class="btn btn-success mx-1" onclick="op('#cover','#cvr','./modal/add.php')" value="新增主題圖片">
         <?php } ?>
         <input class="btn btn-warning mx-1" type="reset" value="重置">
-
+        <input type="hidden" name="subject_id" value="<?=$img['id']?>">
         <input class="btn btn-primary mx-1" type="submit" value="新增">
     </div>
 </form>
