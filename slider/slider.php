@@ -22,6 +22,7 @@ include_once "./layouts/link_css.php"
                 <?php
                 $num = $subject->count(['acive' => 1, 'level' => 1]);
                 // $num_point =$subject->count(['acive' => 1, 'level' => 1], " limit 5");
+                $moth = ($num>5)?5:$num;
                 if ($num > 1) {
                     foreach ($sub_imgs as $key => $img) {
                         if (is_image($img['type']) == ("image/gif" || "image/jpeg" || "image/png")) {
@@ -82,7 +83,7 @@ include_once "./layouts/link_css.php"
 <script>
     //----------------------------自動輪轉-------------------------------//
     var x = 0; //手動用作標
-    const k = <?= $num ?>; //N張圖片可用PHP去撈張數
+    const k = <?= $moth ?>; //N張圖片可用PHP去撈張數
     let interval; //間隔時間，自動用
     let banner = $('#slider'); //簡化;
     let that = $('.tag .rad'); //簡化;

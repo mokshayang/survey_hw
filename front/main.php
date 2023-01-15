@@ -32,26 +32,34 @@
             min-width: 380px;
             min-height: 560px;
             transform: translate(-50%, -10%);
-            left: 56%;
+            left: 50%;
+            top:100px;
             background-color: #ffffff95;
-            box-shadow: 1px 1px 3px 1px #33333390;
             z-index: 100;
+            padding-bottom: 20px;
+            box-shadow: 1px 1px 5px var(--blue);
         }
 
         .in_show {
             transform: translateX(-80%);
             transition: all 2s ease-in-out;
             opacity: 0;
+            
         }
     </style>
     <!--↓↓↓↓↓↓↓↓↓↓ 一般會員　↓↓↓↓↓↓↓↓↓↓-->
     <div id="cover" style="display:none;min-width:380px ">
-        <div id="coverr" style="min-width:380px">
-            <div id="cvr" class="sh" style="position:absolute; width:40%; min-width:380px; min-height:560px; margin:auto; transform:translate(-50%,-10%); left:56%; background-color:#fff;  border-radius: 20px;  background-color:#fff;box-shadow: 1px 1px 3px 1px #33333390;">
+        <div id="coverr" style="min-width:380px;padding: 5px;">
+            <div id="cvr" class="sh" style="position:absolute; width:40%; min-width:380px; min-height:560px; margin:auto; margin-bottom:20px; transform:translate(-50%,-10%);  background-color:#fff;  border-radius: 20px;  background-color:#fff;">
             </div>
-            <a style="position:absolute; color:#00f; transform:translate(-50%,-20%);  left:74%;  cursor:pointer; z-index: 100;" onclick="cl('#cover')">X</a>
+            <a style="position:absolute; color:#00f; transform:translate(-50%,0%);  right:5%; top:5%; cursor:pointer; z-index: 100;" onclick="cl('#cover')">X</a>
         </div>
     </div>
+
+
+
+
+
     <style>
         .sub {
             top: 60px;
@@ -142,6 +150,19 @@
         margin: 240px auto 60px;
         font-style: italic;
     }
+    .she {
+            position: absolute;
+            position: relative;
+            min-width: 380px;
+            min-height: 560px;
+            transform: translate(-50%, -10%);
+            left: 50%;
+            top:5px;
+            background-color: #ffffff95;
+            z-index: 100;
+            box-shadow: 1px 1px 5px var(--blue);
+            padding-bottom: 20px;
+        }
 </style>
 <?php
 if (isset($_SESSION['login'])) {
@@ -153,7 +174,7 @@ if (isset($_SESSION['login'])) {
 
 <div id="cover_user" style="display:none;min-width:380px ">
     <div id="coverr_user" style="min-width:480px">
-        <div id="cvr_user" class="sh" style="position:absolute; width:50%; min-width:320px; min-height:560px; margin:auto; transform:translate(-50%,6%); left:50%; background-color:#fff;  border-radius: 20px;  background-color:#fff;box-shadow: 1px 1px 3px 1px #33333390;">
+        <div id="cvr_user" class="she" style="position:absolute; width:50%; min-width:320px; min-height:560px; margin:auto; transform:translate(-50%,6%); background-color:#fff;  border-radius: 20px;  background-color:#fff;">
         </div>
         <a style="position:absolute; color:#00f; transform:translate(-50%,10%);  right:5%; top:8%;  cursor:pointer; z-index: 100;" onclick="cl('#cover_user')">X</a>
     </div>
@@ -205,7 +226,7 @@ if (isset($_SESSION['login'])) {
                                     </div>
                                 </div>
                                 <div style="padding-top:10px;">
-                                <img src="./photo/voted.png " style=" background-repeat:no-repeat;" alt="votefor" width="80%" >
+                                    <img src="./photo/voted.png " style=" background-repeat:no-repeat;" alt="votefor" width="80%">
                                 </div>
                             </div>
                         </div>

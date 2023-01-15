@@ -5,8 +5,8 @@ $(window).scroll(function() {
 let self=$(this),
     height=self.height(),
     top=self.scrollTop();
-		console.log(height);
-		console.log(top);
+		// console.log(height);
+		// console.log(top);
 if(top>1.2*height) {
     up.fadeIn(800);
 } else {

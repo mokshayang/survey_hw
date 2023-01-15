@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../css/front.css">
+<link rel="stylesheet" href="../css/back.css">
 <?php include_once "../layouts/link_css.php" ?>
 <style>
     .for{
