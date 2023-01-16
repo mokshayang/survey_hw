@@ -73,7 +73,7 @@
         <div style=" border-bottom:3px solid #00e; width:280px; margin: 10px auto;"></div>
     </h3>
     <div class="table_list block in_show">
-        <div class="table_head sub" style="font-size:24px;">
+        <div class="table_head sub" style="font-size:28px;">
             <div>theme</div>
             <div>participant</div>
             <div>vote</div>
