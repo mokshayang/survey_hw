@@ -1,7 +1,5 @@
-<?php
-include_once "./db/base.php";
-include_once "./layouts/link_css.php"
-?>
+<link rel="stylesheet" href="./css/slider.css">
+<link rel="stylesheet" href="./css/mobile_silder.css">
 <style>
     #slider img {
         transform: scale(1, 1);

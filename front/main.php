@@ -96,48 +96,46 @@
         <?php } ?>
     </div>
 </div><!-- bootstrap conainer --->
-<link rel="stylesheet" href="./css/slider.css">
-<link rel="stylesheet" href="./css/mobile_silder.css">
+
 <style>
-    .sub_publicity {
+    /* .sub_publicity {
         width: 60%;
         margin: auto;
         background-color: var(--lightBlue);
-    }
+    } */
 
-    .publicity {
+    /* .publicity {
         padding: 10px;
         overflow: hidden;
         font-size: 40px;
         background-color: var(--darkenBlue);
         color: #fff;
-    }
+    } */
 
     .more {
-        height: 38rem;
+        height: 42rem;
+        min-height: 540px;
         background-color: var(--lightBlue);
         color: #fff;
-        margin: 240px auto 120px;
+        margin: 240px auto 20px;
         color: #fff;
-
     }
-
     .slider {
         text-align: center;
         font-size: 30px;
         margin: 30px auto;
-
     }
 </style>
 <div class="more in_show">
     <h3 class="block in_show sub_vote" style="font-size :40px;text-shadow:1px 1px 3px #00e;padding-top:10px;">More subject
-        <div style=" border-bottom:1px solid #fff; width: 280px; margin: 10px auto;"></div>
+        <div style=" border-bottom:1px solid #fff; width: 280px; margin: 2px auto;"></div>
     </h3>
 
 
 
 
     <?php $sub_imgs = $subject->all(['acive' => 1, 'level' => 1], " ORDER by id limit 5"); ?>
+    <!-- 主題照片輪播 -->
     <?php include_once "./slider/slider.php" ?>
 </div>
 <!-- 紙牌區 -->

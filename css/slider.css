@@ -11,16 +11,17 @@
 
 .imgs {
     /*設定圖片比列(5:3)*/
-    width: 50%;
+    /* min-width: 520px; */
+    width: 60%;
     height: 0;
-    padding-bottom: 30%;
+    padding-bottom: 36%;
     position: relative;
     overflow: hidden;
-    border: 1rem solid #00e;
+    /* border: 1rem solid #00e; */
     
     border-radius: 20px;
     margin: auto;
-    box-shadow: 1px 1px 5px #00e;
+    box-shadow: 1px 1px 12px var(--fadeBlue);
 }
 
 #slider {
