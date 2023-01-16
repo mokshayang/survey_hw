@@ -128,4 +128,6 @@ $ad = $admin->find(['id' => $_GET['id']]);
             $('#seerpw').removeClass().addClass('input-group-text bi bi-eye-slash-fill');
         };
     });
+
+
 </script>

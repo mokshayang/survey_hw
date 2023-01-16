@@ -21,7 +21,7 @@
 
     .img {
         width: 21rem;
-        height: 14rem;
+        height: 12.6rem;
         text-align: center;
         /* border: 2px solid orange; */
         box-shadow: 1px 1px 5px #33333380;
@@ -30,10 +30,12 @@
         border-radius: 40px;
         overflow: hidden;
     }
-    .img div{
+
+    .img div {
         width: 100%;
         height: 100%;
     }
+
     .img img {
         width: 100%;
 
@@ -72,7 +74,7 @@
             <input type="text" name="opt[]" required class="form-control">
             <a href="#" class="btn btn-primary" role="button" style='border-radius:4px;width:33.14px;'></a>
             <!-- 將survey_options id 內容裝入array->opt_id[] -->
-            
+
         </div>
 
     </div>
@@ -81,12 +83,12 @@
         if (!empty($_GET['id'])) {
         ?>
             <input class="btn btn-success mx-1" onclick="op('#cover','#cvr','./modal/add.php?id=<?= $img['id']; ?>')" value="更改主題圖片">
-            <input type="hidden" name=subject_id   value="<?= $img['id']; ?>">
+            <input type="hidden" name=subject_id value="<?= $img['id']; ?>">
         <?php } else { ?>
             <input class="btn btn-success mx-1" onclick="op('#cover','#cvr','./modal/add.php')" value="新增主題圖片">
         <?php } ?>
         <input class="btn btn-warning mx-1" type="reset" value="重置">
-        <input type="hidden" name="subject_id" value="<?=$img['id']?>">
+        <input type="hidden" name="subject_id" value="<?= $img['id'] ?>">
         <input class="btn btn-primary mx-1" type="submit" value="新增">
     </div>
 </form>
@@ -116,4 +118,12 @@
         })
 
     })
+
+    $('input').keypress(function(e) {
+        code = e.keyCode ? e.keyCode : e.which; // in case of browser compatibility
+        if (code == 13) {
+            e.preventDefault();
+
+        }
+    });
 </script>

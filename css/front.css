@@ -1,12 +1,13 @@
-:root{
-    --darkBlue:#000080;
-    --lightBlue:#4D4DFF60;
-    --blue:#00f;
-    --darkenBlue:#262680;
-    --fadeBlue:#0000CC;
-    --white:#fff;
+:root {
+    --darkBlue: #000080;
+    --lightBlue: #4D4DFF60;
+    --blue: #00f;
+    --darkenBlue: #262680;
+    --fadeBlue: #0000CC;
+    --white: #fff;
 }
-h1{
+
+h1 {
     width: 60%;
     padding-top: 30px;
     margin: auto;
@@ -17,19 +18,42 @@ h1{
     font-weight: bold;
     line-height: 30px;
 }
-form{
+
+form {
     width: 50%;
     margin: 40px auto;
     padding-top: 40px;
     background-color: var(--lightBlue);
     border-radius: 40px;
-    box-shadow: 1px 1px  5px  var(--darkBlue);
+    box-shadow: 1px 1px 5px var(--darkBlue);
 }
 
-form .content{
+form .content {
     width: 72%;
     margin: auto;
 }
-#seepw,#seerpw{
+
+#seepw,
+#seerpw {
     cursor: pointer;
+}
+
+#go-top {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(blue, #fff);
+    box-shadow: 2px 2px 5px var(--fadeBlue);
+    position: fixed;
+    right: 40px;
+    bottom: 60px;
+    display: hidden;
+    cursor: pointer;
+}
+
+#go-top .bi {
+    font-size: 60px;
+    color: #fff;
+    position: absolute;
+    top: -15px;
 }

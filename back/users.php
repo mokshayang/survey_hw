@@ -10,6 +10,8 @@
 <h1>會 員 管 理 系 統</h1>
 <style>
     .ad_user{
+        width: 65%;
+        margin: auto;
         display: grid;
         grid-template-columns: 1fr 5fr 1fr;
     }
@@ -19,6 +21,10 @@
         height: 40px;
         align-self: center;
     }
+    .item,.userData{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 3fr 2fr;
+    }
 </style>
 <nav class="ad_user">
     <div></div>
@@ -27,9 +33,9 @@
 </nav>
 <div class="usersList">
     <div class="item">
-        <div>帳號</div>
-        <div>密碼</div>
-        <div>名稱</div>
+        <div >帳號</div>
+        <div >密碼</div>
+        <div >名稱</div>
         <div>email</div>
         <div>操作</div>
     </div>

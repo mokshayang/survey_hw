@@ -20,10 +20,10 @@ if (isset($_GET['id'])) {
     }
 
     .items {
-        margin:10px auto;
+        margin:0px auto 10px;
         display: grid;
         grid-auto-rows: 48px;
-        grid-template-columns: 3fr 1fr 6fr 3fr;
+        grid-template-columns: 1fr 1fr 6fr 1fr;
         justify-items: end;
     }
 
@@ -40,7 +40,7 @@ if (isset($_GET['id'])) {
         width: 300px;
         height: 180px;
         text-align: center;
-        box-shadow: 1px 1px 5px #33333380;
+        box-shadow: 1px 1px 5px var(--blue);
         margin: auto;
         border-radius: 20px;
         overflow: hidden;
@@ -74,13 +74,13 @@ if (isset($_GET['id'])) {
     }
     .select{
 
-        margin: 10px auto ;
+        margin: 10px auto 0;
         text-align: center;
         font-size: 20px;
         
     }
 </style>
-<h3 style="padding-top:20px;"><?= $survey['subject'] ?></h3>
+<h3 style="padding:5px;margin:0 auto;"><?= $survey['subject'] ?></h3>
 <div class="img_sub">
     <div >
         <?php

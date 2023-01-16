@@ -66,11 +66,11 @@ if (isset($_POST['id'])) {
             unlink("../upload/" . $DBimg['img']);
             $row['id'] = $_POST['id'];
             $row['img'] = $new_name;
-            move_uploaded_file($_FILES['img']['tmp_name'], "../upload/" . $new_name);
-            $subject->save($row);
-            $id_row = $row['id'];
-            to("../admin_center.php?do={$_POST['table']}&id=$id_row");
         }
+        move_uploaded_file($_FILES['img']['tmp_name'], "../upload/" . $new_name);
+        $subject->save($row);
+        $id_row = $subject->find(['img'=>$new_name])['id'];
+        to("../admin_center.php?do={$_POST['table']}&id=$id_row");
     } else {
         echo "上傳失敗，請聯絡管理員，或請檢查檔案是否支援";
     }
@@ -86,6 +86,7 @@ if (isset($_POST['id'])) {
         dd($new_name_noid);
         
         move_uploaded_file($_FILES['img']['tmp_name'], "../upload/" . $new_name_noid);
+        
         $subject->save($data);
         $id_array = $subject->find(['img'=>$new_name_noid]);
         dd($id_array);
