@@ -24,6 +24,17 @@
         position: relative;
         top: 0px;
         text-shadow: 1px 1px 3px var(--lightBlue);
+        padding-left: 20px;
+    }
+    .main{
+        display: block;
+        position: relative;
+        top: -4px;
+        font-size: 24px;
+        text-shadow: 1px 1px 3px var(--lightBlue);
+        color: var(--blue);
+        font-style: italic;
+        font-weight: bold;
     }
 </style>
 <header class="shadow" style="margin-bottom:56px;">
@@ -37,13 +48,24 @@
         ?>
 
                 <ul class="nav nav-pills" role="tablist">
-                    <li class="nav-item mx-3">
+                    <li class="nav-item ">
                         <a class=" nav-link tc " href="index.php"><i class="bi bi-file-earmark-music music"></i></a>
+                    </li>
+                    <li class="nav-item "  style="padding-right:20px;">
+                            <a href="#" class="nav-link main" type="button">藍色音符網</a>
                     </li>
                     <!-- 下方為220專用 -->
                     <!-- <li class="nav-item mx-3">
                         <a class=" nav-link tc " style="top:0px;" href="../">回作品集首頁</a>
                     </li> -->
+                </ul>
+
+                <ul class="nav nav-pills" role="tablist">
+                   
+                    <li class="nav-item "  style="padding-right:20px;">
+                            <a href="" class="nav-link main" type="button" style="top: -16px; font-size:28px;">Polling station</a>
+                    </li>
+               
                 </ul>
 
                 <ul class="nav nav-pills mr-2 " role="tablist">
@@ -99,6 +121,9 @@
                 <ul class="nav nav-pills" role="tablist">
                     <li class="nav-item mx-3">
                         <a class=" nav-link tc " href="index.php"><i class="bi bi-file-earmark-music music"></i></a>
+                    </li>
+                    <li class="nav-item "  style="padding-right:20px;">
+                            <a href="index.php" class="nav-link main" type="button">藍色音符網</a>
                     </li>
                 </ul>
                 <ul class="nav nav-pills " role="tablist">
