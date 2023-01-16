@@ -5,7 +5,8 @@ if(isset($_POST['id'])){
     $row['acc']=$_POST['acc'];
     $row['pw']=$_POST['pw'];
     $admin->save($row);
-    $_SESSION['admin']=$row['acc'];
+    ($_SESSION['admin']=="admin")??$_SESSION['admin']=$row['acc'];
+    
     to("../admin_center.php?do=admin");
 
 }else{

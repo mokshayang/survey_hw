@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2023-01-15 14:33:25
+-- 產生時間： 2023-01-16 21:26:29
 -- 伺服器版本： 10.4.25-MariaDB
 -- PHP 版本： 8.1.10
 
@@ -54,7 +54,12 @@ INSERT INTO `survey_log_hw` (`id`, `user_id`, `ip`, `subject_id`, `created_at`) 
 (23, 1, '', 1, '2023-01-15 02:10:15'),
 (24, 1, '', 5, '2023-01-15 02:14:33'),
 (25, 1, '', 1, '2023-01-15 02:15:40'),
-(26, 1, '', 1, '2023-01-15 10:02:36');
+(26, 1, '', 1, '2023-01-15 10:02:36'),
+(27, 1, '', 1, '2023-01-15 16:52:58'),
+(28, 1, '', 0, '2023-01-15 17:10:41'),
+(29, 1, '', 1, '2023-01-15 17:53:37'),
+(30, 1, '', 4, '2023-01-16 17:23:11'),
+(31, 1, '', 34, '2023-01-16 19:43:20');
 
 --
 -- 已傾印資料表的索引
@@ -74,7 +79,7 @@ ALTER TABLE `survey_log_hw`
 -- 使用資料表自動遞增(AUTO_INCREMENT) `survey_log_hw`
 --
 ALTER TABLE `survey_log_hw`
-  MODIFY `id` int(12) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(12) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

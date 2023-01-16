@@ -1,6 +1,10 @@
 <?php include_once "../db/base.php";
 dd($_POST);
 $sub['subject'] = $_POST['subject'];
+$sub['acive'] = 1;
+$sub['level'] = 0;
+$sub['vote'] = 0;
+
 if (isset($_POST['subject_id'])) {
     $sub['id'] = $_POST['subject_id'];
 }
