@@ -6,14 +6,24 @@
         width: 100%;
         /* height: 900px; */
         overflow: hidden;
-
+        position: relative;
+        z-index: -1;
+    }
+    .sub_p div{
+        position: absolute;
+        font-size: 8rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 1px 1px 5px white;
+        left: 12%;
+        top: 32%;
     }
 </style>
 <!--↓↓↓↓↓↓↓↓↓↓ photo　↓↓↓↓↓↓↓↓↓↓-->
 <div class="sub_p">
-
+<div>熱門投票</div>
     <img src="./photo/c10.jpg" alt="" width="100%">
-
+    
 </div>
 
 <!-- 給予固定高度 -->
