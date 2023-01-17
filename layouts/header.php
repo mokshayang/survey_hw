@@ -12,7 +12,7 @@
     }
 
     .tc {
-        color: var(--blue);
+        color: royalblue;
         font-size: 20px;
         position: relative;
         top: -18px;
@@ -32,42 +32,42 @@
         top: -4px;
         font-size: 24px;
         text-shadow: 1px 1px 3px var(--lightBlue);
-        color: var(--blue);
+        color: white;
+        font-style: italic;
+        font-weight: bold;
+    }
+    .main2{
+        display: block;
+        position: relative;
+        top: -4px;
+        font-size: 24px;
+        text-shadow: 1px 1px 3px var(--lightBlue);
+        color: royalblue;
         font-style: italic;
         font-weight: bold;
     }
 </style>
 <header class="shadow" style="margin-bottom:56px;">
 
-    <nav class="navbar fixed-top justify-content-between" style="background-color:var(--lightBlue);height: 56px; ">
+    <nav class="navbar fixed-top justify-content-between" style="background-color:royalblue;height: 100px; ">
+    <ul class="nav nav-pills" role="tablist">
+                   
+                   <li class="nav-item "  style="padding-right:20px;">
+                           <a href="" class="nav-link main" type="button" style="top: -16px; font-size:28px;">Polling station</a>
+                   </li>
+              
+               </ul>
+    </nav>
+    
+
+
+    <div class="  bg-body shadow-sm" style="background-color:white;height: 100px; ">
         <?php
         $file_str = explode("/", $_SERVER['PHP_SELF']);
         $local = str_replace('.php', '', array_pop($file_str));
         switch ($local) {
             case "index":
         ?>
-
-                <ul class="nav nav-pills" role="tablist">
-                    <li class="nav-item ">
-                        <a class=" nav-link tc " href="index.php"><i class="bi bi-file-earmark-music music"></i></a>
-                    </li>
-                    <li class="nav-item "  style="padding-right:20px;">
-                            <a href="#" class="nav-link main" type="button">藍色音符網</a>
-                    </li>
-                    <!-- 下方為220專用 -->
-                    <!-- <li class="nav-item mx-3">
-                        <a class=" nav-link tc " style="top:0px;" href="../">回作品集首頁</a>
-                    </li> -->
-                </ul>
-
-                <ul class="nav nav-pills" role="tablist">
-                   
-                    <li class="nav-item "  style="padding-right:20px;">
-                            <a href="" class="nav-link main" type="button" style="top: -16px; font-size:28px;">Polling station</a>
-                    </li>
-               
-                </ul>
-
                 <ul class="nav nav-pills mr-2 " role="tablist">
 
                     <?php
@@ -78,7 +78,7 @@
                             <i class="bi bi-person-lines-fill i"></i>
                         </li>
                         <li class="nav-item mx-2"  style="padding-right:20px;">
-                            <a href="admin_center.php" class="nav-link tc" type="button">back manage</a>
+                            <a href="admin_center.php" class="nav-link tc main2" type="button">back manage</a>
                         </li>
 
 
@@ -123,7 +123,7 @@
                         <a class=" nav-link tc " href="index.php"><i class="bi bi-file-earmark-music music"></i></a>
                     </li>
                     <li class="nav-item "  style="padding-right:20px;">
-                            <a href="index.php" class="nav-link main" type="button">藍色音符網</a>
+                            <a href="index.php" class="nav-link " type="button" style="top:100px;">藍色音符網</a>
                     </li>
                 </ul>
                 <ul class="nav nav-pills " role="tablist">
@@ -151,6 +151,6 @@
 
         <?php break;
         }  ?>
-    </nav>
+    </div>
 
 </header>
