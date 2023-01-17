@@ -32,11 +32,11 @@
     }
 
     .second {
-
+        z-index: 10;
         position: sticky;
         top: 0px;
-        ;
         background-color: white;
+        box-shadow: 0 1px 10px #333;
     }
 </style>
 <header class="shadow">
@@ -49,7 +49,7 @@
     </nav>
 </header>
 
-<div class="shadow  second" style="height: 50px; ">
+<div class="  second" style="height: 50px; ">
     <?php
     $file_str = explode("/", $_SERVER['PHP_SELF']);
     $local = str_replace('.php', '', array_pop($file_str));
