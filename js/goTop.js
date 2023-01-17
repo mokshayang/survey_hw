@@ -7,7 +7,7 @@ let self=$(this),
     top=self.scrollTop();
 		// console.log(height);
 		// console.log(top);
-if(top>1.2*height) {
+if(top>1.4*height) {
     up.fadeIn(800);
 } else {
     up.fadeOut(800);

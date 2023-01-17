@@ -116,7 +116,9 @@
 <style>
     .more {
         height: 42rem;
-        min-height: 540px;
+        /* min-height: 540px; */
+        height: 0;
+        padding-bottom: 40%;
         background-color: var(--lightBlue);
         color: #fff;
         margin: 240px auto 10px;
