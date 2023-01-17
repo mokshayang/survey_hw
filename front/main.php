@@ -208,7 +208,7 @@ if (isset($_SESSION['login'])) {
 
                             <!-- 卡片背面 -->
                             <div class="card shadow radio" style="width: 216px; height:300px; overflow:hidden;">
-                                <div class="mm ">
+                                <div class="mmed ">
                                     <?php
                                     if (is_image($survey['type'])) {
                                     ?>
@@ -224,7 +224,7 @@ if (isset($_SESSION['login'])) {
                             </div>
                             <div class="selected">
                                 <div class="see_result">
-                                    <p style="width:215px;"><?= $survey['subject'] ?></p>
+                                    <p style="width:215px;padding-top:36px;"><?= $survey['subject'] ?></p>
                                     <div class="choose">
                                         <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-warning mx-1">結果</a>
                                     </div>
@@ -266,8 +266,8 @@ if (isset($_SESSION['login'])) {
                                     <div class="card-body">
                                         <p class="card-text "><?= $survey['subject'] ?></p>
                                         <div class="choose">
-                                            <a class="btn btn-sm btn-primary mx-1" onclick="op('#cover_user','#cvr_user','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
-                                            <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-primary mx-1">結果</a>
+                                            <a class="btn btn-sm btn-ss mx-1" onclick="op('#cover_user','#cvr_user','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
+                                            <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-ss mx-1">結果</a>
                                         </div>
                                     </div>
                                 </div>

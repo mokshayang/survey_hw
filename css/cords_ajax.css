@@ -56,13 +56,13 @@
     margin: 40px auto;
 }
 
-.mm {
+.mm,.mmed {
     width: 101%;
     height: 150px;
     overflow: hidden;
 }
 
-.mm img {
+.mm img,.mmed img {
     width: 100%;
 }
 
@@ -101,12 +101,18 @@
     text-shadow: 1px 1px 1px #333;
 }
 
+.mmed img {
+    transform: scale(1, 1);
+    transition: all 0.3s ease-out;
+    filter:grayscale(1);
+}
 .mm img {
     transform: scale(1, 1);
     transition: all 0.3s ease-out;
+
 }
 
-.mm img:hover {
+.mmed img:hover,.mm img:hover {
     transform: scale(1.02, 1.02);
 }
 
@@ -115,9 +121,11 @@
     height: 300px;
     position: relative;
     top: -300px;
-    background-color: #33333395;
+    background-color: #00000099;
     
+ 
     border-radius: 10px;
+    
    
 }
 
