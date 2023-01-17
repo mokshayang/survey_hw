@@ -15,10 +15,10 @@ if(top>1.2*height) {
 
 });
 
-up.click(() => {
-    $('html,body').animate({
-        scrollTop : 0
-    } , 1500  );
-});
+// up.click(() => {
+//     $('html,body').animate({
+//         scrollTop : 0
+//     } , 1500  );
+// });
 
 //fade in_show

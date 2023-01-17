@@ -119,7 +119,8 @@
         min-height: 540px;
         background-color: var(--lightBlue);
         color: #fff;
-        margin: 240px auto 0px;
+        margin: 240px auto 10px;
+        
     }
 
     .slider {

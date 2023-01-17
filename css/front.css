@@ -62,7 +62,7 @@ form .content {
     width: 60px;
     height: 60px;
     border-radius: 50%;
-    background: linear-gradient(blue, #fff);
+    background-color:var(--blue) ;
     box-shadow: 2px 2px 5px var(--fadeBlue);
     position: fixed;
     right: 40px;

@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <link rel="stylesheet" href="./css/front.css">
     <link rel="stylesheet" href="./css/back.css">
     <link rel="stylesheet" href="./css/cords_ajax.css">
@@ -29,7 +28,7 @@
 
 
 <div id="go-top">
-    <i class="bi bi-arrow-up-short"></i>
+    <a href="#"><i class="bi bi-arrow-up-short"></i></a>
 </div>
 
 <script src="./js/goTop.js"></script>
