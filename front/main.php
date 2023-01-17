@@ -6,10 +6,12 @@
         width: 100%;
         /* height: 900px; */
         overflow: hidden;
+
     }
 </style>
 <!--↓↓↓↓↓↓↓↓↓↓ photo　↓↓↓↓↓↓↓↓↓↓-->
 <div class="sub_p">
+
     <img src="./photo/c10.jpg" alt="" width="100%">
 
 </div>
@@ -33,7 +35,7 @@
             min-height: 560px;
             transform: translate(-50%, -10%);
             left: 50%;
-            top:100px;
+            top: 100px;
             background-color: #ffffff95;
             z-index: 100;
             padding-bottom: 20px;
@@ -44,7 +46,7 @@
             transform: translateX(-80%);
             transition: all 2s ease-in-out;
             opacity: 0;
-            
+
         }
     </style>
     <!--↓↓↓↓↓↓↓↓↓↓ 一般會員　↓↓↓↓↓↓↓↓↓↓-->
@@ -120,6 +122,7 @@
         margin: 240px auto 20px;
         color: #fff;
     }
+
     .slider {
         text-align: center;
         font-size: 30px;
@@ -148,19 +151,20 @@
         margin: 240px auto 60px;
         font-style: italic;
     }
+
     .she {
-            position: absolute;
-            position: relative;
-            min-width: 380px;
-            min-height: 560px;
-            transform: translate(-50%, -10%);
-            left: 50%;
-            top:5px;
-            background-color: #ffffff95;
-            z-index: 100;
-            box-shadow: 1px 1px 5px var(--blue);
-            padding-bottom: 20px;
-        }
+        position: absolute;
+        position: relative;
+        min-width: 380px;
+        min-height: 560px;
+        transform: translate(-50%, -10%);
+        left: 50%;
+        top: 5px;
+        background-color: #ffffff95;
+        z-index: 100;
+        box-shadow: 1px 1px 5px var(--blue);
+        padding-bottom: 20px;
+    }
 </style>
 <?php
 if (isset($_SESSION['login'])) {
@@ -311,28 +315,29 @@ if (isset($_SESSION['login'])) {
 <script>
     $('.block').addClass('in_show');
 
-
-
-
     $(window).on('scroll', function() {
-        // var windowHeight = $(window).height();
-        let windowHeight = window.innerHeight;
-
         $('.in_show').each(function() {
             let card = $('.in_show_card');
             let hiddenBlock = $(this);
             let hiddenBlockTop = hiddenBlock.offset().top;
-            if (hiddenBlockTop <= ($(window).scrollTop() + windowHeight - 80)) {
+            let hiddenBlockHeight = hiddenBlock.outerHeight();
+            let windowHeight = $(window).height();
+            let scrollTop = $(window).scrollTop();
+
+            if (hiddenBlockTop + hiddenBlockHeight >= scrollTop && hiddenBlockTop <= scrollTop + windowHeight) {
                 hiddenBlock.css({
                     'transform': 'translateX(0%)',
-                    'opacity': '0.9'
+                    'opacity': '1'
                 }, function() {});
                 card.fadeIn(1800);
+            } else {
+                hiddenBlock.css({
+                    'transform': 'translateX(-100%)',
+                    'opacity': '0'
+                });
+                card.fadeOut(1800);
             }
-
-            // console.log('to_TOP_H',$(window).scrollTop());
-            // console.log('window_H',windowHeight);
-            // console.log('Obj_H',hiddenBlockTop);
         });
     });
+ 
 </script>
