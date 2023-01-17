@@ -98,7 +98,7 @@ if (isset($_GET['id'])) {
 </div>
 <div class="select">請選擇您的意見</div>
 <form action="./api/survey_vote.php" method="post" >
-    <div class="items">
+    <div class="items my-3">
         <?php
         if (isset($error)) {
             echo "<span style='color:red'>" . $error . "</span>";
@@ -122,7 +122,7 @@ if (isset($_GET['id'])) {
     </div>
     <?php if (!isset($error)) {; ?>
         <div class="text-center col-12 mt-3">
-            <input class="btn btn-primary mx-1" type="submit" value="投票">
+            <input class="btn btn-ss my-2 login" type="submit" value="投票">
         </div>
     <?php } ?>
 </form>

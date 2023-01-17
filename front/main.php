@@ -39,7 +39,7 @@
             background-color: #ffffff95;
             z-index: 100;
             padding-bottom: 20px;
-            box-shadow: 1px 1px 5px var(--blue);
+            box-shadow: 1px 1px 10px #999;
         }
 
         .in_show ,.in_card{

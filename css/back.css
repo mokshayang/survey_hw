@@ -228,11 +228,11 @@ a.now {
     color: #eee;
 }
 .items {
-    box-sizing:  1px 1px 1px 1px #000;
+
+    padding: 20px;
+    box-shadow:  1px 1px 10px #999;
 }
-.items:nth-child(2n){
-    background-color: #f5f5ff;
-}
+
 
 .items div:nth-child(1){
     justify-self: start;
