@@ -26,9 +26,9 @@
                 </div>
                 <!-- <input type="hidden" name="url" valur=""> 傳遞前一頁，暫時先不做-->
             </div>
-            <div class="text-center col-12 my-4">
-                <input class="btn btn-warning shadow mx-1" type="reset" value="重置">
-                <input class="btn btn-primary shadow mx-1" type="submit" value="登入">
+            <div class="text-center col-12 my-1">
+                
+                <input class="btn btn-ss shadow login" type="submit" value="登入">
             </div>
         </form>
     </div>

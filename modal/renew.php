@@ -21,7 +21,7 @@
         <input type="hidden" name="id" value="<?= $_GET['imgId'] ?>">
         
         <input type="hidden" name="table" value="survey_edit">
-        <input class="btn btn-sm btn-primary mx-2 " type="submit" value="確定">
-        <input class="btn btn-sm btn-success mx-2 " type="reset" value="重置">
+        <input class="btn btn-sm btn-ss login " type="submit" value="確定">
+       
     </div>
 </form>

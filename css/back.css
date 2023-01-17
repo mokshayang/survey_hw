@@ -36,9 +36,9 @@ h1,h3{
     background-color: #eef;
 }
 .item{
-    background-color: var(--fadeBlue);
+    background-color: var(--skyblue);
     border-radius: 12px 12px 0 0;
-    color:#eee;
+    color:white;
     text-align: center;
     line-height: 40px;
 }
@@ -183,8 +183,8 @@ a.now {
     width: 200px;
     height: 40px;
     font-size: 20px;
-    background-color:var(--blue);
-    color: #eee;
+    background-color:var(--skyblue);
+    color: var(--white);
     border-radius: 10px;
     margin:20px auto;
     line-height: 24px;

@@ -29,7 +29,7 @@
 <nav class="ad_user">
     <div></div>
     <div class="admin"><?= $_SESSION['admin'] ?> 您好 !!</div>
-    <a href="?do=add_user&p=<?=$pages?>" class="btn btn-outline-primary">新增會員</a>
+    <a href="?do=add_user&p=<?=$pages?>" class="btn btn-outline-ss">新增會員</a>
 </nav>
 <div class="usersList">
     <div class="item">
@@ -50,7 +50,7 @@
                 <div><?= $client['name'] ?></div>
                 <div><?= $client['email'] ?></div>
                 <div class="operate">
-                    <a href="?do=user_edit&id=<?= $client['id'] ?>&p=<?=$_GET['p']?>" class="btn btn-outline-primary">編輯</a>
+                    <a href="?do=user_edit&id=<?= $client['id'] ?>&p=<?=$_GET['p']?>" class="btn btn-outline-ss">編輯</a>
                     <a href="./api/user_del.php?id=<?= $client['id'] ?>" class="btn btn-danger" onclick="
                                 return confirm('確定刪除會員帳號 : <?= $client['acc'] ?>  ?')">刪除</a>
                 </div>

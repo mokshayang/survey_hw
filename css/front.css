@@ -43,9 +43,9 @@ form {
     width: 50%;
     margin: 40px auto;
     padding-top: 40px;
-    background-color: var(--lightBlue);
+    background-color: #fff;
     border-radius: 40px;
-    box-shadow: 1px 1px 5px var(--darkBlue);
+    box-shadow: 1px 1px 10px #999;
 }
 
 form .content {
@@ -76,4 +76,8 @@ form .content {
     color: #fff;
     position: absolute;
     top: -15px;
+}
+.login{
+    width: 100px;
+    margin: 48px auto 10px;
 }

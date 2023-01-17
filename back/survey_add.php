@@ -87,9 +87,9 @@
         <?php } else { ?>
             <input class="btn btn-success mx-1" onclick="op('#cover','#cvr','./modal/add.php')" value="新增主題圖片">
         <?php } ?>
-        <input class="btn btn-warning mx-1" type="reset" value="重置">
+        <input class="btn btn-outline-ss mx-1" type="reset" value="重置">
         <input type="hidden" name="subject_id" value="<?= $img['id'] ?>">
-        <input class="btn btn-primary mx-1" type="submit" value="新增">
+        <input class="btn btn-ss mx-1 " type="submit" value="新增">
     </div>
 </form>
 <script>
@@ -105,7 +105,7 @@
             const div = `<div class='input-group mb-3 col-10 addDiv'>
                             <label class='input-group-text'>選項 :&nbsp;<span>${num}</span></label>
                             <input type='text' name='opt[]' class='form-control '>
-                            <div class='remove btn btn-outline-warning' role='button'>-</div>
+                            <div class='remove btn btn-outline-ss' role='button'>-</div>
                          </div>`; //addDiv Html
             options.parent().append(div);
             $('.remove').on('click', function() {

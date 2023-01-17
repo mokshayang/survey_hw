@@ -105,8 +105,8 @@ if (isset($_GET['id'])) {
     </div>
     <div class="text-center col-12 mt-3">
         <input class="btn btn-success mx-1" onclick="op('#cover','#cvr','./modal/renew.php?imgId=<?= $img['id']; ?>')" value="變更主題圖片">
-        <input class="btn btn-warning mx-1" type="reset" value="重置">
-        <input class="btn btn-primary mx-1" type="submit" value="修改">
+        <input class="btn btn-outline-ss mx-1" type="reset" value="重置">
+        <input class="btn btn-ss mx-1" type="submit" value="修改">
     </div>
 </form>
 
@@ -127,7 +127,7 @@ if (isset($_GET['id'])) {
                                 選項 :&nbsp;<span>${num}</span>
                             </label>
                             <input type='text' name='optn[]' class='form-control'>
-                            <div class='remove btn btn-outline-warning' role='button'>-</div>
+                            <div class='remove btn btn-outline-ss' role='button'>-</div>
                         </div>`; //addDiv Html
 
             opts.parent().append(div);

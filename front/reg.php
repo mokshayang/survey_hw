@@ -106,8 +106,8 @@ function checkForm() {
             </div>
             <div class="text-center col-12 my-4">
                 <input type="hidden" name="table" value="index.php?do=reg">
-                <input class="btn btn-warning shadow mx-1" type="reset" value="重置">
-                <input class="btn btn-primary shadow mx-1" type="submit" value="註冊">
+                <input class="btn btn-outline-ss shadow mx-4" type="reset" value="重置">
+                <input class="btn btn-ss shadow mx-4" type="submit" value="註冊">
             </div>
         </form>
         <div class="text-center col-12">

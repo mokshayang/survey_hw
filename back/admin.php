@@ -22,7 +22,7 @@
 <div class="admin_er">
     <div></div>
     <div class="admin"><?= $_SESSION['admin'] ?> 您好 !!</div>
-    <a href="?do=admin_add" class="btn btn-outline-primary ">新增管理者</a>
+    <a href="?do=admin_add" class="btn btn-outline-ss ">新增管理者</a>
 </div>
 <div class="container">
     <div class="admin_sh"">
@@ -57,8 +57,8 @@
                         </td>
                     <?php } else { ?>
                         <td style="text-align:center;">
-                            <a href="?do=admin_edit&id=<?= $row['id'] ?>" class="btn btn-primary">編輯</a>
-                            <a href="./api/admin_del.php?id=<?= $row['id'] ?>" class="btn btn-warning" onclick="
+                            <a href="?do=admin_edit&id=<?= $row['id'] ?>" class="btn btn-outline-ss">編輯</a>
+                            <a href="./api/admin_del.php?id=<?= $row['id'] ?>" class="btn btn-outline-warning" onclick="
                                 return confirm('確定刪除會員帳號 : <?= $row['acc'] ?>  ?')">刪除</a>
                         </td>
                     <?php } ?>
