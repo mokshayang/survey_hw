@@ -57,6 +57,10 @@
         case "index":
     ?>
             <ul class="nav nav-pills nav-item justify-content-center " role="tablist">
+               <!-- 上傳公用伺服器專用 -->
+                <!-- <li class=" nav-item ">
+                    <a href="../" class="mx-5 nav-link tc" type="button">回作品集首頁</a>
+                </li> -->
 
                 <?php
 
@@ -89,7 +93,7 @@
                         <i class="bi bi-person-plus i"></i>
                     </li>
                     <li class="nav-item mx-2 " style="padding-right:60px;">
-                        <a href="?do=reg" class="nav-link tc " type="button" >Sign Up</a>
+                        <a href="?do=reg" class="nav-link tc " type="button">Sign Up</a>
                     </li>
                     <li class="nav-item mx-2 tc">
                         <i class="bi bi-person-workspace i"></i>
@@ -115,7 +119,7 @@
                 </li>
             </ul> -->
             <ul class="nav nav-pills nav-item justify-content-center " role="tablist">
-            
+
                 <li class="nav-item mx-2">
                     <a href="?do=survey" class="nav-link tc" type="button">選項主題管理</a>
                 </li>
@@ -123,7 +127,7 @@
                 <li class="nav-item mx-2">
                     <a href="?do=users&p=1" class="nav-link tc" type="button">會員管理</a>
                 </li>
-           
+
 
                 <li class="nav-item mx-2">
                     <a href="?do=admin" class="nav-link tc" type="button">管理者列表</a>
