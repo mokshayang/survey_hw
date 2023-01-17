@@ -29,8 +29,8 @@
     </div>
     <style>
         .sh {
-            position: absolute;
-            position: relative;
+            /* position: absolute; */
+            /* position: relative; */
             min-width: 450px;
             min-height: 560px;
             transform: translate(-50%, -10%);
@@ -42,11 +42,10 @@
             box-shadow: 1px 1px 5px var(--blue);
         }
 
-        .in_show {
-            transform: translateX(-80%);
+        .in_show ,.in_card{
+            transform: translateX(-100%);
             transition: all 2s ease-in-out;
             opacity: 0;
-
         }
     </style>
     <!--↓↓↓↓↓↓↓↓↓↓ 一般會員　↓↓↓↓↓↓↓↓↓↓-->
@@ -63,64 +62,64 @@
 
 
     <style>
-        .sub {
-            top: 60px;
-            position: relative;
-            font-style: italic;
+        .sub_vote {
+            color: var(--darkBlue);
+            font-size: 60px;
 
         }
+
+        .sub_vote div {
+            width: 280px;
+            height: 5px;
+            border-bottom: 5px solid var(--darkBlue);
+            padding: 10px auto;
+            margin: 48px auto 0;
+        }
+
+        .btn-sub {
+            color: #fff;
+            background-color: var(--skyblue);
+            border-color: var(--skyblue);
+
+        }
+        
     </style>
-    <h3 class="block in_show sub_vote" style="font-size :40px;color:#00e;text-shadow:1px 1px 3px 
-    #00e;">To experience
-        <div style=" border-bottom:3px solid #00e; width:280px; margin: 10px auto;"></div>
+    <h3 class="block in_show sub_vote">To experience
+        <div style="  padding: 10px auto; "></div>
     </h3>
     <div class="table_list block in_show">
-        <div class="table_head sub" style="font-size:28px;">
+        <div class="table_head sub" ">
             <div>theme</div>
             <div>participant</div>
             <div>vote</div>
         </div>
     </div>
-    <div class="front_table block in_show">
-        <?php
-        $surveys = $subject->all(['acive' => 1, 'level' => 0]); //啟動
-        foreach ($surveys as $key => $survey) {
-        ?>
-            <div class="front_items block in_show" style="line-height:48px;">
-                <div><?= $survey['subject'] ?></div>
-                <div><?= $survey['vote'] ?></div>
-                <div>
-                    <a class="btn btn-sm btn-success mx-1" onclick="op('#cover','#cvr','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
-                    <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-sm btn-outline-success mx-1">結果</a>
+    <div class=" front_table block in_show">
+            <?php
+            $surveys = $subject->all(['acive' => 1, 'level' => 0]); //啟動
+            foreach ($surveys as $key => $survey) {
+            ?>
+                <div class="front_items block in_show" style="line-height:48px;">
+                    <div><?= $survey['subject'] ?></div>
+                    <div><?= $survey['vote'] ?></div>
+                    <div>
+                        <a class="btn btn-lg btn-ss mx-1" onclick="op('#cover','#cvr','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
+                        <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-lg btn-outline-ss mx-1">結果</a>
 
+                    </div>
                 </div>
-            </div>
-        <?php } ?>
-    </div>
+            <?php } ?>
+        </div>
+    </div><!-- bootstrap conainer --->
 </div><!-- bootstrap conainer --->
 
 <style>
-    /* .sub_publicity {
-        width: 60%;
-        margin: auto;
-        background-color: var(--lightBlue);
-    } */
-
-    /* .publicity {
-        padding: 10px;
-        overflow: hidden;
-        font-size: 40px;
-        background-color: var(--darkenBlue);
-        color: #fff;
-    } */
-
     .more {
         height: 42rem;
         min-height: 540px;
         background-color: var(--lightBlue);
         color: #fff;
-        margin: 240px auto 20px;
-        color: #fff;
+        margin: 240px auto 0px;
     }
 
     .slider {
@@ -130,8 +129,8 @@
     }
 </style>
 <div class="more in_show">
-    <h3 class="block in_show sub_vote" style="font-size :40px;text-shadow:1px 1px 3px #00e;padding-top:10px;">More subject
-        <div style=" border-bottom:1px solid #fff; width: 280px; margin: 2px auto;"></div>
+    <h3 class="block in_show" style="font-size :40px;text-shadow:1px 1px 3px #00e;">More subject
+        <div style=" border-bottom:1px solid #fff; width: 280px;  margin:20px auto  0 ;"></div>
     </h3>
 
 
@@ -141,6 +140,8 @@
     <!-- 主題照片輪播 -->
     <?php include_once "./slider/slider.php" ?>
 </div>
+
+
 <!-- 紙牌區 -->
 
 
@@ -165,6 +166,7 @@
         box-shadow: 1px 1px 5px var(--blue);
         padding-bottom: 20px;
     }
+
 </style>
 <?php
 if (isset($_SESSION['login'])) {
@@ -181,10 +183,10 @@ if (isset($_SESSION['login'])) {
         <a style="position:absolute; color:#00f; transform:translate(-50%,10%);  right:5%; top:8%;  cursor:pointer; z-index: 100;" onclick="cl('#cover_user')">X</a>
     </div>
 </div>
-
+<link rel="stylesheet" href="./css/cords_ajax.css">
 <div class="container text-center" style="margin-bottom:200px;">
 
-    <div class="row">
+    <div class="row ">
         <?php if (isset($_SESSION['login'])) {
         ?>
             <div class="asb ">
@@ -202,7 +204,7 @@ if (isset($_SESSION['login'])) {
                     if (in_array($survey['id'], $temp)) {
                 ?>
 
-                        <div class="col-12 col-sm-6 col-lg-4 my-3 c in_show in_show_card justify-content-center">
+                        <div class="col-12 col-sm-6 col-lg-4 my-3 c in_card in_show_cards justify-content-center">
 
                             <!-- 卡片背面 -->
                             <div class="card shadow radio" style="width: 216px; height:300px; overflow:hidden;">
@@ -239,7 +241,7 @@ if (isset($_SESSION['login'])) {
                     <?php } else {
                     ?>
 
-                        <div class="col-12 col-sm-6 col-lg-4 my-3 c in_show in_show_card justify-content-center">
+                        <div class="col-12 col-sm-6 col-lg-4 my-3 c in_card in_show_cards justify-content-center">
                             <!-- 卡片正面 -->
                             <div class="cards cardfront">
 
@@ -308,11 +310,12 @@ if (isset($_SESSION['login'])) {
     footer information
 </div>
 <footer>
-    &copy; 練習作品 & 翻印 必不究 !
+    &copy; 練習作品 & 翻印必不究 !
 </footer>
 
 
 <script>
+    // 進入範圍，transform  // 離開時重製 。
     $('.block').addClass('in_show');
 
     $(window).on('scroll', function() {
@@ -339,5 +342,32 @@ if (isset($_SESSION['login'])) {
             }
         });
     });
- 
+
+
+    $(window).on('scroll', function() {
+        // var windowHeight = $(window).height();
+        let windowHeight = window.innerHeight;
+
+        $('.in_card').each(function() {
+            let card = $('.in_show_cards');
+            let hiddenBlock = $(this);
+            let hiddenBlockTop = hiddenBlock.offset().top;
+            if (hiddenBlockTop <= ($(window).scrollTop() + windowHeight - 80)) {
+                hiddenBlock.css({
+                    'transform': 'translateX(0%)',
+                    'opacity': '1'
+                }, function() {});
+                card.fadeIn(1800);
+            }else{
+                hiddenBlock.css({
+                    'transform': 'translateX(-100%)',
+                    'opacity': '0'
+                })
+            }
+
+            // console.log('to_TOP_H',$(window).scrollTop());
+            // console.log('window_H',windowHeight);
+            // console.log('Obj_H',hiddenBlockTop);
+        });
+    });
 </script>

@@ -89,7 +89,7 @@
                         <i class="bi bi-person-plus i"></i>
                     </li>
                     <li class="nav-item mx-2 " style="padding-right:60px;">
-                        <a href="?do=reg" class="nav-link tc" type="button">Sign Up</a>
+                        <a href="?do=reg" class="nav-link tc " type="button" >Sign Up</a>
                     </li>
                     <li class="nav-item mx-2 tc">
                         <i class="bi bi-person-workspace i"></i>

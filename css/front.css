@@ -6,7 +6,27 @@
     --fadeBlue: #0000CC;
     --white: #fff;
 }
-
+.btn-ss{
+    color:#fff !important;
+    background-color: var(--skyblue) !important;
+    border-color: var(--skyblue) !important;
+    
+}
+.btn-ss:hover,.btn-ss:focus,.btn-ss:active:hover{
+    color:#fff !important;
+    background-color: var(--blue) !important;
+    border-color: var(--blue) !important;
+}
+.btn-outline-ss{
+    color:var(--skyblue) !important;
+    background-color: #fff!important ;
+    border-color: var(--skyblue) !important;
+}
+.btn-outline-ss:hover,.btn-outline-ss:focus,.btn-outline-ss:active:hover{
+    color:#fff !important;
+    background-color: var(--skyblue) !important;
+    border-color: var(--skyblue) !important;
+}
 h1 {
     width: 60%;
     padding-top: 30px;

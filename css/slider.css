@@ -17,8 +17,6 @@
     padding-bottom: 36%;
     position: relative;
     overflow: hidden;
-    /* border: 1rem solid #00e; */
-    
     border-radius: 20px;
     margin: auto;
     box-shadow: 1px 1px 12px var(--fadeBlue);

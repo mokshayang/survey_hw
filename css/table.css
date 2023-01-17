@@ -20,9 +20,12 @@
     padding-top: 6px;
     background-color: #fff;
     border-radius: 10px 10px 0 0;
-    color: var(--darkBlue);
-    text-shadow: 1px 1px 3px var(--darkBlue);
+    color: var(--blue);
+    text-shadow: 1px 1px 1px var(--blue);
     box-shadow: none;
+    top: 60px;
+    position: relative;
+    font-size:28px;
 }
 .front_table{
     width: 60%;
@@ -39,8 +42,8 @@
     grid-gap:10px;
     border-radius: 36px;
     margin-bottom: 80px;
-    color:#333;
-    box-shadow: 1px 3px  5px 1px #999;
+    color:#999;
+    box-shadow: 5px 5px  20px  #999;
 }
 
 .items div:nth-child(1){
