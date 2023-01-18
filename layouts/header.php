@@ -1,25 +1,16 @@
 <style>
     .i {
-        font-size: 28px;
-        /* margin-top: 20px; */
-
+        font-size: 28;
         color: var(--blue);
         position: relative;
         top: -10px;
         font-size: 32px;
-
-
     }
-
     .tc {
         color: royalblue;
         font-size: 20px;
         padding-top: 10px;
-
-
     }
-
-
     .main {
         display: block;
         position: relative;
@@ -30,7 +21,6 @@
         font-style: italic;
         font-weight: bold;
     }
-
     .second {
         z-index: 10;
         position: sticky;
@@ -58,9 +48,12 @@
     ?>
             <ul class="nav nav-pills nav-item justify-content-center " role="tablist">
                <!-- 上傳公用伺服器專用 -->
-                <!-- <li class=" nav-item ">
-                    <a href="../" class="mx-5 nav-link tc" type="button">回作品集首頁</a>
-                </li> -->
+               <li class="nav-item tc">
+               <i class="bi bi-house-up-fill i"></i>
+                    </li>
+                <li class=" nav-item ">
+                    <a href="../" class=" nav-link tc" type="button" style='padding-right:60px;'>回作品集首頁</a>
+                </li>
 
                 <?php
 
@@ -76,15 +69,15 @@
 
                 <?php } else if (isset($_SESSION['login'])) {  ?>
                     <li class="nav-item tc">
-                        <i class="bi bi-person-vcard-fill i" style="color:blue;"></i>
+                        <i class="bi bi-person-vcard-fill i" "></i>
                     </li>
-                    <li class="nav-item mx-2" style="padding-right:60px;">
+                    <li class="nav-item " style="padding-right:32px;">
                         <a href="?do=user_edit&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">Member Center</a>
                     </li>
-                    <li class="nav-item  tc">
-                        <i class="bi bi-door-open-fill i" style="color:blue;"></i>
+                    <li class="nav-item  tc" >
+                        <i class="bi bi-door-open-fill i" ></i>
                     </li>
-                    <li class="nav-item mx-2">
+                    <li class="nav-item ">
                         <a href="./logout.php" class="nav-link tc" type="button">Sign Out</a>
                     </li>
 
@@ -92,13 +85,13 @@
                     <li class="nav-item tc">
                         <i class="bi bi-person-plus i"></i>
                     </li>
-                    <li class="nav-item mx-2 " style="padding-right:60px;">
+                    <li class="nav-item  " style="padding-right:60px;">
                         <a href="?do=reg" class="nav-link tc " type="button">Sign Up</a>
                     </li>
-                    <li class="nav-item mx-2 tc">
+                    <li class="nav-item  tc">
                         <i class="bi bi-person-workspace i"></i>
                     </li>
-                    <li class="nav-item mx-2 ">
+                    <li class="nav-item  ">
                         <a href="?do=login" class="nav-link tc" type="button">Login</a>
                     </li>
                 <?php }

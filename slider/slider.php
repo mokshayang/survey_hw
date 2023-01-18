@@ -52,13 +52,13 @@
             <!-- php 撈顯示的數量 -->
             <?php
 
-            if ($num > 1) {
+            if ($num > 1 ) {
             ?>
                 <div class="rad">
                     <div class="point"></div>
                 </div>
                 <?php
-                for ($i = 1; $i <= ($num-1) ; $i++) {
+                for ($i = 1; $i <= ($moth-1) ; $i++) {
                 ?>
                     <div class="rad">
                         <div></div>

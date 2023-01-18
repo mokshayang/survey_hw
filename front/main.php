@@ -15,7 +15,7 @@
         font-size: 8rem;
         font-weight: bold;
         color: white;
-        text-shadow: 1px 1px 5px white;
+        /* text-shadow: 1px 1px 5px white; */
         left: 12%;
         top: 32%;
     }
@@ -33,10 +33,7 @@
 
     <!--↓↓↓↓↓↓↓↓↓↓ 廣告曲　↓↓↓↓↓↓↓↓↓↓-->
     <div style="text-align:center; margin:40px;font-size:40px;" class="in_show">
-        <img src="./photo/vote.png" alt="photo" class="img_show">
-        <img src="./photo/vote.png" alt="photo" class="img_show">
-        <img src="./photo/vote.png" alt="photo" class="img_show">
-        <img src="./photo/vote.png" alt="photo" class="img_show">
+       
     </div>
     <style>
         .sh {
@@ -55,8 +52,8 @@
 
         .in_show,
         .in_card {
-            transform: translateX(-100%);
-            transition: all 2s ease-in-out;
+            /* transform: translateX(-100%); */
+            transition: all 1.5s ease-in-out;
             opacity: 0;
         }
     </style>
@@ -130,7 +127,7 @@
         /* min-height: 540px; */
         height: 0;
         padding-bottom: 40%;
-        background-color: var(--lightBlue);
+        background-color:var(--skyblue);
         color: #fff;
         margin: 240px auto 10px;
 
@@ -143,7 +140,7 @@
     }
 </style>
 <div class="more in_show">
-    <h3 class="block in_show" style="font-size :40px;text-shadow:1px 1px 3px #00e;">More subject
+    <h3 class="block in_show" style="font-size :40px;">More subject
         <div style=" border-bottom:1px solid #fff; width: 280px;  margin:20px auto  0 ;"></div>
     </h3>
 
@@ -243,7 +240,7 @@ if (isset($_SESSION['login'])) {
                                     </div>
                                 </div>
                                 <div style="padding-top:10px;">
-                                    <img src="./photo/voted.png " style=" background-repeat:no-repeat;" alt="votefor" width="80%">
+                                    <img src="./photo/voted2.png " style=" background-repeat:no-repeat;" alt="votefor" width="80%">
                                 </div>
                             </div>
                         </div>
@@ -348,14 +345,16 @@ if (isset($_SESSION['login'])) {
 
             if (hiddenBlockTop + hiddenBlockHeight >= scrollTop && hiddenBlockTop <= scrollTop + windowHeight) {
                 hiddenBlock.css({
-                    'transform': 'translateX(0%)',
+                    // 'transform': 'translateX(0%)',
                     'opacity': '1'
+                    
                 }, function() {});
                 card.fadeIn(1800);
             } else {
                 hiddenBlock.css({
-                    'transform': 'translateX(-100%)',
+                    // 'transform': 'translateX(-100%)',
                     'opacity': '0'
+                   
                 });
                 card.fadeOut(1800);
             }
