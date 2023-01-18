@@ -9,7 +9,8 @@
         position: relative;
         z-index: -1;
     }
-    .sub_p div{
+
+    .sub_p div {
         position: absolute;
         font-size: 8rem;
         font-weight: bold;
@@ -21,9 +22,9 @@
 </style>
 <!--↓↓↓↓↓↓↓↓↓↓ photo　↓↓↓↓↓↓↓↓↓↓-->
 <div class="sub_p">
-<div>熱門投票</div>
+    <div>熱門投票</div>
     <img src="./photo/c10.jpg" alt="" width="100%">
-    
+
 </div>
 
 <!-- 給予固定高度 -->
@@ -52,7 +53,8 @@
             box-shadow: 1px 1px 10px #999;
         }
 
-        .in_show ,.in_card{
+        .in_show,
+        .in_card {
             transform: translateX(-100%);
             transition: all 2s ease-in-out;
             opacity: 0;
@@ -92,7 +94,6 @@
             border-color: var(--skyblue);
 
         }
-        
     </style>
     <h3 class="block in_show sub_vote">To experience
         <div style="  padding: 10px auto; "></div>
@@ -132,7 +133,7 @@
         background-color: var(--lightBlue);
         color: #fff;
         margin: 240px auto 10px;
-        
+
     }
 
     .slider {
@@ -179,7 +180,6 @@
         box-shadow: 1px 1px 5px var(--blue);
         padding-bottom: 20px;
     }
-
 </style>
 <?php
 if (isset($_SESSION['login'])) {
@@ -247,10 +247,6 @@ if (isset($_SESSION['login'])) {
                                 </div>
                             </div>
                         </div>
-
-
-
-
                     <?php } else {
                     ?>
 
@@ -288,14 +284,24 @@ if (isset($_SESSION['login'])) {
                         </div>
                 <?php }
                 } ?>
-
-
-
             </div>
-        <?php } ?>
+        <?php } else {
+        ?>
+            <div class="asb">
+                <?php
+                $nums = $subject->count(['acive' => 1, 'level' => 1]);
+                for ($i = 1; $i <= $nums; $i++) {
+                ?>
+                    <div class="col-12 col-sm-6 col-lg-4 my-3 in_card in_show_cards c cardsEnd cardfrontEnd justify-content-center" data-bs-toggle="tooltip" data-bs-placement="top" title="本區只對會員開放，請加入會員 !!">
+                        <!-- 卡片正面 -->
+                        <div class=" cardfront">
+                        </div>
+                    </div>
+            <?php }
+            } ?>
+            </div><!-- .abs -->
 
-
-    </div>
+    </div> <!-- .row end -->
 </div>
 
 
@@ -371,7 +377,7 @@ if (isset($_SESSION['login'])) {
                     'opacity': '1'
                 }, function() {});
                 card.fadeIn(1800);
-            }else{
+            } else {
                 hiddenBlock.css({
                     'transform': 'translateX(-100%)',
                     'opacity': '0'
@@ -383,4 +389,10 @@ if (isset($_SESSION['login'])) {
             // console.log('Obj_H',hiddenBlockTop);
         });
     });
+
+
+    let tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    let tooltipList = tooltipTriggerList.map(function(tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
 </script>

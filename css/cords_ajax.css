@@ -21,6 +21,22 @@
     position: relative;
     transform: rotateY(0deg);
 }
+.cardsEnd {
+    width: 215px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 1.6s all ease;
+    backface-visibility: hidden;
+    box-shadow: 1px 1px 5px #0000cc98;
+}
+
+.cardfrontEnd {
+    background: url("../photo/vote.jpg");
+    background-size: 100%;
+    /* position: relative;
+    transform: rotateY(0deg); */
+}
 
 .cardback {
     top: -300px;
@@ -37,11 +53,11 @@
 }
 
 .asb {
-    margin-top: 40px;
+    margin-top: 48px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
-    grid-gap: 20px;
+    grid-gap: 48px;
 }
 
 @media screen and (max-width:760px) {
