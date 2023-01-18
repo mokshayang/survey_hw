@@ -6,11 +6,13 @@
         top: -10px;
         font-size: 32px;
     }
+
     .tc {
         color: royalblue;
         font-size: 20px;
         padding-top: 10px;
     }
+
     .main {
         display: block;
         position: relative;
@@ -21,15 +23,16 @@
         font-style: italic;
         font-weight: bold;
     }
+
     .second {
         z-index: 10;
         position: sticky;
         top: 0px;
         background-color: white;
-        box-shadow: 0 1px 10px #333;
+        box-shadow: 0 2px 10px #333;
     }
 </style>
-<header class="shadow">
+<header>
     <nav class="navbar justify-content-center" style="background-color:royalblue;height: 96px; ">
         <ul class="nav nav-pills" role="tablist">
             <li class="nav-item ">
@@ -47,13 +50,13 @@
         case "index":
     ?>
             <ul class="nav nav-pills nav-item justify-content-center " role="tablist">
-               <!-- 上傳公用伺服器專用 -->
-               <li class="nav-item tc">
-               <i class="bi bi-house-up-fill i"></i>
-                    </li>
+                <!-- 上傳公用伺服器專用 -->
+                <!-- <li class="nav-item tc">
+                    <i class="bi bi-house-up-fill i"></i>
+                </li>
                 <li class=" nav-item ">
                     <a href="../" class=" nav-link tc" type="button" style='padding-right:60px;'>回作品集首頁</a>
-                </li>
+                </li> -->
 
                 <?php
 
@@ -71,11 +74,11 @@
                     <li class="nav-item tc">
                         <i class="bi bi-person-vcard-fill i" "></i>
                     </li>
-                    <li class="nav-item " style="padding-right:32px;">
-                        <a href="?do=user_edit&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">Member Center</a>
+                    <li class=" nav-item " style=" padding-right:32px;">
+                            <a href="?do=user_edit&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button">Member Center</a>
                     </li>
-                    <li class="nav-item  tc" >
-                        <i class="bi bi-door-open-fill i" ></i>
+                    <li class="nav-item  tc">
+                        <i class="bi bi-door-open-fill i"></i>
                     </li>
                     <li class="nav-item ">
                         <a href="./logout.php" class="nav-link tc" type="button">Sign Out</a>
