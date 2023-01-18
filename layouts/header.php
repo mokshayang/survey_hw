@@ -51,6 +51,7 @@
     ?>
             <ul class="nav nav-pills nav-item justify-content-center " role="tablist">
                 <!-- 上傳公用伺服器專用 -->
+
                 <!-- <li class="nav-item tc">
                     <i class="bi bi-house-up-fill i"></i>
                 </li>
@@ -62,11 +63,11 @@
 
                 if (isset($_SESSION['admin']) || (isset($_SESSION['admin']) && isset($_SESSION['login']))) {
                 ?>
-                    <li class="nav-item mx-2 tc">
+                    <li class="nav-item  tc">
                         <i class="bi bi-person-lines-fill i"></i>
                     </li>
                     <li class=" nav-item ">
-                        <a href="admin_center.php" class="mx-2 nav-link tc" type="button">back manage</a>
+                        <a href="admin_center.php" class=" nav-link tc" type="button">back manage</a>
                     </li>
 
 
@@ -88,7 +89,7 @@
                     <li class="nav-item tc">
                         <i class="bi bi-person-plus i"></i>
                     </li>
-                    <li class="nav-item  " style="padding-right:60px;">
+                    <li class="nav-item  " style="padding-right:48px;">
                         <a href="?do=reg" class="nav-link tc " type="button">Sign Up</a>
                     </li>
                     <li class="nav-item  tc">
@@ -133,9 +134,6 @@
                     <a href="./logout.php" class="nav-link tc" type="button">登出</a>
                 </li>
             </ul>
-
-
-
 
     <?php break;
     }  ?>

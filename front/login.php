@@ -28,7 +28,7 @@
                 </div>
                 <div class="input-group mb-3 col-8">
                     <label class="input-group-text">密碼 :</label>
-                    <input type="text" class="form-control" name="pw">
+                    <input type="password" class="form-control" name="pw">
                 </div>
                 <!-- <input type="hidden" name="url" valur=""> 傳遞前一頁，暫時先不做-->
             </div>
@@ -36,7 +36,7 @@
                 <input class="btn btn-ss shadow login" type="submit" value=" 登入 ">
             </div>
             <div class="text-center col-12 my-4">
-                <a href="?do=forget" class=" mx-1  forget">?&nbsp; 忘記密碼</a>
+                <a href="?do=forget" class=" mx-1  forget"> 忘記密碼</a>
             </div>
         </form>
     </div>
