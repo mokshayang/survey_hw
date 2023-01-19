@@ -12,7 +12,7 @@ if (isset($_GET['id'])) {
 <link rel="stylesheet" href="./css/table.css">
 <style>
     form {
-        width: 68%;
+        width: 88%;
         margin:0 auto;
         background-color: #fff;
         box-shadow: none;
@@ -20,11 +20,12 @@ if (isset($_GET['id'])) {
     }
 
     .items {
-        margin:0px auto 10px;
+        margin:0px auto 5px;
         display: grid;
-        grid-auto-rows: 48px;
-        grid-template-columns: 1fr 1fr 6fr 1fr;
+        grid-auto-rows: 36px;
+        grid-template-columns: 1fr 1fr  20fr ;
         justify-items: end;
+        grid-gap:5px;
     }
 
     .radio {
@@ -35,6 +36,7 @@ if (isset($_GET['id'])) {
         background-color: #fff;
         text-align: center;
         line-height: 38px;
+        /* margin: auto; */
     }
     .img_sub {
         width: 300px;
@@ -114,7 +116,7 @@ if (isset($_GET['id'])) {
                 <div class="form-control">
                     <?= $option['opt']; ?>
                 </div>
-                <div></div>
+                
         <?php
             }
         }

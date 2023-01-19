@@ -74,7 +74,6 @@
         .sub_vote {
             color: var(--darkBlue);
             font-size: 60px;
-
         }
 
         .sub_vote div {
@@ -89,7 +88,6 @@
             color: #fff;
             background-color: var(--skyblue);
             border-color: var(--skyblue);
-
         }
     </style>
     <h3 class="block in_show sub_vote">To experience
