@@ -1,31 +1,32 @@
 <?php include_once "../db/base.php"; ?>
 <?php
 if (isset($_GET['id'])) {
-    $survey =$subject->find( $_GET['id']); //取得主題
-    $options =$options->all( ['subject_id' => $_GET['id']]); //取的選項資料
+    $survey = $subject->find($_GET['id']); //取得主題
+    $options = $options->all(['subject_id' => $_GET['id']]); //取的選項資料
     //  dd($options);
 } else {
     $error = "請回到問卷首頁選擇正確的題目來進行";
 }
 // echo $_GET['ip'];
 ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <link rel="stylesheet" href="./css/table.css">
 <style>
     form {
         width: 88%;
-        margin:0 auto;
+        margin: 0 auto;
         background-color: #fff;
         box-shadow: none;
         padding-top: 5px;
     }
 
     .items {
-        margin:0px auto 5px;
+        margin: 0px auto 5px;
         display: grid;
         grid-auto-rows: 36px;
-        grid-template-columns: 1fr 1fr  20fr ;
+        grid-template-columns: 1fr 1fr 20fr;
         justify-items: end;
-        grid-gap:5px;
+        grid-gap: 5px;
     }
 
     .radio {
@@ -38,6 +39,7 @@ if (isset($_GET['id'])) {
         line-height: 38px;
         /* margin: auto; */
     }
+
     .img_sub {
         width: 300px;
         height: 180px;
@@ -49,42 +51,50 @@ if (isset($_GET['id'])) {
         min-width: 240px;
         min-height: 144px;
     }
+
     .ii {
         width: 120px;
     }
-    .img_sub div{
+
+    .img_sub div {
         width: 100%;
         height: 100%;
     }
+
     .img_sub .img_opt {
         width: 100%;
     }
+
     @media only screen and (max-width: 780px) {
         form {
             width: 90%;
         }
     }
-    .img_opt , .ii {
+
+    .img_opt,
+    .ii {
         width: 100%;
         margin: auto;
         transform: scale(1, 1);
         transition: all 0.3s ease-out;
     }
 
-    .img_opt:hover , .ii:hover {
+    .img_opt:hover,
+    .ii:hover {
         transform: scale(1.02, 1.02);
     }
-    .select{
+
+    .select {
 
         margin: 10px auto 0;
         text-align: center;
         font-size: 20px;
-        
+
     }
 </style>
 <h3 style="padding:5px;margin:0 auto;"><?= $survey['subject'] ?></h3>
 <div class="img_sub">
-    <div >
+    <div>
         <?php
         if (!empty($_GET['id'])) {
             if (is_image($survey['type'])) {
@@ -98,8 +108,31 @@ if (isset($_GET['id'])) {
         } ?>
     </div>
 </div>
+<style>
+    #all_show {
+        position: absolute;
+        width: 180px;
+        min-height: 180px;
+        background-color: #eef;
+        /* top: 0px;*/
+        left: 160px;
+        z-index: 100;
+        display: none;
+        padding: 5px;
+        border-radius: 10px;
+        border: 3px double #f90;
+        background-position: initial initial;
+        background-repeat: initial initial;
+        overflow: auto;
+    }
+
+ .option_select:hover{
+    cursor: pointer;
+    background-color: #ccccee90;
+ }
+</style>
 <div class="select">請選擇您的意見</div>
-<form action="./api/survey_vote.php" method="post" >
+<form action="./api/survey_vote.php" method="post">
     <div class="items my-3">
         <?php
         if (isset($error)) {
@@ -113,10 +146,12 @@ if (isset($_GET['id'])) {
                 <div class="radio">
                     <input type="radio" name="option" <?= $checked ?> value="<?= $option['id'] ?>">
                 </div>
-                <div class="form-control">
-                    <?= $option['opt']; ?>
+                <div class="form-control option_select" style='position:relative;'>
+                    <?= mb_substr($option['opt'], 0, 15) . "..."; ?>
+                    <span class="all" style="display:none;"><?= $option['opt'] ?></span>
+                    <div id="all_show"></div>
                 </div>
-                
+
         <?php
             }
         }
@@ -128,3 +163,30 @@ if (isset($_GET['id'])) {
         </div>
     <?php } ?>
 </form>
+
+
+<script>
+    $(".option_select").hover(
+        function() {
+            let div = `
+                    ${
+                    $(this).children(".all").html() 
+                    }`;
+            $("#all_show").html(div);
+            //對齊選項
+
+            let position = $(this).position();
+            $("#all_show").css({
+                top: position.top + $(this).height()-328,
+                left: position.left+100
+            });
+
+            $("#all_show").show();
+        }
+    )
+    $(".option_select").mouseout(
+        function() {
+            $('#all_show').hide();
+        }
+    )
+</script>
