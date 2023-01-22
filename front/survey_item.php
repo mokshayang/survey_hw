@@ -147,9 +147,16 @@ if (isset($_GET['id'])) {
                     <input type="radio" name="option" <?= $checked ?> value="<?= $option['id'] ?>">
                 </div>
                 <div class="form-control option_select" style='position:relative;'>
-                    <?= mb_substr($option['opt'], 0, 15) . "..."; ?>
+                <?php 
+                    if(strlen($option['opt'])>28){
+                       echo mb_substr($option['opt'], 0, 12) . "..."; 
+                ?>
                     <span class="all" style="display:none;"><?= $option['opt'] ?></span>
                     <div id="all_show"></div>
+                    <?php } else {
+                        echo $option['opt']; 
+                     } ?>
+
                 </div>
 
         <?php
