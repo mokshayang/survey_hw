@@ -65,6 +65,11 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+@media screen and (max-width:550px) {
+    .asb {
+        grid-template-columns:  1fr;
+    }
+}
 .user {
     text-align: center;
     font-size: 40px;

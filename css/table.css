@@ -1,7 +1,7 @@
 .table_list{
     width: 60%;
     margin: 10px auto;
-    min-width: 540px;
+    min-width: 360px;
 }
 .table_head,.items{
     display: grid;
@@ -30,7 +30,8 @@
 .front_table{
     width: 60%;
     margin: 20px auto 120px;
-    min-width: 540px;   
+    min-width: 360px;   
+    
 }
 .front_items{
     display: grid;

@@ -50,7 +50,7 @@ h1,h3{
 }
 .item , .users, h1{
     width: 68%;
-    min-width: 560px;
+   
 }
 
 .operate {
@@ -252,7 +252,7 @@ a.now {
 #coverr
 {
 	width:70%;
-	min-width:300px;
+	min-width:380px;
 	max-width:800px;
 	height:70%;
 	min-height:300px;

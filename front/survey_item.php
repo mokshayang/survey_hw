@@ -126,7 +126,7 @@ if (isset($_GET['id'])) {
         overflow: auto;
     }
 
- .option_select:hover{
+ .option_select:hover,.opt:hover{
     cursor: pointer;
     background-color: #ccccee90;
  }
@@ -146,18 +146,20 @@ if (isset($_GET['id'])) {
                 <div class="radio">
                     <input type="radio" name="option" <?= $checked ?> value="<?= $option['id'] ?>">
                 </div>
-                <div class="form-control option_select" style='position:relative;'>
                 <?php 
-                    if(strlen($option['opt'])>28){
+                    if(strlen($option['opt']) > 28){
+                        echo "<div class='form-control option_select' style='position:relative;'>";
                        echo mb_substr($option['opt'], 0, 12) . "..."; 
                 ?>
                     <span class="all" style="display:none;"><?= $option['opt'] ?></span>
                     <div id="all_show"></div>
+                </div>
                     <?php } else {
+                        echo "<div class='form-control opt' style='position:relative;'>";
                         echo $option['opt']; 
+                        echo "</div>";
                      } ?>
 
-                </div>
 
         <?php
             }
