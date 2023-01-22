@@ -112,10 +112,10 @@
             foreach ($surveys as $key => $survey) {
             ?>
                 <div class="front_items block in_show" style="line-height:48px; color:var(--blue);">
-                    <div style="line-height: 20px;"><?= $survey['subject'] ?></div>
+                    <div style="line-height: 20px;padding:10px;"><?= $survey['subject'] ?></div>
                     <div><?= $survey['vote'] ?></div>
                     <div>
-                        <a class="btn btn-lg btn-ss mx-1" onclick="op('#cover','#cvr','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
+                        <a class="btn  btn-lg btn-ss mx-1" onclick="op('#cover','#cvr','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
                         <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-lg btn-outline-ss mx-1">結果</a>
 
                     </div>
@@ -331,7 +331,7 @@ if (isset($_SESSION['login'])) {
     footer information
 </div>
 <footer>
-    &copy; 練習作品 & 翻印必不究 !
+    &copy; 練習作品 !
 </footer>
 
 

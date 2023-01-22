@@ -27,6 +27,7 @@ $recoup = ($sub['vote'] / $max);
         min-height: 300px; */
         text-align: center;
         /* margin: auto; */
+        width: 100%;
     }
 
 
@@ -181,7 +182,8 @@ $type = ($sub['level'] == 1) ? "人" : "次";
                 units: '<?= $opt['vote']; ?>'
             },
             size: {
-                width: 800
+                width: 800,
+              
             }
         })
     }
