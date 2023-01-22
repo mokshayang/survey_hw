@@ -16,12 +16,13 @@
         grid-template-columns: 1fr 5fr 1fr;
     }
     .ad_user a {
-        display: block;
+        /* display: block;
         width: 100px;
-        height: 40px;
+        height: 40px; */
         align-self: center;
     }
     .item,.userData{
+    
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 3fr 2fr;
     }
@@ -50,8 +51,8 @@
                 <div><?= $client['name'] ?></div>
                 <div><?= $client['email'] ?></div>
                 <div class="operate">
-                    <a href="?do=user_edit&id=<?= $client['id'] ?>&p=<?=$_GET['p']?>" class="btn btn-outline-ss">編輯</a>
-                    <a href="./api/user_del.php?id=<?= $client['id'] ?>" class="btn btn-danger" onclick="
+                    <a href="?do=user_edit&id=<?= $client['id'] ?>&p=<?=$_GET['p']?>" class="btn btn-outline-ss ">編輯</a>
+                    <a href="./api/user_del.php?id=<?= $client['id'] ?>" class="btn btn-danger " onclick="
                                 return confirm('確定刪除會員帳號 : <?= $client['acc'] ?>  ?')">刪除</a>
                 </div>
             </div>
