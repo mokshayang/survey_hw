@@ -39,6 +39,7 @@
         box-shadow: 1px 1px 10px var(--lightBlue);
     }
 </style>
+<div class="admin"><?= $_SESSION['admin'] ?> 您好 !!</div>
 <h3>調查列表</h3>
 <div class=add_head>
     <a href="admin_center.php?do=survey_add" class="btn btn-ss">新增調查主題</a>

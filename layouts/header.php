@@ -55,9 +55,9 @@
             <ul class="nav nav-pills nav-item  justify-content-center  " role="tablist">
                 <!-- 上傳公用伺服器專用 -->
 
-                <li class="nav-item tc"  style=" padding-right:0.6rem;">
+                <!-- <li class="nav-item tc"  style=" padding-right:0.6rem;">
                     <a href="../" class=" nav-link tc" type="button" ><i class="bi bi-house-up-fill i"></i>作品首頁</a>
-                </li>
+                </li> -->
 
                 <?php
 
