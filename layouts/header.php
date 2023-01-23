@@ -1,6 +1,5 @@
 <style>
     .i {
-       
         color: var(--blue);
         position: relative;
         padding-right: 0.5rem;
@@ -28,7 +27,7 @@
     .second {
         z-index: 10;
         position: sticky;
-        top: 0px;
+        top: 0;
         background-color: white;
         box-shadow: 0 2px 10px #333;
     }
@@ -56,9 +55,9 @@
             <ul class="nav nav-pills nav-item  justify-content-center  " role="tablist">
                 <!-- 上傳公用伺服器專用 -->
 
-                <!-- <li class="nav-item tc"  style=" padding-right:0.6rem;">
+                <li class="nav-item tc"  style=" padding-right:0.6rem;">
                     <a href="../" class=" nav-link tc" type="button" ><i class="bi bi-house-up-fill i"></i>作品首頁</a>
-                </li> -->
+                </li>
 
                 <?php
 
@@ -98,7 +97,7 @@
 
 
             <!-- <ul class="nav nav-pills" role="tablist">
-                <li class="nav-item mx-3">
+                <li class="nav-item mx-1">
                     <a class=" nav-link tc " href="index.php"><i class="bi bi-file-earmark-music music"></i></a>
                 </li>
                 <li class="nav-item " style="padding-right:20px;">
@@ -107,21 +106,21 @@
             </ul> -->
             <ul class="nav nav-pills nav-item justify-content-center " role="tablist">
 
-                <li class="nav-item mx-2">
-                    <a href="?do=survey" class="nav-link tc" type="button">選項主題管理</a>
+                <li class="nav-item">
+                    <a href="?do=survey" class="nav-link tc btn btn-lineout-ss" type="button">選項主題管理</a>
                 </li>
 
-                <li class="nav-item mx-2">
-                    <a href="?do=users&p=1" class="nav-link tc" type="button">會員管理</a>
+                <li class="nav-item">
+                    <a href="?do=users&p=1" class="nav-link tc btn btn-lineout-ss" type="button">會員管理</a>
                 </li>
 
 
-                <li class="nav-item mx-2">
-                    <a href="?do=admin" class="nav-link tc" type="button">管理者列表</a>
+                <li class="nav-item">
+                    <a href="?do=admin" class="nav-link tc btn btn-lineout-ss" type="button">管理者列表</a>
                 </li>
 
-                <li class="nav-item mx-2" style="padding-right:20px;">
-                    <a href="./logout.php" class="nav-link tc" type="button">登出</a>
+                <li class="nav-item" >
+                    <a href="./logout.php" class="nav-link tc btn btn-lineout-ss" type="button">登出</a>
                 </li>
             </ul>
 

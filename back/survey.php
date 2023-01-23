@@ -28,8 +28,8 @@
         box-shadow: 1px 1px 10px #33333390;
     }
     .mm{
-        width:20rem;
-        height: 12rem;
+        width:320px;
+        height: 192px;
         overflow: hidden;
     }
     .radio{
@@ -55,7 +55,7 @@
 
         ?>
             <div class="col-12 col-sm-6 col-lg-4  my-3 d-flex  justify-content-center ">
-                <div class="card radio cardshadow" style="width: 20rem; overflow:hidden;">
+                <div class="card radio cardshadow" style="width: 320px; overflow:hidden;">
                 <div class="mm ">
                     <?php
                     if (is_image($survey['type'])) {
@@ -69,10 +69,10 @@
                 </div>
                     <div class="card-body ">
                         <p class="card-text sub"><?= $survey['subject'] ?></p>
-                        <a href="./api/acive.php?id=<?= $survey['id'] ?>" class="btn btn-sm mx-2 bh <?= $active ?>"> <?= $activeText ?> </a>
-                        <a href="./api/level.php?id=<?= $survey['id'] ?>" class="btn btn-sm mx-2 bh <?= $level ?>"><?= $levelText ?></a>
-                        <a href="./admin_center.php?do=survey_edit&id=<?= $survey['id'] ?>" class="btn btn-sm btn-outline-ss mx-2 bh ">編輯</a>
-                        <a href="./api/del.php?id=<?= $survey['id'] ?>" class="btn btn-sm btn-warning mx-2 bh" onclick="
+                        <a href="./api/acive.php?id=<?= $survey['id'] ?>" class="btn btn-sm mx-1 bh <?= $active ?>"> <?= $activeText ?> </a>
+                        <a href="./api/level.php?id=<?= $survey['id'] ?>" class="btn btn-sm mx-1 bh <?= $level ?>"><?= $levelText ?></a>
+                        <a href="./admin_center.php?do=survey_edit&id=<?= $survey['id'] ?>" class="btn btn-sm btn-outline-ss mx-1 bh ">編輯</a>
+                        <a href="./api/del.php?id=<?= $survey['id'] ?>" class="btn btn-sm btn-warning mx-1 bh" onclick="
                         return confirm('確定刪除主題 : <?=$survey['subject']?>  ?')">刪除</a>
                     </div>
                 </div>

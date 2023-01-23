@@ -22,7 +22,7 @@
 <div class="admin_er">
     <div></div>
     <div class="admin"><?= $_SESSION['admin'] ?> 您好 !!</div>
-    <a href="?do=admin_add" class="btn btn-outline-ss ">新增管理者</a>
+    <a href="?do=admin_add" class="btn btn-outline-ss " style="font-size:16px;">新增管理者</a>
 </div>
 <div class="container">
     <div class="admin_sh"">
