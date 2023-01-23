@@ -77,15 +77,15 @@
     <style>
         .sub_vote {
             color: var(--darkBlue);
-            font-size: 60px;
+            font-size: 4.5rem;
         }
 
         .sub_vote div {
-            width: 280px;
+            width: 18rem;
             height: 5px;
-            border-bottom: 5px solid var(--darkBlue);
-            padding: 10px auto;
-            margin: 48px auto 0;
+            border-bottom: 0.3rem solid var(--darkBlue);
+            padding: 0.6rem auto;
+            margin: 2rem auto 0;
             font-weight: bold;
         }
 
@@ -100,10 +100,10 @@
         <div style="  padding: 10px auto; "></div>
     </h3>
     <div class="table_list block in_show">
-        <div class="table_head sub" ">
-            <div>Theme</div>
-            <div>Participant</div>
-            <div>Vote</div>
+        <div class="table_head sub" >
+            <div >Theme</div>
+            <div >Participant</div>
+            <div >Vote</div>
         </div>
     </div>
     <div class=" front_table block in_show">
@@ -115,8 +115,8 @@
                     <div style="line-height: 20px;padding:10px;"><?= $survey['subject'] ?></div>
                     <div><?= $survey['vote'] ?></div>
                     <div>
-                        <a class="btn  btn-lg btn-ss mx-1" onclick="op('#cover','#cvr','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
-                        <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-lg btn-outline-ss mx-1">結果</a>
+                        <a class="btn  btn-lg btn-ss" onclick="op('#cover','#cvr','./front/survey_item.php?id=<?= $survey['id']; ?>')">投票</a>
+                        <a href="index.php?do=survey_result&id=<?= $survey['id']; ?>" class="btn btn-lg btn-outline-ss">結果</a>
 
                     </div>
                 </div>

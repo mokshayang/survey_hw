@@ -16,6 +16,7 @@ if (!isset($_SESSION['admin'])) {
     <title>Opinion</title>
     <?php include_once "./layouts/link_css.php" ?>
     <link rel="stylesheet" href="./css/back.css">
+    <link rel="stylesheet" href="./css/mobile_silder.css">
     <script src="js/js.js"></script>
 </head>
 

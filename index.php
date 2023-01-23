@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./css/front.css">
     <link rel="stylesheet" href="./css/back.css">
     <link rel="stylesheet" href="./css/cords_ajax.css">
+    <link rel="stylesheet" href="./css/mobile_silder.css">
     <title>Opinion</title>
     <?php include "./layouts/link_css.php" ?>
 </head>

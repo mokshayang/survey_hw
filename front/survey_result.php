@@ -99,9 +99,9 @@ $type = ($sub['level'] == 1) ? "人" : "次";
     ?>
         <li class="d-flex list-group-item list-group-item-light list-group-item-action my-4 li_sh" style="min-height:40px;">
 
-            <div class="col-7 voted-result" data-vote="<?= $opt['vote'] ?>"><?= $opt['opt']; ?></div>
-            <div class="col-1"><?= $opt['vote']; ?> <?= $type ?></div>
-            <div class="col-4 d-flex align-items-center">
+            <div class="col-5 voted-result" data-vote="<?= $opt['vote'] ?>"><?= $opt['opt']; ?></div>
+            <div class="col-2"><?= $opt['vote'];  ?> <?= $type ?></div>
+            <div class="col-5 d-flex align-items-center">
                 <div class="tool-chart col-12  rounded" data-progress="<?= $width; ?>" data-title="degree">
                     <div class="tag"></div>
                     <div class="bar">
@@ -117,7 +117,7 @@ $type = ($sub['level'] == 1) ? "人" : "次";
 </ul>
 <div class="text-center mt-4">
 
-    <a href="index.php?do=survey" class="btn btn-warning mx-1">返回</a>
+    <a href="index.php?do=survey" class="btn btn-warning mx-1" style="margin-bottom: 24px;">返回</a>
 </div>
 <style>
     /* c3.donut.totle.fontSize */
@@ -181,10 +181,10 @@ $type = ($sub['level'] == 1) ? "人" : "次";
             gauge: {
                 units: '<?= $opt['vote']; ?>'
             },
-            size: {
-                width: 800,
+            // size: {
+            //     width: 800,
               
-            }
+            // }
         })
     }
 </script>

@@ -1,16 +1,16 @@
 <style>
     .i {
-        font-size: 28;
+       
         color: var(--blue);
         position: relative;
-        padding-right: 10px;
-        font-size: 32px;
+        padding-right: 0.5rem;
+        font-size: 2rem;
         vertical-align: middle;
     }
 
     .tc {
         color: royalblue;
-        font-size: 20px;
+        font-size: 1.2rem;
        
     }
 
@@ -18,7 +18,7 @@
         display: block;
         position: relative;
         margin: auto;
-        font-size: 36px;
+        font-size: 2.3rem;
         text-shadow: 1px 1px 3px var(--lightBlue);
         color: white;
         font-style: italic;
@@ -37,7 +37,7 @@
     }
 </style>
 <header>
-    <nav class="navbar justify-content-center" style="background-color:royalblue;height: 96px; ">
+    <nav class="navbar justify-content-center" style="background-color:royalblue;height: 6rem; ">
         <ul class="nav nav-pills" role="tablist">
             <li class="nav-item ">
                 <a href="./index.php" class="nav-link main" type="button">Polling station</a>
@@ -46,7 +46,7 @@
     </nav>
 </header>
 
-<div class="  second" style="min-height: 50px; ">
+<div class="  second" style="min-height: 3rem; ">
     <?php
     $file_str = explode("/", $_SERVER['PHP_SELF']);
     $local = str_replace('.php', '', array_pop($file_str));
@@ -56,7 +56,7 @@
             <ul class="nav nav-pills nav-item  justify-content-center  " role="tablist">
                 <!-- 上傳公用伺服器專用 -->
 
-                <!-- <li class="nav-item tc"  style=" padding-right:10px;">
+                <!-- <li class="nav-item tc"  style=" padding-right:0.6rem;">
                     <a href="../" class=" nav-link tc" type="button" ><i class="bi bi-house-up-fill i"></i>作品首頁</a>
                 </li> -->
 
@@ -65,25 +65,26 @@
                 if (isset($_SESSION['admin']) || (isset($_SESSION['admin']) && isset($_SESSION['login']))) {
                 ?>
                     <li class="nav-item  tc">
-                        <a href="admin_center.php" class=" nav-link tc" type="button"> <i class="bi bi-person-lines-fill i"></i>back manage</a>
+                        <a href="admin_center.php" class=" nav-link tc" type="button">
+                        <i class="bi bi-person-lines-fill i"></i>back manage</a>
                     </li>
 
 
                 <?php } else if (isset($_SESSION['login'])) {  ?>
                    
-                    <li class=" nav-item tc" style=" padding-right:10px;">
+                    <li class=" nav-item tc" style=" padding-right:0.6rem;">
                             <a href="?do=user_edit&id=<?= $_SESSION['login']['id'] ?>" class="nav-link tc" type="button"> <i class="bi bi-person-vcard-fill i" "></i>Member Center</a>
                     </li>
-                    <li class=" nav-item tc" style=" padding-right:10px;">
+                    <li class=" nav-item tc" style=" padding-right:0.6rem;">
                     <a href="./logout.php" class="nav-link tc" type="button"> <i class="bi bi-door-open-fill i" ></i>Sign Out</a>
                     </li>
 
                 <?php  } else { ?>
-                    <li class="nav-item tc"  style=" padding-right:10px;">
+                    <li class="nav-item tc"  style=" padding-right:0.6rem;">
                         <a href="?do=reg" class="nav-link tc " type="button"><i class="bi bi-person-plus i"></i>Sign Up</a>
                     </li>
                   
-                    <li class="nav-item  tc"  style=" padding-right:10px;">
+                    <li class="nav-item  tc"  style=" padding-right:0.6rem;">
                         <a href="?do=login" class="nav-link tc"type="button"><i class="bi bi-person-workspace i"></i>Login</a>
                     </li>
                     
